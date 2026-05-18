@@ -2,6 +2,10 @@
 .godot/
 /android/
 
+# IDE stuff
+.vscode/
+.idea/
+
 # Imported translations (automatically generated from CSV files)
 *.translation
 
