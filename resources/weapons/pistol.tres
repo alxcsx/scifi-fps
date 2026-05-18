@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://dflobhpwe1c4q"]
+
+[ext_resource type="Script" uid="uid://bo4xwaru6jy3j" path="res://scripts/resources/WeaponItem.gd" id="1_1vsk4"]
+[ext_resource type="Texture2D" uid="uid://joejstvfmfla" path="res://sprites/placeholders/pistol/pistol_icon.png" id="1_uny8x"]
+
+[resource]
+script = ExtResource("1_1vsk4")
+weapon_id = "Pistol"
+starting_ammo = 5
+item_name = "Pistol"
+icon = ExtResource("1_uny8x")
+metadata/_custom_type_script = "uid://bo4xwaru6jy3j"

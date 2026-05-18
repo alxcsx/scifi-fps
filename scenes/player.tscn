@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://buioxy5ag4gc6"]
+
+[ext_resource type="Script" uid="uid://bwne07mm23kui" path="res://scripts/player/PlayerInventoryManager.gd" id="2_dqkch"]
+[ext_resource type="Script" uid="uid://d2q325h3ul3s0" path="res://scripts/player/PlayerMovementManager.gd" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://dh65p6lyige1w" path="res://scenes/weapons_manager.tscn" id="3_qhqgy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1601922834]
+
+[node name="PlayerStats" type="Node" parent="." unique_id=433658206]
+
+[node name="MovementManager" type="Node" parent="." unique_id=1523989142]
+unique_name_in_owner = true
+script = ExtResource("2_qhqgy")
+
+[node name="InventoryManager" type="Node" parent="." unique_id=1118382013]
+unique_name_in_owner = true
+script = ExtResource("2_dqkch")
+
+[node name="WeaponsManager" parent="." unique_id=1126807396 instance=ExtResource("3_qhqgy")]
+unique_name_in_owner = true
+
+[node name="Pivot" type="Node3D" parent="." unique_id=2037270985]
+unique_name_in_owner = true
+
+[node name="Camera" type="Camera3D" parent="Pivot" unique_id=420349659]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.315)
+
+[node name="Flashlight" type="SpotLight3D" parent="Pivot" unique_id=497022320]
+transform = Transform3D(1, 0, 0, 0, 0.96554077, -0.26025176, 0, 0.26025176, 0.96554077, -0.84690034, -0.3614058, -0.420012)
+spot_range = 287.632
+spot_attenuation = 0.74
+spot_angle = 44.42
+
+[node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=1138739066]
+shape = SubResource("CapsuleShape3D_onrkg")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1751736324]
+
+[node name="UI_Root" type="Control" parent="HUD" unique_id=460035666]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

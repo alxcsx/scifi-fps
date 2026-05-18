@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://gxbtuojst76b"]
+
+[ext_resource type="PackedScene" uid="uid://buioxy5ag4gc6" path="res://player.tscn" id="1_37kl0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mf4mk"]
+
+[sub_resource type="Sky" id="Sky_37kl0"]
+sky_material = SubResource("ProceduralSkyMaterial_mf4mk")
+
+[sub_resource type="Environment" id="Environment_mf4mk"]
+background_mode = 1
+background_energy_multiplier = 0.29
+sky = SubResource("Sky_37kl0")
+fog_light_color = Color(0.5344273, 0.5522602, 0.5726386, 1)
+fog_light_energy = 0.0
+fog_sky_affect = 0.28
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf4mk"]
+albedo_color = Color(0.26352, 0.2592, 0.27, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_37kl0"]
+size = Vector3(7, 1, 27)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8uh7m"]
+size = Vector3(7, 1, 27)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6uqi0"]
+size = Vector3(1, 8.5, 26)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37kl0"]
+size = Vector3(1, 8.5, 26)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6uqi0"]
+size = Vector3(1, 8.5, 26)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37kl0"]
+transparency = 1
+albedo_color = Color(0.67, 0.60355836, 0.10049999, 0.5411765)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mf4mk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mf4mk"]
+size = Vector3(48, 1, 41)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ppyta"]
+size = Vector3(48, 1, 41)
+
+[node name="Node3D" type="Node3D" unique_id=558373705]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=83075442]
+environment = SubResource("Environment_mf4mk")
+
+[node name="Sala" type="Node3D" parent="." unique_id=766194394]
+
+[node name="Hallway" type="Node3D" parent="Sala" unique_id=1143720007]
+
+[node name="floor" type="StaticBody3D" parent="Sala/Hallway" unique_id=57201225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.987028)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sala/Hallway/floor" unique_id=1558750023]
+material_override = SubResource("StandardMaterial3D_mf4mk")
+mesh = SubResource("BoxMesh_37kl0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sala/Hallway/floor" unique_id=924780113]
+shape = SubResource("BoxShape3D_8uh7m")
+
+[node name="wall#1" type="StaticBody3D" parent="Sala/Hallway" unique_id=83420413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, 11.507)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sala/Hallway/wall#1" unique_id=153279277]
+material_override = SubResource("StandardMaterial3D_mf4mk")
+mesh = SubResource("BoxMesh_6uqi0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sala/Hallway/wall#1" unique_id=147081325]
+shape = SubResource("BoxShape3D_37kl0")
+
+[node name="wall#2" type="StaticBody3D" parent="Sala/Hallway" unique_id=1438409431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.074, 4, 11.507)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sala/Hallway/wall#2" unique_id=2106872035]
+material_override = SubResource("StandardMaterial3D_mf4mk")
+mesh = SubResource("BoxMesh_6uqi0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sala/Hallway/wall#2" unique_id=48466472]
+shape = SubResource("BoxShape3D_6uqi0")
+
+[node name="light#1" type="MeshInstance3D" parent="Sala/Hallway" unique_id=1908784437]
+transform = Transform3D(1.0960628, 0, 0, 0, 1, 0, 0, 0, 1.1194316, -3.8, 3.8430624, 8.206991)
+material_override = SubResource("StandardMaterial3D_37kl0")
+gi_mode = 0
+gi_lightmap_texel_scale = 0.935
+mesh = SubResource("BoxMesh_mf4mk")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Sala/Hallway/light#1" unique_id=1483816635]
+transform = Transform3D(0.11959158, 0, 0.90448445, 0, 1, 0, -0.8856028, 0, 0.11709503, 0.73679686, 0, 0)
+light_energy = 5.703
+spot_range = 19.772
+spot_attenuation = 0.78
+spot_angle = 171.64
+spot_angle_attenuation = 1.8025012
+
+[node name="light#2" type="MeshInstance3D" parent="Sala/Hallway" unique_id=1872976300]
+transform = Transform3D(1.0960628, 0, 0, 0, 1, 0, 0, 0, 1.1194316, -3.8, 3.8430624, 21.214)
+material_override = SubResource("StandardMaterial3D_37kl0")
+gi_mode = 0
+gi_lightmap_texel_scale = 0.935
+mesh = SubResource("BoxMesh_mf4mk")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Sala/Hallway/light#2" unique_id=1361814260]
+transform = Transform3D(0.11959158, 0, 0.90448445, 0, 1, 0, -0.8856028, 0, 0.11709503, 0.73679686, 0, 0)
+light_energy = 5.703
+spot_range = 19.772
+spot_attenuation = 0.78
+spot_angle = 171.64
+spot_angle_attenuation = 1.8025012
+
+[node name="Hall" type="Node3D" parent="Sala" unique_id=1471120098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 44.769)
+
+[node name="hall_light" type="MeshInstance3D" parent="Sala/Hall" unique_id=1194632087]
+transform = Transform3D(-4.791043e-08, -1, 0, 1.0960629, -4.371139e-08, 0, 0, 0, 1.1194316, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_37kl0")
+gi_mode = 0
+gi_lightmap_texel_scale = 0.935
+mesh = SubResource("BoxMesh_mf4mk")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Sala/Hall/hall_light" unique_id=1290592421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73679686, 0, 0)
+light_energy = 5.703
+spot_range = 14.731
+spot_attenuation = 0.63
+spot_angle = 132.53
+spot_angle_attenuation = 1.8025012
+
+[node name="floor_hall" type="StaticBody3D" parent="Sala/Hall" unique_id=1690457009]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sala/Hall/floor_hall" unique_id=2026173302]
+shape = SubResource("BoxShape3D_mf4mk")
+
+[node name="floor2" type="MeshInstance3D" parent="Sala/Hall/floor_hall" unique_id=698243669]
+material_override = SubResource("StandardMaterial3D_mf4mk")
+mesh = SubResource("BoxMesh_ppyta")
+
+[node name="Player" parent="." unique_id=1601922834 instance=ExtResource("1_37kl0")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2.8625035, 0)

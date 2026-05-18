@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://dcnoxw5o35r4d"]
+
+[ext_resource type="Texture2D" uid="uid://w3bh8msy5agx" path="res://sprites/placeholders/crowbar/crowbar_icon.png" id="1_1hgv1"]
+[ext_resource type="Script" uid="uid://bo4xwaru6jy3j" path="res://scripts/resources/WeaponItem.gd" id="2_hyat3"]
+
+[resource]
+script = ExtResource("2_hyat3")
+weapon_id = "Crowbar"
+damage = 0.0
+fire_rate = 0.1
+starting_ammo = 0
+ammo_type = 0
+ammo_cost = 0
+item_name = "Crowbar"
+icon = ExtResource("1_1hgv1")
+metadata/_custom_type_script = "uid://bo4xwaru6jy3j"
