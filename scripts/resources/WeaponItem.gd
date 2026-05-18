@@ -1,8 +1,16 @@
 extends Item
 class_name WeaponItem
 
-#TODO: acho que pode ser um enum
-@export var weapon_id: String 
+enum WeaponType {
+  NONE,
+  PISTOL,
+  RIFLE,
+  FLASHLIGHT,
+  MELEE,
+}
+
+
+@export var weaponType: WeaponType = WeaponType.NONE
 
 @export_category("Weapon Stats")
 @export var damage: float = 10.0

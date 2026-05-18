@@ -2,31 +2,31 @@ extends Node
 class_name PlayerInventoryManager
 
 signal ammo_changed(ammo_type: String, new_amount: int)
-signal weapon_unlocked(weapon_id: String)
+signal weapon_unlocked(weaponType: WeaponItem.WeaponType)
 
 var ammo_inventory: Dictionary[AmmoItem.AmmoType, int] = {
   AmmoItem.AmmoType.BULLETS: 0,
   AmmoItem.AmmoType.NONE: 999,
 }
 
-var unlocked_weapons: Array[String] = []
+var unlocked_weapons: Array[WeaponItem.WeaponType] = []
 
-func _on_item_picked_up(item_data: Item) -> void: 
+func _on_item_picked_up(item_data: Item) -> void:
   if item_data is AmmoItem:
     print("Picked up %d %s!" % [item_data.amount, item_data.ammo_type])
     add_ammo(item_data.ammo_type, item_data.amount)
   elif item_data is WeaponItem:
     print("Picked up Weapon: %s!" % item_data.item_name)
     add_ammo(item_data.ammo_type, item_data.starting_ammo)
-    unlock_weapon(item_data.weapon_id)
-    
+    unlock_weapon(item_data.weaponType)
+
 func add_ammo(type: AmmoItem.AmmoType, amount: int) -> void:
   if amount == 0: return
   if ammo_inventory.has(type):
     ammo_inventory[type] += amount
     ammo_changed.emit(type, ammo_inventory[type])
 
-func unlock_weapon(weapon_id: String) -> void:
-  if not unlocked_weapons.has(weapon_id):
-    unlocked_weapons.append(weapon_id)
-    weapon_unlocked.emit(weapon_id)
+func unlock_weapon(weaponType: WeaponItem.WeaponType) -> void:
+  if not unlocked_weapons.has(weaponType):
+    unlocked_weapons.append(weaponType)
+    weapon_unlocked.emit(weaponType)

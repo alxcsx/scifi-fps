@@ -36,11 +36,11 @@ func _ready() -> void:
 
 #TODO: mover para o weapons manager ou alguma outra classe auxiliar.
 func _handle_flashlight_on_weapon_fire(weapon: WeaponItem, _damage: float) -> void:
-  if weapon.weapon_id == "Flashlight":
+  if weapon.weaponType == WeaponItem.WeaponType.FLASHLIGHT:
     flashlight.visible = not flashlight.visible
 
 func _handle_flashlight_on_weapon_unequipped(weapon: WeaponItem) -> void:
-  if weapon.weapon_id == "Flashlight":
+  if weapon.weaponType == WeaponItem.WeaponType.FLASHLIGHT:
     flashlight.hide()
 
 func _physics_process(delta: float) -> void:
@@ -54,10 +54,10 @@ func process_input(_delta: float) -> void:
 
   var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
   direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-  
+
 
 func crounching_control():
-  is_crouching = Input.is_action_pressed("crouch")	
+  is_crouching = Input.is_action_pressed("crouch")
 
 func mouse_capture_control():
   if Input.is_action_just_pressed("ui_cancel"):
@@ -76,11 +76,11 @@ func process_movement(delta: float) -> void:
   var target_speed := MAX_CROUCH_SPEED if is_crouching else MAX_SPEED
   var target_velocity := direction * target_speed
   var current_accel := (CROUCH_ACCEL if is_crouching else ACCEL) if (direction.dot(hvel) > 0) else DEACCEL
-  
+
   hvel = hvel.lerp(target_velocity, current_accel * delta)
   player.velocity.x = hvel.x
   player.velocity.z = hvel.z
-  
+
   player.move_and_slide()
 
 

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_1vsk4")
-weapon_id = "Pistol"
+weaponType = 1
 starting_ammo = 5
 item_name = "Pistol"
 icon = ExtResource("1_uny8x")
