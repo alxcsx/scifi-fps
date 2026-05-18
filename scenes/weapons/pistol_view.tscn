@@ -3,6 +3,47 @@
 [ext_resource type="Script" uid="uid://bh2hu60eaifer" path="res://scripts/views/BaseWeaponView.gd" id="1_ok3if"]
 [ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="2_mo4cc"]
 [ext_resource type="Texture2D" uid="uid://c4l3lag5hdb7s" path="res://textures/placeholders/pistol/pistol1.png" id="3_ular8"]
+[ext_resource type="Texture2D" uid="uid://6ar8ettqwjfx" path="res://textures/placeholders/pistol/pistol2.png" id="4_fkhff"]
+[ext_resource type="Texture2D" uid="uid://b4fdyccjby4bn" path="res://textures/placeholders/pistol/pistol3.png" id="5_yxfhf"]
+[ext_resource type="Texture2D" uid="uid://bdeeb0tch8dyh" path="res://textures/placeholders/pistol/pistol4.png" id="6_tsxs5"]
+[ext_resource type="Texture2D" uid="uid://bymnn3jp1tmch" path="res://textures/placeholders/pistol/pistol5.png" id="7_v8nxd"]
+
+[sub_resource type="Animation" id="Animation_k1fdf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_ular8")]
+}
+
+[sub_resource type="Animation" id="Animation_1mxuq"]
+resource_name = "shoot"
+length = 0.33333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666666, 0.13333334, 0.2, 0.26666668, 0.33333337),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_ular8"), ExtResource("4_fkhff"), ExtResource("5_yxfhf"), ExtResource("6_tsxs5"), ExtResource("7_v8nxd"), ExtResource("3_ular8")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_57y1b"]
+_data = {
+&"RESET": SubResource("Animation_k1fdf"),
+&"shoot": SubResource("Animation_1mxuq")
+}
 
 [node name="PistolView" type="Control" unique_id=815802002]
 layout_mode = 3
@@ -27,3 +68,5 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1640066410]
+root_node = NodePath("../WeaponSprite")
+libraries/ = SubResource("AnimationLibrary_57y1b")
