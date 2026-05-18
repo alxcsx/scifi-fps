@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bq2s4kxumv5sy" path="res://textures/placeholders/crosshair003.png" id="2_dwo6c"]
 [ext_resource type="PackedScene" uid="uid://br77up73je7iu" path="res://scenes/weapons/pistol_view.tscn" id="3_dvdhn"]
 [ext_resource type="PackedScene" uid="uid://cfrjlg2gdalui" path="res://scenes/weapons/flashlight_view.tscn" id="4_dwo6c"]
+[ext_resource type="Script" uid="uid://txyuxgeliykh" path="res://scripts/views/FlashLightView.gd" id="5_bquqe"]
 [ext_resource type="Resource" uid="uid://c5liy3lsbp0pp" path="res://resources/weapons/flashlight.tres" id="5_dvdhn"]
 
 [node name="WeaponsManager" type="Node" unique_id=1126807396 node_paths=PackedStringArray("ammo_label")]
@@ -65,4 +66,5 @@ layout_mode = 1
 
 [node name="Flashlight" parent="WeaponsHUD/UI_Root/Weapons" unique_id=581189973 instance=ExtResource("4_dwo6c")]
 layout_mode = 1
+script = ExtResource("5_bquqe")
 weapon_data = ExtResource("5_dvdhn")

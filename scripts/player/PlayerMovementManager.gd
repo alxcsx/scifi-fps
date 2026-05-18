@@ -13,11 +13,9 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 # "Constants" that can be edited from the menu
 var mouse_sensitivity = 0.09
 
-@onready var weapons_manager: PlayerWeaponsManager = %WeaponsManager
 @onready var player: CharacterBody3D = owner as CharacterBody3D
 @export var pivot: Node3D
 @export var camera: Camera3D
-@export var flashlight: SpotLight3D
 # State
 var is_crouching 	:= false
 var direction 		:= Vector3.ZERO
@@ -27,21 +25,9 @@ var direction 		:= Vector3.ZERO
 func _ready() -> void:
   if pivot 	== null: pivot 	= %Pivot
   if camera == null: camera = %Camera
-  if flashlight == null: flashlight = %Pivot/Flashlight
 
   Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-  weapons_manager.weapon_fired.connect(_handle_flashlight_on_weapon_fire)
-  weapons_manager.weapon_unequipped.connect(_handle_flashlight_on_weapon_unequipped)
-  flashlight.hide()
 
-#TODO: mover para o weapons manager ou alguma outra classe auxiliar.
-func _handle_flashlight_on_weapon_fire(weapon: WeaponItem, _damage: float) -> void:
-  if weapon.weaponType == WeaponItem.WeaponType.FLASHLIGHT:
-    flashlight.visible = not flashlight.visible
-
-func _handle_flashlight_on_weapon_unequipped(weapon: WeaponItem) -> void:
-  if weapon.weaponType == WeaponItem.WeaponType.FLASHLIGHT:
-    flashlight.hide()
 
 func _physics_process(delta: float) -> void:
   process_input(delta)

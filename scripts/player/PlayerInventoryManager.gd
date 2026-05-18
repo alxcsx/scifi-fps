@@ -1,7 +1,7 @@
 extends Node
 class_name PlayerInventoryManager
 
-signal ammo_changed(ammo_type: String, new_amount: int)
+signal ammo_changed(ammo_type: AmmoItem.AmmoType, new_amount: int)
 signal weapon_unlocked(weaponType: WeaponItem.WeaponType)
 
 var ammo_inventory: Dictionary[AmmoItem.AmmoType, int] = {
@@ -10,6 +10,10 @@ var ammo_inventory: Dictionary[AmmoItem.AmmoType, int] = {
 }
 
 var unlocked_weapons: Array[WeaponItem.WeaponType] = []
+
+func is_weapon_unlocked(weaponType: WeaponItem.WeaponType) -> bool:
+  return weaponType in unlocked_weapons
+
 
 func _on_item_picked_up(item_data: Item) -> void:
   if item_data is AmmoItem:

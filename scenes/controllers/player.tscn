@@ -21,6 +21,9 @@ script = ExtResource("2_dqkch")
 [node name="WeaponsManager" parent="." unique_id=1126807396 instance=ExtResource("3_qhqgy")]
 unique_name_in_owner = true
 
+[node name="Flashlight" parent="WeaponsManager/WeaponsHUD/UI_Root/Weapons" parent_id_path=PackedInt32Array(1126807396, 814892083) index="1" unique_id=581189973 node_paths=PackedStringArray("flashlight")]
+flashlight = NodePath("../../../../../Pivot/Flashlight")
+
 [node name="Pivot" type="Node3D" parent="." unique_id=2037270985]
 unique_name_in_owner = true
 
@@ -47,3 +50,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[editable path="WeaponsManager"]
