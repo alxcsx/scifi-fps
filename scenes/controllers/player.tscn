@@ -5,8 +5,12 @@
 [ext_resource type="Script" uid="uid://bwne07mm23kui" path="res://scripts/player/PlayerInventoryManager.gd" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://d2q325h3ul3s0" path="res://scripts/player/PlayerMovementManager.gd" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://dh65p6lyige1w" path="res://scenes/controllers/weapons_manager.tscn" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://dmjyqs7aqro33" path="res://scripts/ui/StatusUi.gd" id="6_4p0md"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4p0md"]
+font_size = 35
 
 [node name="Player" type="CharacterBody3D" unique_id=1601922834]
 script = ExtResource("1_xxdfd")
@@ -47,13 +51,28 @@ shape = SubResource("CapsuleShape3D_onrkg")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1751736324]
 
-[node name="UI_Root" type="Control" parent="HUD" unique_id=460035666]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+[node name="UI_Root" type="VBoxContainer" parent="HUD" unique_id=471601780]
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = -154.0
+offset_right = 121.0
+grow_vertical = 0
 mouse_filter = 2
+alignment = 1
+script = ExtResource("6_4p0md")
+
+[node name="AmmoLabel" type="Label" parent="HUD/UI_Root" unique_id=1966502148]
+layout_mode = 2
+text = "Ammo:"
+label_settings = SubResource("LabelSettings_4p0md")
+vertical_alignment = 1
+
+[node name="HealthLabel" type="Label" parent="HUD/UI_Root" unique_id=125058601]
+layout_mode = 2
+text = "Ammo:
+"
+label_settings = SubResource("LabelSettings_4p0md")
+vertical_alignment = 1
 
 [editable path="WeaponsManager"]

@@ -97,8 +97,6 @@ light_energy = 5.0
 spot_range = 3.044
 spot_angle = 82.97
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="SpotLightDecompress2" unique_id=704967444]
-
 [node name="SpotLightDecompress" type="SpotLight3D" parent="." unique_id=1304865898]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -8.0980015, 79.45659, -4.03813)
 light_energy = 5.0

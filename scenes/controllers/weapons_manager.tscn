@@ -9,7 +9,7 @@
 
 [node name="WeaponsManager" type="Node" unique_id=1126807396 node_paths=PackedStringArray("ammo_label")]
 script = ExtResource("1_md8hi")
-ammo_label = NodePath("WeaponsHUD/UI_Root/AmmoLabel")
+ammo_label = NodePath("")
 
 [node name="WeaponsHUD" type="CanvasLayer" parent="." unique_id=111736077]
 
@@ -21,20 +21,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="AmmoLabel" type="Label" parent="WeaponsHUD/UI_Root" unique_id=1538511945]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = -65.0
-offset_right = 155.0
-offset_bottom = -16.0
-grow_vertical = 0
-text = "Ammo:
-"
-vertical_alignment = 1
 
 [node name="CrossHair" type="TextureRect" parent="WeaponsHUD/UI_Root" unique_id=242390794]
 layout_mode = 1

@@ -26,14 +26,11 @@ func _ready() -> void:
     queue_free();
     return;
 
-  inventory.ammo_changed.connect(_on_ammo_changed)
   inventory.weapon_unlocked.connect(_on_weapon_unlocked)
 
   for c in %Weapons.get_children():
     if c is BaseWeaponView:
       _setup_weapon_view(c)
-
-  _update_ammo_display()
 
 func _setup_weapon_view(weapon_view: BaseWeaponView) -> void:
   if not weapon_view.weapon_data:
@@ -72,7 +69,6 @@ func equip_weapon(index: int) -> void:
   var new_weapon := weapons[current_weapon_index]
   new_weapon.equip()
   weapon_equipped.emit(new_weapon.weapon_data)
-  _update_ammo_display()
 
 func _get_next_unlocked_weapon_index(direction: int) -> int:
   var max_weapons := weapons.size()
@@ -86,13 +82,6 @@ func _get_next_unlocked_weapon_index(direction: int) -> int:
 
   return -1
 
-func _on_ammo_changed(type: AmmoItem.AmmoType, _new_amount: int) -> void:
-  var current_weapon := get_current_weapon()
-  if not current_weapon: return
-
-  if type == current_weapon.weapon_data.ammo_type:
-    _update_ammo_display()
-
 func _on_weapon_unlocked(weaponType: WeaponItem.WeaponType) -> void:
   var id := weapons.find_custom(func(w: BaseWeaponView): return w.weapon_data.weaponType == weaponType)
   print("Weapon unlocked: %s (%d)" % [weaponType, id])
@@ -100,16 +89,3 @@ func _on_weapon_unlocked(weaponType: WeaponItem.WeaponType) -> void:
     equip_weapon(id)
   else:
     push_warning("Unlocked weapon '%s' not found in weapons list!" % weaponType)
-
-func _update_ammo_display() -> void:
-  if not ammo_label or not inventory: return
-  var current_weapon := get_current_weapon()
-
-  if not current_weapon or not current_weapon.weapon_data or current_weapon.weapon_data.ammo_type == AmmoItem.AmmoType.NONE:
-    ammo_label.text = "---"
-    return
-
-  var current_type = weapons[current_weapon_index].weapon_data.ammo_type
-  var amount = inventory.ammo_inventory.get(current_type, 0)
-
-  ammo_label.text = str(amount)
