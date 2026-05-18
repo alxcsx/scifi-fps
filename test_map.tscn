@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gxbtuojst76b"]
 
 [ext_resource type="PackedScene" uid="uid://xfg4c8hgb0ab" path="res://scenes/item_3d.tscn" id="1_4wuf8"]
-[ext_resource type="PackedScene" uid="uid://buioxy5ag4gc6" path="res://scenes/player.tscn" id="2_s02eq"]
+[ext_resource type="PackedScene" uid="uid://buioxy5ag4gc6" path="res://scenes/controllers/player.tscn" id="2_s02eq"]
 [ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="2_t8dge"]
 [ext_resource type="Resource" uid="uid://c5liy3lsbp0pp" path="res://resources/weapons/flashlight.tres" id="3_t8dge"]
 
