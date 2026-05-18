@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://xfg4c8hgb0ab" path="res://scenes/item_3d.tscn" id="2_b1u3c"]
 [ext_resource type="Resource" uid="uid://c5liy3lsbp0pp" path="res://resources/weapons/flashlight.tres" id="3_h7lmj"]
 [ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="4_w2ebg"]
+[ext_resource type="Texture2D" uid="uid://bqkp8x3rlsk5u" path="res://textures/map/Reference.png" id="5_b1u3c"]
 
 [node name="IntroScene" type="Node3D" unique_id=398566854]
 
@@ -123,3 +124,9 @@ item_to_give = ExtResource("3_h7lmj")
 [node name="Item3D2" parent="." unique_id=2106596903 instance=ExtResource("2_b1u3c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0985284, 1.6542103, 0.91612005)
 item_to_give = ExtResource("4_w2ebg")
+
+[node name="Reference" type="Sprite3D" parent="." unique_id=1869162786]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.009475231, -61.18184, -0.04828453)
+pixel_size = 0.1
+texture = ExtResource("5_b1u3c")
+metadata/_edit_lock_ = true
