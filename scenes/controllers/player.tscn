@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://buioxy5ag4gc6"]
 
+[ext_resource type="Script" uid="uid://bh7whb50yhh3k" path="res://scripts/player/Player.gd" id="1_xxdfd"]
+[ext_resource type="Script" uid="uid://dm870l2w53ue4" path="res://scripts/player/PlayerHealthManager.gd" id="2_4p0md"]
 [ext_resource type="Script" uid="uid://bwne07mm23kui" path="res://scripts/player/PlayerInventoryManager.gd" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://d2q325h3ul3s0" path="res://scripts/player/PlayerMovementManager.gd" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://dh65p6lyige1w" path="res://scenes/controllers/weapons_manager.tscn" id="3_qhqgy"]
@@ -7,8 +9,11 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1601922834]
+script = ExtResource("1_xxdfd")
 
-[node name="PlayerStats" type="Node" parent="." unique_id=433658206]
+[node name="HealthManager" type="Node" parent="." unique_id=433658206]
+unique_name_in_owner = true
+script = ExtResource("2_4p0md")
 
 [node name="MovementManager" type="Node" parent="." unique_id=1523989142]
 unique_name_in_owner = true
