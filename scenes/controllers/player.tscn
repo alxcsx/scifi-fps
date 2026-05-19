@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bh7whb50yhh3k" path="res://scripts/player/Player.gd" id="1_xxdfd"]
 [ext_resource type="Script" uid="uid://dm870l2w53ue4" path="res://scripts/player/PlayerHealthManager.gd" id="2_4p0md"]
 [ext_resource type="Script" uid="uid://bwne07mm23kui" path="res://scripts/player/PlayerInventoryManager.gd" id="2_dqkch"]
+[ext_resource type="Script" uid="uid://ff8i2a4rw2jq" path="res://scripts/player/PlayerInteractionManager.gd" id="2_nceo0"]
 [ext_resource type="Script" uid="uid://d2q325h3ul3s0" path="res://scripts/player/PlayerMovementManager.gd" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://dh65p6lyige1w" path="res://scenes/controllers/weapons_manager.tscn" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://dmjyqs7aqro33" path="res://scripts/ui/StatusUi.gd" id="6_4p0md"]
@@ -12,8 +13,14 @@
 [sub_resource type="LabelSettings" id="LabelSettings_4p0md"]
 font_size = 35
 
-[node name="Player" type="CharacterBody3D" unique_id=1601922834]
+[node name="Player" type="CharacterBody3D" unique_id=1601922834 node_paths=PackedStringArray("combat_raycast")]
 script = ExtResource("1_xxdfd")
+combat_raycast = NodePath("Pivot/Camera/CombatRaycast")
+
+[node name="InteractionManager" type="Node" parent="." unique_id=2086084979 node_paths=PackedStringArray("raycast")]
+unique_name_in_owner = true
+script = ExtResource("2_nceo0")
+raycast = NodePath("../Pivot/Camera/InteractionRaycast")
 
 [node name="HealthManager" type="Node" parent="." unique_id=433658206]
 unique_name_in_owner = true
@@ -39,6 +46,13 @@ unique_name_in_owner = true
 [node name="Camera" type="Camera3D" parent="Pivot" unique_id=420349659]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.315)
+
+[node name="CombatRaycast" type="RayCast3D" parent="Pivot/Camera" unique_id=1282047513]
+target_position = Vector3(0, 0, -2.5)
+collide_with_areas = true
+
+[node name="InteractionRaycast" type="RayCast3D" parent="Pivot/Camera" unique_id=1391424238]
+target_position = Vector3(0, 0, 0)
 
 [node name="Flashlight" type="SpotLight3D" parent="Pivot" unique_id=497022320]
 transform = Transform3D(1, 0, 0, 0, 0.96554077, -0.26025176, 0, 0.26025176, 0.96554077, -0.84690034, -0.3614058, -0.420012)

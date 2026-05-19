@@ -15,6 +15,7 @@ enum WeaponType {
 @export_category("Weapon Stats")
 @export var damage: float = 10.0
 @export var fire_rate: float = 0.2
+@export var attack_range: float = 50.0
 
 @export_category("Ammo")
 @export var starting_ammo: int = 20
