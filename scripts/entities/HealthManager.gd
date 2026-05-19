@@ -1,5 +1,6 @@
 extends Node
-class_name PlayerHealthManager
+class_name HealthManager
+# Tracks Health for an entity (players or enemies)
 
 signal health_changed(current_health: float, max_health: float)
 signal player_died()
@@ -12,7 +13,7 @@ func take_damage(amount: float) -> void:
 
 	current_health -= amount
 	current_health = max(current_health, 0.0)
-	print("Player took damage! Health: ", current_health)
+	print("%s took damage! Health: %d" % [owner.name, current_health])
 	health_changed.emit(current_health, max_health)
 	if current_health == 0:
 		_die()
@@ -23,9 +24,9 @@ func heal(amount: float) -> void:
 
 	current_health += amount
 	current_health = min(current_health, max_health)
-	print("Player healed! Health: ", current_health)
+	print("%s healed! Health: %d" % [owner.name, current_health])
 	health_changed.emit(current_health, max_health)
 
 func _die() -> void:
-	print("Player has died!")
+	print("%s has died!" % [owner.name])
 	player_died.emit()

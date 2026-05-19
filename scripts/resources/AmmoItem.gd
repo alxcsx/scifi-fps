@@ -1,12 +1,13 @@
 extends Item
 class_name AmmoItem
 
-enum AmmoType { 
+enum AmmoType {
   NONE,
-  BULLETS, 
+  BULLETS,
 }
 
+@export
 var ammo_type: AmmoType = AmmoType.BULLETS
 
-@export 
+@export
 var amount: int = 10

@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://xfg4c8hgb0ab" path="res://scenes/item_3d.tscn" id="4_me068"]
 [ext_resource type="Resource" uid="uid://c5liy3lsbp0pp" path="res://resources/weapons/flashlight.tres" id="5_nrrx4"]
 [ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="6_x8ewb"]
+[ext_resource type="PackedScene" uid="uid://bp2uqpvawm2be" path="res://scenes/enemy_base.tscn" id="7_nrrx4"]
+[ext_resource type="Resource" uid="uid://caq4ql0j4kocw" path="res://resources/ammo/bullets.tres" id="8_c5b8y"]
 
 [node name="Main" type="Node3D" unique_id=487650876]
 
@@ -134,3 +136,16 @@ item_to_give = ExtResource("5_nrrx4")
 [node name="Item3D2" parent="." unique_id=1655220422 instance=ExtResource("4_me068")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0985284, 78.160324, 0.91612005)
 item_to_give = ExtResource("6_x8ewb")
+
+[node name="Item3D3" parent="." unique_id=1210510599 instance=ExtResource("4_me068")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9021652, 78.160324, 2.0589228)
+item_to_give = ExtResource("8_c5b8y")
+
+[node name="EnemyBase" parent="." unique_id=2019205864 instance=ExtResource("7_nrrx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7671146, 78.84013, 6.8413177)
+
+[node name="EnemyBase2" parent="." unique_id=1392446255 instance=ExtResource("7_nrrx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6664553, 78.84013, -1.8231549)
+
+[node name="EnemyBase3" parent="." unique_id=1398383204 instance=ExtResource("7_nrrx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3330307, 78.84013, -1.8231549)

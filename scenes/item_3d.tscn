@@ -5,19 +5,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_rqc4q"]
 radius = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a83qc"]
-transparency = 1
-shading_mode = 0
-billboard_mode = 2
-
-[sub_resource type="QuadMesh" id="QuadMesh_a83qc"]
-material = SubResource("StandardMaterial3D_a83qc")
-size = Vector2(1.5, 1.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqc4q"]
-transparency = 1
-shading_mode = 0
-billboard_mode = 2
+[sub_resource type="SpriteFrames" id="SpriteFrames_a83qc"]
 
 [node name="Item3D" type="Area3D" unique_id=498381206]
 script = ExtResource("1_a83qc")
@@ -25,6 +13,7 @@ script = ExtResource("1_a83qc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1207463710]
 shape = SubResource("SphereShape3D_rqc4q")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1124968775]
-mesh = SubResource("QuadMesh_a83qc")
-surface_material_override/0 = SubResource("StandardMaterial3D_rqc4q")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=397695751]
+billboard = 2
+double_sided = false
+sprite_frames = SubResource("SpriteFrames_a83qc")

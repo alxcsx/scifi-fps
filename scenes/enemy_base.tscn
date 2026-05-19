@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bp2uqpvawm2be"]
+
+[ext_resource type="Script" uid="uid://bm82j8rrewjpk" path="res://scripts/entities/enemy/Enemy.gd" id="1_j1ss0"]
+[ext_resource type="Script" uid="uid://dm870l2w53ue4" path="res://scripts/entities/HealthManager.gd" id="1_sw0xa"]
+[ext_resource type="Texture2D" uid="uid://dhjl0ei71hw2g" path="res://textures/placeholders/enemies/alien_mock.png" id="2_j1ss0"]
+[ext_resource type="Script" uid="uid://ylqa4a3k3hac" path="res://scripts/entities/enemy/DebugHealthLabel.gd" id="4_vv3x1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vv3x1"]
+margin = 0.02
+radius = 0.55
+
+[sub_resource type="SystemFont" id="SystemFont_lxe82"]
+font_names = PackedStringArray("Comic Sans MS")
+
+[node name="EnemyBase" type="CharacterBody3D" unique_id=2019205864]
+script = ExtResource("1_j1ss0")
+
+[node name="HealthManager" type="Node" parent="." unique_id=1480613007]
+unique_name_in_owner = true
+script = ExtResource("1_sw0xa")
+max_health = 20.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1819026439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009917676, 0)
+pixel_size = 0.007
+billboard = 2
+texture = ExtResource("2_j1ss0")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1093155764]
+shape = SubResource("CapsuleShape3D_vv3x1")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=999046501 node_paths=PackedStringArray("health_manager")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1453488, 0)
+billboard = 2
+modulate = Color(1, 0.21176471, 1, 1)
+text = "100/100"
+font = SubResource("SystemFont_lxe82")
+font_size = 43
+script = ExtResource("4_vv3x1")
+health_manager = NodePath("../HealthManager")
+
+[node name="AmmoLabel" type="Label" parent="." unique_id=1749076433]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -65.0
+offset_right = 155.0
+offset_bottom = -16.0
+grow_vertical = 0
+text = "Ammo:
+"
+vertical_alignment = 1

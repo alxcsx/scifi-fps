@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AmmoItem" format=3 uid="uid://caq4ql0j4kocw"]
+
+[ext_resource type="Script" uid="uid://b4m6knhom7fdn" path="res://scripts/resources/AmmoItem.gd" id="1_0gyap"]
+[ext_resource type="Texture2D" uid="uid://bs8h7i178yr3x" path="res://textures/placeholders/bullets_mock.png" id="1_4ws6o"]
+
+[resource]
+script = ExtResource("1_0gyap")
+item_name = "Bullets"
+icon = ExtResource("1_4ws6o")
+metadata/_custom_type_script = "uid://b4m6knhom7fdn"

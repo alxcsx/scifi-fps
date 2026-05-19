@@ -5,7 +5,7 @@ class_name StatusUi
 @onready var ammo_label: Label = $AmmoLabel
 @onready var weapons_manager: PlayerWeaponsManager = %WeaponsManager
 @onready var inventory_manager: PlayerInventoryManager = %InventoryManager
-@onready var health_manager: PlayerHealthManager = %HealthManager
+@onready var health_manager: HealthManager = %HealthManager
 
 
 func _ready() -> void:
@@ -21,7 +21,7 @@ func setup_health_display() -> void:
     health_manager.health_changed.connect(_on_health_changed)
     _on_health_changed(health_manager.current_health, health_manager.max_health)
   else:
-    push_warning("No PlayerHealthManager found! Health display will not function.")
+    push_warning("No HealthManager found! Health display will not function.")
     health_label.hide()
 
 func _on_health_changed(current_health: float, max_health: float) -> void:

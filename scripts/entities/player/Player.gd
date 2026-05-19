@@ -3,7 +3,7 @@ class_name Player
 
 @export var combat_raycast: RayCast3D
 # Managers
-@onready var health_manager: PlayerHealthManager = %HealthManager
+@onready var health_manager: HealthManager = %HealthManager
 @onready var movement_manager: PlayerMovementManager = %MovementManager
 @onready var weapons_manager: PlayerWeaponsManager = %WeaponsManager
 @onready var inventory_manager: PlayerInventoryManager = %InventoryManager
