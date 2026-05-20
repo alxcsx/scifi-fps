@@ -5,10 +5,11 @@ signal weapon_fired(weapon:WeaponItem)
 signal weapon_equipped(weapon: WeaponItem)
 signal weapon_unequipped(weapon: WeaponItem)
 
-@export var ammo_label: Label
-@onready var inventory: PlayerInventoryManager = %InventoryManager
+@export var player_vision: PlayerVision
 
-# This serves as our master dictionary/list of all possible weapon views in the game layout
+@onready var inventory: PlayerInventoryManager = %InventoryManager
+@onready var crosshair_ui: TextureRect = $WeaponsHUD/UI_Root/CrossHair
+
 var weapons: Array[BaseWeaponView] = []
 var current_weapon_index := -1
 
@@ -25,6 +26,10 @@ func _ready() -> void:
     push_error("No PlayerInventoryManager found! Weapons will not function without it.")
     queue_free();
     return;
+
+  if player_vision:
+    player_vision.targeting_enemy.connect(_on_target_enemy)
+
 
   inventory.weapon_unlocked.connect(_on_weapon_unlocked)
 
@@ -69,6 +74,8 @@ func equip_weapon(index: int) -> void:
   var new_weapon := weapons[current_weapon_index]
   new_weapon.equip()
   weapon_equipped.emit(new_weapon.weapon_data)
+  player_vision.current_weapon_range = new_weapon.weapon_data.attack_range
+  print("Current weapon range set to: %f" % player_vision.current_weapon_range)
 
 func _get_next_unlocked_weapon_index(direction: int) -> int:
   var max_weapons := weapons.size()
@@ -89,3 +96,8 @@ func _on_weapon_unlocked(weaponType: WeaponItem.WeaponType) -> void:
     equip_weapon(id)
   else:
     push_warning("Unlocked weapon '%s' not found in weapons list!" % weaponType)
+
+func _on_target_enemy(is_targeting: bool) -> void:
+  print("Targeting enemy: %s" % is_targeting)
+  if crosshair_ui:
+    crosshair_ui.modulate = Color(1, 0, 0) if is_targeting else Color(1, 1, 1)

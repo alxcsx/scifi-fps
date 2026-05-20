@@ -1,31 +1,22 @@
 extends Node
 class_name PlayerInteractionManager
 
-@export var raycast: RayCast3D
+@export var player_vision: PlayerVision
 
-signal is_looking_at_interactable(looking: bool)
-signal interacted_with_object(object: Node)
-
-var _was_looking_at_interactable := false
+var current_interactable: Node3D = null
 
 func _ready() -> void:
-  raycast.enabled = true
+  player_vision.targeting_interactable.connect(_on_targeting_interactable)
 
-func _process(_delta: float) -> void:
-  var is_looking_now := false
-  if raycast.is_colliding():
-    var collider := raycast.get_collider()
-    if collider and collider.has_method("interact"):
-        is_looking_now = true
-        if Input.is_action_just_pressed("interact"):
-            collider.interact()
-            interacted_with_object.emit(collider)
+func _on_targeting_interactable(is_targeting: bool, interactable: Node3D) -> void:
+  if is_targeting:
+    current_interactable = interactable
+    # TODO: UI "Aperte (E) Para Interagir"
+  elif current_interactable == interactable:
+    current_interactable = null
+    # TODO: esconder UI
 
-    if is_looking_now != _was_looking_at_interactable:
-        is_looking_at_interactable.emit(is_looking_now)
-        _was_looking_at_interactable = is_looking_now
-
-func get_looked_at_object() -> Node:
-  if raycast.is_colliding():
-    return raycast.get_collider()
-  return null
+func _unhandled_input(event: InputEvent) -> void:
+  if event.is_action_pressed("interact") and current_interactable:
+    if current_interactable.has_method("interact"):
+      current_interactable.interact()

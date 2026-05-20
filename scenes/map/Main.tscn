@@ -151,10 +151,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9021652, 78.160324, 2.0589
 item_to_give = ExtResource("8_c5b8y")
 
 [node name="EnemyBase" parent="." unique_id=2019205864 instance=ExtResource("7_nrrx4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.4634569, 79.35752, 12.169493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4634569, 79.35752, 12.169493)
 
 [node name="EnemyBase2" parent="." unique_id=1392446255 instance=ExtResource("7_nrrx4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.6664553, 79.35752, 14.887255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6664553, 79.35752, 14.887255)
 
 [node name="EnemyBase3" parent="." unique_id=1398383204 instance=ExtResource("7_nrrx4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.3330307, 79.35752, 14.670952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3330307, 79.35752, 14.670952)

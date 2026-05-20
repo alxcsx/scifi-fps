@@ -8,10 +8,11 @@ class_name Player
 @onready var weapons_manager: PlayerWeaponsManager = %WeaponsManager
 @onready var inventory_manager: PlayerInventoryManager = %InventoryManager
 @onready var interaction_manager: PlayerInteractionManager = %InteractionManager
+@onready var player_vision: PlayerVision = %PlayerVision
 
 func _ready() -> void:
   inventory_manager.item_picked_up.connect(_on_item_picked_up)
-  interaction_manager.is_looking_at_interactable.connect(_on_is_looking_at_interactable)
+  player_vision.targeting_interactable.connect(_on_is_looking_at_interactable)
   weapons_manager.weapon_fired.connect(_on_weapon_fired)
 
 func _on_is_looking_at_interactable(can_interact: bool) -> void:

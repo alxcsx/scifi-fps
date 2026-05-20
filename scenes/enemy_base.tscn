@@ -80,7 +80,7 @@ subpixel_positioning = 0
 [sub_resource type="SphereShape3D" id="SphereShape3D_okkm7"]
 radius = 20.0
 
-[node name="EnemyBase" type="CharacterBody3D" unique_id=2019205864]
+[node name="EnemyBase" type="CharacterBody3D" unique_id=2019205864 groups=["Enemy"]]
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_j1ss0")

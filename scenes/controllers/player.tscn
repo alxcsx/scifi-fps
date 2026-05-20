@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://d2q325h3ul3s0" path="res://scripts/entities/player/PlayerMovementManager.gd" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://dh65p6lyige1w" path="res://scenes/controllers/weapons_manager.tscn" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://dmjyqs7aqro33" path="res://scripts/ui/StatusUi.gd" id="6_4p0md"]
+[ext_resource type="Script" uid="uid://ci7fb3r8ilme8" path="res://scripts/entities/player/PlayerVisionRaycast.gd" id="8_iavnn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 
@@ -19,10 +20,10 @@ collision_mask = 39
 script = ExtResource("1_xxdfd")
 combat_raycast = NodePath("Pivot/Camera/CombatRaycast")
 
-[node name="InteractionManager" type="Node" parent="." unique_id=2086084979 node_paths=PackedStringArray("raycast")]
+[node name="InteractionManager" type="Node" parent="." unique_id=2086084979 node_paths=PackedStringArray("player_vision")]
 unique_name_in_owner = true
 script = ExtResource("2_nceo0")
-raycast = NodePath("../Pivot/Camera/InteractionRaycast")
+player_vision = NodePath("../Pivot/Camera/PlayerVision")
 
 [node name="HealthManager" type="Node" parent="." unique_id=433658206]
 unique_name_in_owner = true
@@ -36,8 +37,9 @@ script = ExtResource("2_qhqgy")
 unique_name_in_owner = true
 script = ExtResource("2_dqkch")
 
-[node name="WeaponsManager" parent="." unique_id=1126807396 instance=ExtResource("3_qhqgy")]
+[node name="WeaponsManager" parent="." unique_id=1126807396 node_paths=PackedStringArray("player_vision") instance=ExtResource("3_qhqgy")]
 unique_name_in_owner = true
+player_vision = NodePath("../Pivot/Camera/PlayerVision")
 
 [node name="Flashlight" parent="WeaponsManager/WeaponsHUD/UI_Root/Weapons" parent_id_path=PackedInt32Array(1126807396, 814892083) index="1" unique_id=581189973 node_paths=PackedStringArray("flashlight")]
 flashlight = NodePath("../../../../../Pivot/Flashlight")
@@ -54,9 +56,12 @@ target_position = Vector3(0, 0, -2.5)
 collision_mask = 5
 collide_with_areas = true
 
-[node name="InteractionRaycast" type="RayCast3D" parent="Pivot/Camera" unique_id=1391424238]
+[node name="PlayerVision" type="RayCast3D" parent="Pivot/Camera" unique_id=1391424238]
+unique_name_in_owner = true
 target_position = Vector3(0, 0, 0)
-collision_mask = 33
+collision_mask = 37
+collide_with_areas = true
+script = ExtResource("8_iavnn")
 
 [node name="Flashlight" type="SpotLight3D" parent="Pivot" unique_id=497022320]
 transform = Transform3D(1, 0, 0, 0, 0.96554077, -0.26025176, 0, 0.26025176, 0.96554077, -0.84690034, -0.3614058, -0.420012)
