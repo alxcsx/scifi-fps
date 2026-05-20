@@ -2,8 +2,72 @@
 
 [ext_resource type="Script" uid="uid://bm82j8rrewjpk" path="res://scripts/entities/enemy/Enemy.gd" id="1_j1ss0"]
 [ext_resource type="Script" uid="uid://dm870l2w53ue4" path="res://scripts/entities/HealthManager.gd" id="1_sw0xa"]
-[ext_resource type="Texture2D" uid="uid://dhjl0ei71hw2g" path="res://textures/placeholders/enemies/alien_mock.png" id="2_j1ss0"]
-[ext_resource type="Script" uid="uid://ylqa4a3k3hac" path="res://scripts/entities/enemy/DebugHealthLabel.gd" id="4_vv3x1"]
+[ext_resource type="Texture2D" uid="uid://em05fgdtion7" path="res://textures/placeholders/enemies/Alien_Back_Idle.png" id="3_hxr1d"]
+[ext_resource type="Texture2D" uid="uid://e6bkdemd77f" path="res://textures/placeholders/enemies/Alien_Back_L.png" id="4_e42xm"]
+[ext_resource type="Script" uid="uid://ylqa4a3k3hac" path="res://scripts/entities/DebugHealthLabel.gd" id="4_vv3x1"]
+[ext_resource type="Texture2D" uid="uid://c60owl5ebavs2" path="res://textures/placeholders/enemies/Alien_Back_R.png" id="5_okkm7"]
+[ext_resource type="Texture2D" uid="uid://xvfxdryugaxs" path="res://textures/placeholders/enemies/Alien_Front_IDLE.png" id="6_sn6ap"]
+[ext_resource type="Texture2D" uid="uid://cm4v1fqthkbw4" path="res://textures/placeholders/enemies/Alien_Front_L.png" id="7_p8dd5"]
+[ext_resource type="Texture2D" uid="uid://dury5yry338me" path="res://textures/placeholders/enemies/Alien_Front_R.png" id="8_150yw"]
+[ext_resource type="Texture2D" uid="uid://cqlv7lpwolqhv" path="res://textures/placeholders/enemies/Alien_Side_Idle.png" id="9_k8ff1"]
+[ext_resource type="Texture2D" uid="uid://byt66wvoob3kk" path="res://textures/placeholders/enemies/Alien_Side_L.png" id="10_mjxc3"]
+[ext_resource type="Texture2D" uid="uid://7lydhhdb7j6a" path="res://textures/placeholders/enemies/Alien_Side_R.png" id="11_jv35x"]
+[ext_resource type="Script" uid="uid://dy8bndlychh60" path="res://scripts/entities/DirectionalSprite3D.gd" id="12_6rri4"]
+[ext_resource type="Script" uid="uid://ish4ng6ubupt" path="res://scripts/entities/enemy/ChasingAIManager.gd" id="14_e42xm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4sx7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hxr1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e42xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hxr1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_okkm7")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_sn6ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p8dd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sn6ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_150yw")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_k8ff1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mjxc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k8ff1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jv35x")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vv3x1"]
 margin = 0.02
@@ -11,8 +75,14 @@ radius = 0.55
 
 [sub_resource type="SystemFont" id="SystemFont_lxe82"]
 font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_okkm7"]
+radius = 20.0
 
 [node name="EnemyBase" type="CharacterBody3D" unique_id=2019205864]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_j1ss0")
 
 [node name="HealthManager" type="Node" parent="." unique_id=1480613007]
@@ -20,11 +90,16 @@ unique_name_in_owner = true
 script = ExtResource("1_sw0xa")
 max_health = 20.0
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1819026439]
+[node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=868043640 node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009917676, 0)
 pixel_size = 0.007
 billboard = 2
-texture = ExtResource("2_j1ss0")
+sprite_frames = SubResource("SpriteFrames_x4sx7")
+animation = &"front"
+script = ExtResource("12_6rri4")
+target_node = NodePath("..")
+freeze_animation = true
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=1093155764]
 shape = SubResource("CapsuleShape3D_vv3x1")
@@ -39,15 +114,19 @@ font_size = 43
 script = ExtResource("4_vv3x1")
 health_manager = NodePath("../HealthManager")
 
-[node name="AmmoLabel" type="Label" parent="." unique_id=1749076433]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = -65.0
-offset_right = 155.0
-offset_bottom = -16.0
-grow_vertical = 0
-text = "Ammo:
-"
-vertical_alignment = 1
+[node name="AIManager" type="Node3D" parent="." unique_id=320697715]
+unique_name_in_owner = true
+script = ExtResource("14_e42xm")
+move_speed = 1.0
+
+[node name="DetectableArea" type="Area3D" parent="AIManager" unique_id=730196427]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AIManager/DetectableArea" unique_id=137430240]
+shape = SubResource("SphereShape3D_okkm7")
+
+[node name="SightRayCast" type="RayCast3D" parent="AIManager" unique_id=1282418689 groups=["Enemy"]]
+collision_mask = 3
+
+[node name="NavAgent" type="NavigationAgent3D" parent="AIManager" unique_id=179488981]

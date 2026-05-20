@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 	position.y = start_y + (sin(Time.get_ticks_msec() / 1000.0 * float_speed) * float_height)
 
 func on_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D and body.name == "Player":
+	if body.is_in_group("Player"):
 		var inventory: PlayerInventoryManager = body.get_node_or_null("InventoryManager")
 		if inventory:
 			inventory._on_item_picked_up(item_to_give)
