@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bbwelkky22hq0"]
+
+[ext_resource type="PackedScene" uid="uid://kvov04udfk2j" path="res://ASSETS/Black_Concrete_Fat_wall-col.glb" id="1_gl8e0"]
+[ext_resource type="PackedScene" uid="uid://brqwaecaw5dp8" path="res://ASSETS/Red_Metal_Flat_wall-col.glb" id="1_ifmsu"]
+[ext_resource type="PackedScene" uid="uid://c085vuilc2vp" path="res://ASSETS/Black_Concrete_Flat_wall-col.glb" id="2_nopk8"]
+[ext_resource type="PackedScene" uid="uid://6pyaek4txgeg" path="res://ASSETS/Cylinder_Hallway-col.glb" id="3_qsvpx"]
+[ext_resource type="PackedScene" uid="uid://wgehs3rufv2h" path="res://ASSETS/Deprecated_Concrete_Fat_wall-col.glb" id="4_ptm53"]
+[ext_resource type="PackedScene" uid="uid://bovdear66tgyo" path="res://ASSETS/Deprecated_Concrete_Flat_wall-col.glb" id="5_wniou"]
+[ext_resource type="PackedScene" uid="uid://c0illkmu5elam" path="res://ASSETS/Fence-col.glb" id="6_m8nvf"]
+[ext_resource type="PackedScene" uid="uid://dqio83f11eii8" path="res://ASSETS/Fence_Circles-col.glb" id="7_j2psu"]
+[ext_resource type="PackedScene" uid="uid://rapb1pxv1cdg" path="res://ASSETS/Green_Concrete_Fat_wall-col.glb" id="8_384i0"]
+[ext_resource type="PackedScene" uid="uid://ctgsdhrpgdo5k" path="res://ASSETS/Green_Concrete_Flat_wall-col.glb" id="9_ewviq"]
+[ext_resource type="PackedScene" uid="uid://cx3rstogiqtag" path="res://ASSETS/Grey_Concrete_Fat_wall-col.glb" id="10_twsql"]
+[ext_resource type="PackedScene" uid="uid://2gh34kf1g2n2" path="res://ASSETS/Grey_Concrete_Flat_wall-col.glb" id="11_5lqt4"]
+[ext_resource type="PackedScene" uid="uid://biu0la1rf2c3j" path="res://ASSETS/Hazard_Concrete_Fat_wall-col.glb" id="12_cfh6m"]
+[ext_resource type="PackedScene" uid="uid://cexytf0i5m8kb" path="res://ASSETS/Hazard_Concrete_Flat_wall-col.glb" id="13_4bc0k"]
+[ext_resource type="PackedScene" uid="uid://dd2sscv56xrmh" path="res://ASSETS/Light_Concrete_Fat_wall-col.glb" id="14_q15m4"]
+[ext_resource type="PackedScene" uid="uid://ycw45ry56rlg" path="res://ASSETS/Light_Concrete_Flat_wall-col.glb" id="15_b5b0d"]
+[ext_resource type="PackedScene" uid="uid://7lop325r678w" path="res://ASSETS/Mud_Concrete_Fat_wall-col.glb" id="16_ltqoh"]
+[ext_resource type="PackedScene" uid="uid://clnqkgoc6dy2s" path="res://ASSETS/Mud_Concrete_Flat_wall-col.glb" id="17_1rg6m"]
+[ext_resource type="PackedScene" uid="uid://csd6ionao3h7c" path="res://ASSETS/Red_Metal_Diagonal _structure-col.glb" id="18_fh1fi"]
+[ext_resource type="PackedScene" uid="uid://uot5k5253bq1" path="res://ASSETS/Red_Metal_Fat_wall-col.glb" id="19_dybqe"]
+[ext_resource type="PackedScene" uid="uid://cisucya1d0vff" path="res://ASSETS/Windown_green_concrete-col.glb" id="21_1acwg"]
+[ext_resource type="PackedScene" uid="uid://bmt7qc7fhdiyn" path="res://ASSETS/Wood_Fat_wall-col.glb" id="22_c4byq"]
+[ext_resource type="PackedScene" uid="uid://ca05hoqjy6ena" path="res://ASSETS/Wood_Flat_wall-col.glb" id="23_bg16d"]
+
+[node name="Assets_catalog_scene" type="Node3D" unique_id=604525499]
+
+[node name="Black_Concrete_Fat_wall-col" parent="." unique_id=1529421321 instance=ExtResource("1_gl8e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Black_Concrete_Flat_wall-col" parent="." unique_id=1045580301 instance=ExtResource("2_nopk8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1)
+
+[node name="Cylinder_Hallway-col" parent="." unique_id=1991682681 instance=ExtResource("3_qsvpx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -1)
+
+[node name="Deprecated_Concrete_Fat_wall-col" parent="." unique_id=1245926119 instance=ExtResource("4_ptm53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="Deprecated_Concrete_Flat_wall-col" parent="." unique_id=1648808553 instance=ExtResource("5_wniou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -7)
+
+[node name="Fence-col" parent="." unique_id=999447074 instance=ExtResource("6_m8nvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -1)
+
+[node name="Fence_Circles-col" parent="." unique_id=1159863955 instance=ExtResource("7_j2psu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -7)
+
+[node name="Green_Concrete_Fat_wall-col" parent="." unique_id=377515334 instance=ExtResource("8_384i0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13)
+
+[node name="Green_Concrete_Flat_wall-col" parent="." unique_id=774155798 instance=ExtResource("9_ewviq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -13)
+
+[node name="Grey_Concrete_Fat_wall-col" parent="." unique_id=953455538 instance=ExtResource("10_twsql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19)
+
+[node name="Grey_Concrete_Flat_wall-col" parent="." unique_id=450500695 instance=ExtResource("11_5lqt4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -19)
+
+[node name="Hazard_Concrete_Fat_wall-col" parent="." unique_id=1923460177 instance=ExtResource("12_cfh6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+
+[node name="Hazard_Concrete_Flat_wall-col" parent="." unique_id=1734434018 instance=ExtResource("13_4bc0k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -25)
+
+[node name="Light_Concrete_Fat_wall-col" parent="." unique_id=1374998813 instance=ExtResource("14_q15m4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -31)
+
+[node name="Light_Concrete_Flat_wall-col" parent="." unique_id=2141107919 instance=ExtResource("15_b5b0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -31)
+
+[node name="Mud_Concrete_Fat_wall-col" parent="." unique_id=1343486721 instance=ExtResource("16_ltqoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -37)
+
+[node name="Mud_Concrete_Flat_wall-col" parent="." unique_id=1140285843 instance=ExtResource("17_1rg6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -37)
+
+[node name="Red_Metal_Diagonal _structure-col" parent="." unique_id=1810322783 instance=ExtResource("18_fh1fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -1)
+
+[node name="Red_Metal_Fat_wall-col" parent="." unique_id=1746117574 instance=ExtResource("19_dybqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -43)
+
+[node name="Red_Metal_Flat_wall-col" parent="." unique_id=1260217970 instance=ExtResource("1_ifmsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -43)
+
+[node name="Windown_green_concrete-col" parent="." unique_id=2118213699 instance=ExtResource("21_1acwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -13)
+
+[node name="Wood_Fat_wall-col" parent="." unique_id=1085417214 instance=ExtResource("22_c4byq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -49)
+
+[node name="Wood_Flat_wall-col" parent="." unique_id=722143714 instance=ExtResource("23_bg16d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -49)
