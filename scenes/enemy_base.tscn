@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bp2uqpvawm2be"]
+[gd_scene format=3 uid="uid://bffgrulu082f"]
 
 [ext_resource type="Script" uid="uid://bm82j8rrewjpk" path="res://scripts/entities/enemy/Enemy.gd" id="1_j1ss0"]
 [ext_resource type="Script" uid="uid://dm870l2w53ue4" path="res://scripts/entities/HealthManager.gd" id="1_sw0xa"]

@@ -6,12 +6,18 @@ signal weapon_equipped(weapon: WeaponItem)
 signal weapon_unequipped(weapon: WeaponItem)
 
 @export var player_vision: PlayerVision
+@export var camera: Camera3D
+@export var zoom_lerp_speed: float = 12.0
 
 @onready var inventory: PlayerInventoryManager = %InventoryManager
 @onready var crosshair_ui: TextureRect = $WeaponsHUD/UI_Root/CrossHair
 
 var weapons: Array[BaseWeaponView] = []
 var current_weapon_index := -1
+var hold_fire: bool = false
+var is_zooming: bool = false
+var default_camera_fov: float = 75.0
+var weapon_zoom_fov: float = 75.0
 
 func _unhandled_input(event: InputEvent) -> void:
   if event.is_action_pressed("shoot"):
@@ -21,18 +27,27 @@ func _unhandled_input(event: InputEvent) -> void:
   elif event.is_action_pressed("weapon_prev"):
     equip_weapon(_get_next_unlocked_weapon_index(-1))
 
+  if event is InputEventMouseButton and event.is_action_pressed("zoom"):
+    is_zooming = not is_zooming
+
+func _physics_process(delta: float) -> void:
+  if camera:
+    var target_fov := weapon_zoom_fov if is_zooming else default_camera_fov
+    camera.fov = lerp(camera.fov, target_fov, zoom_lerp_speed * delta)
+
 func _ready() -> void:
   if not inventory:
     push_error("No PlayerInventoryManager found! Weapons will not function without it.")
     queue_free();
     return;
-
+  if camera == null: camera = %Camera
+  if camera:
+    default_camera_fov = camera.fov
+    weapon_zoom_fov = camera.fov
   if player_vision:
     player_vision.targeting_enemy.connect(_on_target_enemy)
 
-
   inventory.weapon_unlocked.connect(_on_weapon_unlocked)
-
   for c in %Weapons.get_children():
     if c is BaseWeaponView:
       _setup_weapon_view(c)
@@ -49,6 +64,7 @@ func _setup_weapon_view(weapon_view: BaseWeaponView) -> void:
   weapons.append(weapon_view)
 
 func _shoot() -> void:
+  if hold_fire: return
   var current_weapon := get_current_weapon()
   if not current_weapon: return;
 
@@ -74,7 +90,11 @@ func equip_weapon(index: int) -> void:
   var new_weapon := weapons[current_weapon_index]
   new_weapon.equip()
   weapon_equipped.emit(new_weapon.weapon_data)
+
   player_vision.current_weapon_range = new_weapon.weapon_data.attack_range
+  weapon_zoom_fov = new_weapon.weapon_data.zoom_fov if new_weapon.weapon_data.zoom_enabled else default_camera_fov
+  is_zooming = false
+
   print("Current weapon range set to: %f" % player_vision.current_weapon_range)
 
 func _get_next_unlocked_weapon_index(direction: int) -> int:

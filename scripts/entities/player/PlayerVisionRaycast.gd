@@ -22,14 +22,16 @@ func _physics_process(_delta: float) -> void:
 
   if is_colliding():
     var collider  := get_collider()
-    var hit_point := get_collision_point()
-    var distance  := global_position.distance_to(hit_point)
 
-    if collider.is_in_group("Enemy") and distance <= current_weapon_range:
-      is_seeing_enemy = true
+    if is_instance_valid(collider) and not collider.is_queued_for_deletion():
+      var hit_point := get_collision_point()
+      var distance  := global_position.distance_to(hit_point)
 
-    elif collider.is_in_group("Interactable") and distance <= interaction_range:
-      current_interactable = collider
+      if collider.is_in_group("Enemy") and distance <= current_weapon_range:
+        is_seeing_enemy = true
+
+      elif collider.is_in_group("Interactable") and distance <= interaction_range:
+        current_interactable = collider
 
   _handle_enemy_signals(is_seeing_enemy)
   _handle_interactable_signals(current_interactable)
@@ -41,6 +43,12 @@ func _handle_enemy_signals(is_seeing_enemy: bool) -> void:
     print("targetting enemy: %s" % is_seeing_enemy)
 
 func _handle_interactable_signals(current_interactable: Node3D) -> void:
+  if last_seen_interactable and not is_instance_valid(last_seen_interactable):
+    targeting_interactable.emit(false, null)
+    last_seen_interactable = null
+    print("Stopped seeing interactable: (destroyed)")
+    return
+
   if current_interactable != last_seen_interactable:
     if last_seen_interactable != null:
       targeting_interactable.emit(false, last_seen_interactable)

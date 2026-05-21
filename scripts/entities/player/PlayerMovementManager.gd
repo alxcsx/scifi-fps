@@ -1,4 +1,4 @@
-extends Node
+extends BaseMovementManager
 class_name PlayerMovementManager
 # Constants
 const MAX_SPEED = 10
@@ -13,9 +13,6 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 # "Constants" that can be edited from the menu
 var mouse_sensitivity = 0.09
 
-@onready var player: CharacterBody3D = owner as CharacterBody3D
-@export var pivot: Node3D
-@export var camera: Camera3D
 # State
 var is_crouching 	:= false
 var direction 		:= Vector3.ZERO
@@ -23,21 +20,15 @@ var direction 		:= Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-  if pivot 	== null: pivot 	= %Pivot
-  if camera == null: camera = %Camera
-
   Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+func calculate_movement(player: CharacterBody3D, delta: float) -> Vector3:
+  _process_input(player, delta)
+  return process_movement(player, delta)
 
-func _physics_process(delta: float) -> void:
-  process_input(delta)
-  process_movement(delta)
-
-
-func process_input(_delta: float) -> void:
+func _process_input(player: CharacterBody3D, _delta: float) -> void:
   mouse_capture_control();
   crounching_control();
-
   var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
   direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
@@ -52,11 +43,12 @@ func mouse_capture_control():
     else:
       Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-func process_movement(delta: float) -> void:
+func process_movement(player: CharacterBody3D, delta: float) -> Vector3:
+  var calculated_velocity := player.velocity
   if not player.is_on_floor():
-    player.velocity.y -= gravity * delta
+    calculated_velocity.y -= gravity * delta
 
-  var hvel := player.velocity;
+  var hvel := calculated_velocity
   hvel.y = 0
 
   var target_speed := MAX_CROUCH_SPEED if is_crouching else MAX_SPEED
@@ -64,17 +56,17 @@ func process_movement(delta: float) -> void:
   var current_accel := (CROUCH_ACCEL if is_crouching else ACCEL) if (direction.dot(hvel) > 0) else DEACCEL
 
   hvel = hvel.lerp(target_velocity, current_accel * delta)
-  player.velocity.x = hvel.x
-  player.velocity.z = hvel.z
+  var current_knockback = process_knockback(delta)
 
-  player.move_and_slide()
+  calculated_velocity.x = hvel.x + current_knockback.x
+  calculated_velocity.z = hvel.z + current_knockback.z
+
+  return calculated_velocity
 
 
-func _unhandled_input(event):
+func handle_camera_rotation(x_axis: Node3D, y_axis: Node3D, event: InputEvent) -> void:
   if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-    # Rotate the pivot up/down, rotate the player left/right
-    pivot.rotate_x(deg_to_rad(event.relative.y * mouse_sensitivity * -1))
-    player.rotate_y(deg_to_rad(event.relative.x * mouse_sensitivity * -1))
+    x_axis.rotate_x(deg_to_rad(event.relative.y * mouse_sensitivity * -1))
+    y_axis.rotate_y(deg_to_rad(event.relative.x * mouse_sensitivity * -1))
 
-    # Clamp the camera using radians directly, avoiding conversion back and forth
-    pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-70), deg_to_rad(70))
+    x_axis.rotation.x = clamp(x_axis.rotation.x, deg_to_rad(-70), deg_to_rad(70))

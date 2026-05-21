@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://xfg4c8hgb0ab" path="res://scenes/item_3d.tscn" id="4_me068"]
 [ext_resource type="Resource" uid="uid://c5liy3lsbp0pp" path="res://resources/weapons/flashlight.tres" id="5_nrrx4"]
 [ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="6_x8ewb"]
-[ext_resource type="PackedScene" uid="uid://bp2uqpvawm2be" path="res://scenes/enemy_base.tscn" id="7_nrrx4"]
+[ext_resource type="PackedScene" uid="uid://bffgrulu082f" path="res://scenes/enemy_base.tscn" id="7_nrrx4"]
 [ext_resource type="Resource" uid="uid://caq4ql0j4kocw" path="res://resources/ammo/bullets.tres" id="8_c5b8y"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_x8ewb"]
