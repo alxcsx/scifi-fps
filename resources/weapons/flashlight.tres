@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://c5liy3lsbp0pp"]
 
+[ext_resource type="Script" uid="uid://b6g3ghwigtquc" path="res://scripts/resources/WeaponEffects/WeaponEffect.gd" id="1_hyat3"]
 [ext_resource type="Texture2D" uid="uid://cuiiyhhxyewaf" path="res://textures/placeholders/flashlight/light_icon.png" id="1_miw60"]
 [ext_resource type="Script" uid="uid://bo4xwaru6jy3j" path="res://scripts/resources/WeaponItem.gd" id="2_m1515"]
 
@@ -12,6 +13,7 @@ attack_range = 0.0
 starting_ammo = 0
 ammo_type = 0
 ammo_cost = 0
+zoom_enabled = false
 item_name = "Flashlight"
 icon = ExtResource("1_miw60")
 metadata/_custom_type_script = "uid://bo4xwaru6jy3j"
