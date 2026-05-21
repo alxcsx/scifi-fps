@@ -1,0 +1,637 @@
+[gd_scene format=3 uid="uid://d22s8xwiv7q4s"]
+
+[ext_resource type="PackedScene" uid="uid://dbrlgxusgd5m2" path="res://assets/doors/blast_door.tscn" id="1_krlnm"]
+[ext_resource type="PackedScene" uid="uid://v5kwk5ts0pej" path="res://assets_raw/Hazard_floor-col.glb" id="2_3374c"]
+[ext_resource type="PackedScene" uid="uid://buioxy5ag4gc6" path="res://scenes/controllers/player.tscn" id="3_hjg48"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_istj1"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_er6v5"]
+sky_material = SubResource("ProceduralSkyMaterial_istj1")
+
+[sub_resource type="Environment" id="Environment_ypfg7"]
+background_mode = 2
+sky = SubResource("Sky_er6v5")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=665548302]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=838881718]
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, 9, 9, -15)
+
+[node name="Player" parent="." unique_id=1601922834 instance=ExtResource("3_hjg48")]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 12, 3, -0.5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1809770964]
+environment = SubResource("Environment_ypfg7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=643982298]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Blast_door4" parent="." unique_id=1086876818 instance=ExtResource("1_krlnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 0, 0)
+
+[node name="Blast_door2" parent="." unique_id=139351219 instance=ExtResource("1_krlnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 0)
+
+[node name="Blast_door3" parent="." unique_id=900816693 instance=ExtResource("1_krlnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 0)
+
+[node name="Blast_door" parent="." unique_id=1529659387 instance=ExtResource("1_krlnm")]
+
+[node name="Blast_door5" parent="." unique_id=1924533299 instance=ExtResource("1_krlnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122, 0, 0)
+
+[node name="Blast_door6" parent="." unique_id=1080463052 instance=ExtResource("1_krlnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 0, 0)
+
+[node name="Blast_door7" parent="." unique_id=1346904426 instance=ExtResource("1_krlnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87, 0, 0)
+
+[node name="Blast_door8" parent="." unique_id=1546811816 instance=ExtResource("1_krlnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 0)
+
+[node name="Floor" type="Node3D" parent="." unique_id=1346061272]
+
+[node name="Hazard_floor-col2" parent="Floor" unique_id=1793531553 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.9, 0)
+
+[node name="Hazard_floor-col3" parent="Floor" unique_id=296404430 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.9, 2)
+
+[node name="Hazard_floor-col4" parent="Floor" unique_id=781095870 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.9, -2)
+
+[node name="Hazard_floor-col5" parent="Floor" unique_id=1582579665 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.9, 0)
+
+[node name="Hazard_floor-col6" parent="Floor" unique_id=1608756237 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.9, 2)
+
+[node name="Hazard_floor-col7" parent="Floor" unique_id=907576221 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.9, -2)
+
+[node name="Hazard_floor-col8" parent="Floor" unique_id=170742819 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.9, 0)
+
+[node name="Hazard_floor-col9" parent="Floor" unique_id=1732139485 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.9, 2)
+
+[node name="Hazard_floor-col10" parent="Floor" unique_id=1884465843 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.9, -2)
+
+[node name="Hazard_floor-col11" parent="Floor" unique_id=1266687385 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.9, 0)
+
+[node name="Hazard_floor-col12" parent="Floor" unique_id=1336508612 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.9, 2)
+
+[node name="Hazard_floor-col13" parent="Floor" unique_id=1232033744 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.9, -2)
+
+[node name="Hazard_floor-col14" parent="Floor" unique_id=1969593900 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.9, 0)
+
+[node name="Hazard_floor-col15" parent="Floor" unique_id=2047686650 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.9, 2)
+
+[node name="Hazard_floor-col16" parent="Floor" unique_id=1339391374 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.9, -2)
+
+[node name="Hazard_floor-col17" parent="Floor" unique_id=1701866590 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.9, 0)
+
+[node name="Hazard_floor-col18" parent="Floor" unique_id=1189600213 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.9, 2)
+
+[node name="Hazard_floor-col19" parent="Floor" unique_id=1849278492 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.9, -2)
+
+[node name="Hazard_floor-col20" parent="Floor" unique_id=1281839417 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.9, 0)
+
+[node name="Hazard_floor-col21" parent="Floor" unique_id=102968691 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.9, 2)
+
+[node name="Hazard_floor-col22" parent="Floor" unique_id=1094019182 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.9, -2)
+
+[node name="Hazard_floor-col23" parent="Floor" unique_id=1015298783 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.9, 0)
+
+[node name="Hazard_floor-col24" parent="Floor" unique_id=928320391 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.9, 2)
+
+[node name="Hazard_floor-col25" parent="Floor" unique_id=1853522979 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.9, -2)
+
+[node name="Hazard_floor-col26" parent="Floor" unique_id=105657299 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 1.9, 0)
+
+[node name="Hazard_floor-col27" parent="Floor" unique_id=1389208507 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 1.9, 2)
+
+[node name="Hazard_floor-col28" parent="Floor" unique_id=22351687 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 1.9, -2)
+
+[node name="Hazard_floor-col29" parent="Floor" unique_id=2050204352 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 1.9, 0)
+
+[node name="Hazard_floor-col30" parent="Floor" unique_id=2100785878 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 1.9, 2)
+
+[node name="Hazard_floor-col31" parent="Floor" unique_id=1288598960 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 1.9, -2)
+
+[node name="Hazard_floor-col32" parent="Floor" unique_id=1554862007 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 1.9, 0)
+
+[node name="Hazard_floor-col33" parent="Floor" unique_id=2062310576 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 1.9, 2)
+
+[node name="Hazard_floor-col34" parent="Floor" unique_id=348599352 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 1.9, -2)
+
+[node name="Hazard_floor-col35" parent="Floor" unique_id=1848512497 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1.9, 0)
+
+[node name="Hazard_floor-col36" parent="Floor" unique_id=1931063647 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1.9, 2)
+
+[node name="Hazard_floor-col37" parent="Floor" unique_id=123939090 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1.9, -2)
+
+[node name="Hazard_floor-col38" parent="Floor" unique_id=101031137 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1.9, 0)
+
+[node name="Hazard_floor-col39" parent="Floor" unique_id=1803669001 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1.9, 2)
+
+[node name="Hazard_floor-col40" parent="Floor" unique_id=443060872 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1.9, -2)
+
+[node name="Hazard_floor-col41" parent="Floor" unique_id=2009010750 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 1.9, 0)
+
+[node name="Hazard_floor-col42" parent="Floor" unique_id=137917317 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 1.9, 2)
+
+[node name="Hazard_floor-col43" parent="Floor" unique_id=1742380068 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 1.9, -2)
+
+[node name="Hazard_floor-col44" parent="Floor" unique_id=1576838417 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1.9, 0)
+
+[node name="Hazard_floor-col45" parent="Floor" unique_id=1584344791 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1.9, 2)
+
+[node name="Hazard_floor-col46" parent="Floor" unique_id=1227379898 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1.9, -2)
+
+[node name="Hazard_floor-col47" parent="Floor" unique_id=161736250 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.9, 0)
+
+[node name="Hazard_floor-col48" parent="Floor" unique_id=439954022 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.9, 2)
+
+[node name="Hazard_floor-col49" parent="Floor" unique_id=762142752 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.9, -2)
+
+[node name="Hazard_floor-col50" parent="Floor" unique_id=1580819207 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 1.9, 0)
+
+[node name="Hazard_floor-col51" parent="Floor" unique_id=633346522 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 1.9, 2)
+
+[node name="Hazard_floor-col52" parent="Floor" unique_id=1866174162 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 1.9, -2)
+
+[node name="Hazard_floor-col53" parent="Floor" unique_id=1129334128 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 1.9, 0)
+
+[node name="Hazard_floor-col54" parent="Floor" unique_id=70891069 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 1.9, 2)
+
+[node name="Hazard_floor-col55" parent="Floor" unique_id=319195835 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 1.9, -2)
+
+[node name="Hazard_floor-col56" parent="Floor" unique_id=2084794697 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 1.9, 0)
+
+[node name="Hazard_floor-col57" parent="Floor" unique_id=1105959929 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 1.9, 2)
+
+[node name="Hazard_floor-col58" parent="Floor" unique_id=1547273543 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 1.9, -2)
+
+[node name="Hazard_floor-col59" parent="Floor" unique_id=1899994409 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 1.9, 0)
+
+[node name="Hazard_floor-col60" parent="Floor" unique_id=648603395 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 1.9, 2)
+
+[node name="Hazard_floor-col61" parent="Floor" unique_id=1180192292 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 1.9, -2)
+
+[node name="Hazard_floor-col62" parent="Floor" unique_id=1525452699 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 1.9, 0)
+
+[node name="Hazard_floor-col63" parent="Floor" unique_id=592727534 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 1.9, 2)
+
+[node name="Hazard_floor-col64" parent="Floor" unique_id=739759863 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 1.9, -2)
+
+[node name="Hazard_floor-col65" parent="Floor" unique_id=1272713496 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 1.9, 0)
+
+[node name="Hazard_floor-col66" parent="Floor" unique_id=293848510 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 1.9, 2)
+
+[node name="Hazard_floor-col67" parent="Floor" unique_id=1802166814 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 1.9, -2)
+
+[node name="Hazard_floor-col68" parent="Floor" unique_id=700727793 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 1.9, 0)
+
+[node name="Hazard_floor-col69" parent="Floor" unique_id=486145980 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 1.9, 2)
+
+[node name="Hazard_floor-col70" parent="Floor" unique_id=165379275 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 1.9, -2)
+
+[node name="Hazard_floor-col71" parent="Floor" unique_id=932204894 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 1.9, 0)
+
+[node name="Hazard_floor-col72" parent="Floor" unique_id=1705363921 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 1.9, 2)
+
+[node name="Hazard_floor-col73" parent="Floor" unique_id=1278365065 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 1.9, -2)
+
+[node name="Hazard_floor-col74" parent="Floor" unique_id=1638856305 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103, 1.9, 0)
+
+[node name="Hazard_floor-col75" parent="Floor" unique_id=1728220033 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103, 1.9, 2)
+
+[node name="Hazard_floor-col76" parent="Floor" unique_id=1176631479 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103, 1.9, -2)
+
+[node name="Hazard_floor-col77" parent="Floor" unique_id=127586879 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101, 1.9, 0)
+
+[node name="Hazard_floor-col78" parent="Floor" unique_id=1531959108 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101, 1.9, 2)
+
+[node name="Hazard_floor-col79" parent="Floor" unique_id=350478123 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101, 1.9, -2)
+
+[node name="Hazard_floor-col80" parent="Floor" unique_id=1308158362 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99, 1.9, 0)
+
+[node name="Hazard_floor-col81" parent="Floor" unique_id=1832154387 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99, 1.9, 2)
+
+[node name="Hazard_floor-col82" parent="Floor" unique_id=1002226001 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99, 1.9, -2)
+
+[node name="Hazard_floor-col83" parent="Floor" unique_id=287775258 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97, 1.9, 0)
+
+[node name="Hazard_floor-col84" parent="Floor" unique_id=737517890 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97, 1.9, 2)
+
+[node name="Hazard_floor-col85" parent="Floor" unique_id=57384071 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97, 1.9, -2)
+
+[node name="Hazard_floor-col86" parent="Floor" unique_id=1918720473 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 1.9, 0)
+
+[node name="Hazard_floor-col87" parent="Floor" unique_id=1917364977 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 1.9, 2)
+
+[node name="Hazard_floor-col88" parent="Floor" unique_id=42565058 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 1.9, -2)
+
+[node name="Hazard_floor-col89" parent="Floor" unique_id=1960776563 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 1.9, 0)
+
+[node name="Hazard_floor-col90" parent="Floor" unique_id=142066189 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 1.9, 2)
+
+[node name="Hazard_floor-col91" parent="Floor" unique_id=209535483 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 1.9, -2)
+
+[node name="Hazard_floor-col92" parent="Floor" unique_id=456323891 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91, 1.9, 0)
+
+[node name="Hazard_floor-col93" parent="Floor" unique_id=989354430 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91, 1.9, 2)
+
+[node name="Hazard_floor-col94" parent="Floor" unique_id=1042713224 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91, 1.9, -2)
+
+[node name="Hazard_floor-col95" parent="Floor" unique_id=143083390 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89, 1.9, 0)
+
+[node name="Hazard_floor-col96" parent="Floor" unique_id=2145783963 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89, 1.9, 2)
+
+[node name="Hazard_floor-col97" parent="Floor" unique_id=901559993 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89, 1.9, -2)
+
+[node name="Floor" type="Node3D" parent="Floor" unique_id=939219391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="Hazard_floor-col2" parent="Floor/Floor" unique_id=654723564 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.9, 0)
+
+[node name="Hazard_floor-col3" parent="Floor/Floor" unique_id=639535791 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.9, 2)
+
+[node name="Hazard_floor-col4" parent="Floor/Floor" unique_id=327450731 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.9, -2)
+
+[node name="Hazard_floor-col5" parent="Floor/Floor" unique_id=1713438150 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.9, 0)
+
+[node name="Hazard_floor-col6" parent="Floor/Floor" unique_id=1298005938 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.9, 2)
+
+[node name="Hazard_floor-col7" parent="Floor/Floor" unique_id=1917725991 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.9, -2)
+
+[node name="Hazard_floor-col8" parent="Floor/Floor" unique_id=2134968917 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.9, 0)
+
+[node name="Hazard_floor-col9" parent="Floor/Floor" unique_id=1248536299 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.9, 2)
+
+[node name="Hazard_floor-col10" parent="Floor/Floor" unique_id=173452600 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.9, -2)
+
+[node name="Hazard_floor-col11" parent="Floor/Floor" unique_id=1374346564 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.9, 0)
+
+[node name="Hazard_floor-col12" parent="Floor/Floor" unique_id=616068629 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.9, 2)
+
+[node name="Hazard_floor-col13" parent="Floor/Floor" unique_id=2116263543 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.9, -2)
+
+[node name="Hazard_floor-col14" parent="Floor/Floor" unique_id=1798861278 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.9, 0)
+
+[node name="Hazard_floor-col15" parent="Floor/Floor" unique_id=1794475068 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.9, 2)
+
+[node name="Hazard_floor-col16" parent="Floor/Floor" unique_id=225937855 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.9, -2)
+
+[node name="Hazard_floor-col17" parent="Floor/Floor" unique_id=1461037837 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.9, 0)
+
+[node name="Hazard_floor-col18" parent="Floor/Floor" unique_id=2084041586 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.9, 2)
+
+[node name="Hazard_floor-col19" parent="Floor/Floor" unique_id=897389377 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.9, -2)
+
+[node name="Hazard_floor-col20" parent="Floor/Floor" unique_id=1494419558 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.9, 0)
+
+[node name="Hazard_floor-col21" parent="Floor/Floor" unique_id=1341412063 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.9, 2)
+
+[node name="Hazard_floor-col22" parent="Floor/Floor" unique_id=1084925100 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.9, -2)
+
+[node name="Hazard_floor-col23" parent="Floor/Floor" unique_id=866680524 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.9, 0)
+
+[node name="Hazard_floor-col24" parent="Floor/Floor" unique_id=294846035 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.9, 2)
+
+[node name="Hazard_floor-col25" parent="Floor/Floor" unique_id=1012495175 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.9, -2)
+
+[node name="Hazard_floor-col26" parent="Floor/Floor" unique_id=875209728 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 1.9, 0)
+
+[node name="Hazard_floor-col27" parent="Floor/Floor" unique_id=1121188601 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 1.9, 2)
+
+[node name="Hazard_floor-col28" parent="Floor/Floor" unique_id=560494310 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 1.9, -2)
+
+[node name="Hazard_floor-col29" parent="Floor/Floor" unique_id=183355964 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 1.9, 0)
+
+[node name="Hazard_floor-col30" parent="Floor/Floor" unique_id=200668135 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 1.9, 2)
+
+[node name="Hazard_floor-col31" parent="Floor/Floor" unique_id=1440574737 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 1.9, -2)
+
+[node name="Hazard_floor-col32" parent="Floor/Floor" unique_id=1221366521 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 1.9, 0)
+
+[node name="Hazard_floor-col33" parent="Floor/Floor" unique_id=1782312239 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 1.9, 2)
+
+[node name="Hazard_floor-col34" parent="Floor/Floor" unique_id=281159342 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 1.9, -2)
+
+[node name="Hazard_floor-col35" parent="Floor/Floor" unique_id=1381179686 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1.9, 0)
+
+[node name="Hazard_floor-col36" parent="Floor/Floor" unique_id=1661856704 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1.9, 2)
+
+[node name="Hazard_floor-col37" parent="Floor/Floor" unique_id=1890922910 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1.9, -2)
+
+[node name="Hazard_floor-col38" parent="Floor/Floor" unique_id=1810459363 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1.9, 0)
+
+[node name="Hazard_floor-col39" parent="Floor/Floor" unique_id=809889368 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1.9, 2)
+
+[node name="Hazard_floor-col40" parent="Floor/Floor" unique_id=867045376 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1.9, -2)
+
+[node name="Hazard_floor-col41" parent="Floor/Floor" unique_id=2067983224 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 1.9, 0)
+
+[node name="Hazard_floor-col42" parent="Floor/Floor" unique_id=980349827 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 1.9, 2)
+
+[node name="Hazard_floor-col43" parent="Floor/Floor" unique_id=394093930 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 1.9, -2)
+
+[node name="Hazard_floor-col44" parent="Floor/Floor" unique_id=1886524500 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1.9, 0)
+
+[node name="Hazard_floor-col45" parent="Floor/Floor" unique_id=1905149576 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1.9, 2)
+
+[node name="Hazard_floor-col46" parent="Floor/Floor" unique_id=1319606219 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1.9, -2)
+
+[node name="Hazard_floor-col47" parent="Floor/Floor" unique_id=1694300668 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.9, 0)
+
+[node name="Hazard_floor-col48" parent="Floor/Floor" unique_id=39831631 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.9, 2)
+
+[node name="Hazard_floor-col49" parent="Floor/Floor" unique_id=597097068 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.9, -2)
+
+[node name="Hazard_floor-col50" parent="Floor/Floor" unique_id=1845383046 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 1.9, 0)
+
+[node name="Hazard_floor-col51" parent="Floor/Floor" unique_id=424437748 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 1.9, 2)
+
+[node name="Hazard_floor-col52" parent="Floor/Floor" unique_id=1864176437 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 1.9, -2)
+
+[node name="Hazard_floor-col53" parent="Floor/Floor" unique_id=52550031 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 1.9, 0)
+
+[node name="Hazard_floor-col54" parent="Floor/Floor" unique_id=2127357237 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 1.9, 2)
+
+[node name="Hazard_floor-col55" parent="Floor/Floor" unique_id=1460855362 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 1.9, -2)
+
+[node name="Hazard_floor-col56" parent="Floor/Floor" unique_id=1253668503 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 1.9, 0)
+
+[node name="Hazard_floor-col57" parent="Floor/Floor" unique_id=1058880630 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 1.9, 2)
+
+[node name="Hazard_floor-col58" parent="Floor/Floor" unique_id=1030812832 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 1.9, -2)
+
+[node name="Hazard_floor-col59" parent="Floor/Floor" unique_id=1568947545 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 1.9, 0)
+
+[node name="Hazard_floor-col60" parent="Floor/Floor" unique_id=1908806864 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 1.9, 2)
+
+[node name="Hazard_floor-col61" parent="Floor/Floor" unique_id=1631022162 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 1.9, -2)
+
+[node name="Hazard_floor-col62" parent="Floor/Floor" unique_id=1261972665 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 1.9, 0)
+
+[node name="Hazard_floor-col63" parent="Floor/Floor" unique_id=1751662451 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 1.9, 2)
+
+[node name="Hazard_floor-col64" parent="Floor/Floor" unique_id=344043542 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 1.9, -2)
+
+[node name="Hazard_floor-col65" parent="Floor/Floor" unique_id=595359879 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 1.9, 0)
+
+[node name="Hazard_floor-col66" parent="Floor/Floor" unique_id=365077014 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 1.9, 2)
+
+[node name="Hazard_floor-col67" parent="Floor/Floor" unique_id=1713031837 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 1.9, -2)
+
+[node name="Hazard_floor-col68" parent="Floor/Floor" unique_id=1485400819 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 1.9, 0)
+
+[node name="Hazard_floor-col69" parent="Floor/Floor" unique_id=911105607 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 1.9, 2)
+
+[node name="Hazard_floor-col70" parent="Floor/Floor" unique_id=424639248 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 1.9, -2)
+
+[node name="Hazard_floor-col71" parent="Floor/Floor" unique_id=708381687 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 1.9, 0)
+
+[node name="Hazard_floor-col72" parent="Floor/Floor" unique_id=1386337313 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 1.9, 2)
+
+[node name="Hazard_floor-col73" parent="Floor/Floor" unique_id=1382823530 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 1.9, -2)
+
+[node name="Hazard_floor-col74" parent="Floor/Floor" unique_id=1036518935 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103, 1.9, 0)
+
+[node name="Hazard_floor-col75" parent="Floor/Floor" unique_id=1433736377 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103, 1.9, 2)
+
+[node name="Hazard_floor-col76" parent="Floor/Floor" unique_id=16044450 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103, 1.9, -2)
+
+[node name="Hazard_floor-col77" parent="Floor/Floor" unique_id=60923037 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101, 1.9, 0)
+
+[node name="Hazard_floor-col78" parent="Floor/Floor" unique_id=1219913135 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101, 1.9, 2)
+
+[node name="Hazard_floor-col79" parent="Floor/Floor" unique_id=265946349 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101, 1.9, -2)
+
+[node name="Hazard_floor-col80" parent="Floor/Floor" unique_id=1916578034 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99, 1.9, 0)
+
+[node name="Hazard_floor-col81" parent="Floor/Floor" unique_id=626988275 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99, 1.9, 2)
+
+[node name="Hazard_floor-col82" parent="Floor/Floor" unique_id=496096381 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99, 1.9, -2)
+
+[node name="Hazard_floor-col83" parent="Floor/Floor" unique_id=1871133896 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97, 1.9, 0)
+
+[node name="Hazard_floor-col84" parent="Floor/Floor" unique_id=1348106930 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97, 1.9, 2)
+
+[node name="Hazard_floor-col85" parent="Floor/Floor" unique_id=839194232 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97, 1.9, -2)
+
+[node name="Hazard_floor-col86" parent="Floor/Floor" unique_id=1884180979 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 1.9, 0)
+
+[node name="Hazard_floor-col87" parent="Floor/Floor" unique_id=624374389 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 1.9, 2)
+
+[node name="Hazard_floor-col88" parent="Floor/Floor" unique_id=593505576 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 1.9, -2)
+
+[node name="Hazard_floor-col89" parent="Floor/Floor" unique_id=837418105 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 1.9, 0)
+
+[node name="Hazard_floor-col90" parent="Floor/Floor" unique_id=1168442613 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 1.9, 2)
+
+[node name="Hazard_floor-col91" parent="Floor/Floor" unique_id=35092593 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 1.9, -2)
+
+[node name="Hazard_floor-col92" parent="Floor/Floor" unique_id=1137619750 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91, 1.9, 0)
+
+[node name="Hazard_floor-col93" parent="Floor/Floor" unique_id=1464083869 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91, 1.9, 2)
+
+[node name="Hazard_floor-col94" parent="Floor/Floor" unique_id=1559928701 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91, 1.9, -2)
+
+[node name="Hazard_floor-col95" parent="Floor/Floor" unique_id=2102913507 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89, 1.9, 0)
+
+[node name="Hazard_floor-col96" parent="Floor/Floor" unique_id=118812994 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89, 1.9, 2)
+
+[node name="Hazard_floor-col97" parent="Floor/Floor" unique_id=99340389 instance=ExtResource("2_3374c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89, 1.9, -2)

@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://co6uitkqinfh6"]
-
-[ext_resource type="Texture2D" uid="uid://cndrpiu4uevb8" path="res://ASSETS/1024X1024_TEXTURE_ATLAS.png" id="1_tp38c"]
-
-[resource]
-resource_name = "ATLAS_MATERIAL"
-albedo_texture = ExtResource("1_tp38c")
-texture_filter = 0
