@@ -4,8 +4,6 @@ class_name Enemy
 @onready var ai_manager: ChasingAIManager = get_node_or_null("%AIManager")
 @onready var sprite: DirectionalSprite3D = get_node_or_null("%Sprite")
 
-var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
-
 func _ready() -> void:
   super();
   movement_manager = ai_manager
@@ -26,28 +24,12 @@ func _setup_ai_manager() -> void:
     print_verbose("Enemy has no AIManager! It will not be able to chase the player.")
 
 func _physics_process(delta: float) -> void:
-  var ai_velocity := Vector3.ZERO
-  var vertical_velocity := velocity.y
-  if not is_on_floor():
-     vertical_velocity -= gravity * delta
+  super(delta)
 
-  if ai_manager and ai_manager.has_method("calculate_movement"):
-    ai_velocity = ai_manager.calculate_movement(self, delta)
-    # process the knockback utilizing the manager
-    var current_knockback = ai_manager.process_knockback(delta)
-    velocity = ai_velocity + current_knockback
-  else:
-    velocity = ai_velocity
-
-  velocity.y = vertical_velocity
-
-  # sem levar o knockback em consideração na hora de girar
-  var horizontal_velocity := Vector3(ai_velocity.x, 0, ai_velocity.z)
+  var horizontal_velocity := Vector3(velocity.x, 0, velocity.z)
   if horizontal_velocity.length_squared() > 0.1:
     var look_target := global_position + horizontal_velocity
     look_at(look_target, Vector3.UP)
-
-  move_and_slide()
 
 ## Health | Combat
 func take_damage(payload: HitPayload) -> void:

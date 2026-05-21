@@ -4,17 +4,22 @@
 [ext_resource type="Script" uid="uid://b6g3ghwigtquc" path="res://scripts/resources/WeaponEffects/WeaponEffect.gd" id="1_i4ekl"]
 [ext_resource type="Texture2D" uid="uid://joejstvfmfla" path="res://textures/placeholders/pistol/pistol_icon.png" id="1_uny8x"]
 [ext_resource type="Script" uid="uid://b313hl63k85oq" path="res://scripts/resources/WeaponEffects/KnockbackEffect.gd" id="2_xq21v"]
+[ext_resource type="Script" uid="uid://crji7ht0mwcnu" path="res://scripts/resources/WeaponEffects/PiercingEffect.gd" id="3_xq21v"]
 
 [sub_resource type="Resource" id="Resource_ikjd2"]
 script = ExtResource("2_xq21v")
 force = 3.0
 metadata/_custom_type_script = "uid://b313hl63k85oq"
 
+[sub_resource type="Resource" id="Resource_xt237"]
+script = ExtResource("3_xq21v")
+metadata/_custom_type_script = "uid://crji7ht0mwcnu"
+
 [resource]
 script = ExtResource("1_1vsk4")
 weaponType = 1
 starting_ammo = 5
-effects = Array[ExtResource("1_i4ekl")]([SubResource("Resource_ikjd2")])
+effects = Array[ExtResource("1_i4ekl")]([SubResource("Resource_ikjd2"), SubResource("Resource_xt237")])
 item_name = "Pistol"
 icon = ExtResource("1_uny8x")
 metadata/_custom_type_script = "uid://bo4xwaru6jy3j"

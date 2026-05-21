@@ -17,11 +17,6 @@ func _ready() -> void:
   player_vision.targeting_interactable.connect(_on_is_looking_at_interactable)
   weapons_manager.weapon_fired.connect(_on_weapon_fired)
 
-func _physics_process(delta: float) -> void:
-  if movement_manager and movement_manager.has_method("calculate_movement"):
-    velocity = movement_manager.calculate_movement(self, delta)
-    move_and_slide()
-
 func _unhandled_input(event: InputEvent) -> void:
   if movement_manager and movement_manager.has_method("handle_camera_rotation"):
     movement_manager.handle_camera_rotation(camera_pivot,self, event)
@@ -43,18 +38,20 @@ func _on_weapon_fired(weapon_data: WeaponItem) -> void:
   var end_pos := origin + (direction * weapon_data.attack_range)
 
   var query := PhysicsRayQueryParameters3D.create(origin, end_pos)
-  var excluded_rids = []
+  var excluded_rids := []
   query.exclude = excluded_rids
 
   # Piercing Logic. If the weapon has no piercing effect then max_hits will be 1 and it will behave like a normal raycast.
-  var hits = 0
-  var max_hits = payload.max_pierces + 1 if payload.is_piercing else 1
+  var hits := 0
+  var max_hits := payload.max_pierces + 1 if payload.is_piercing else 1
+  var current_damage := payload.damage
   while hits < max_hits:
-    var result = space_state.intersect_ray(query)
+    var result := space_state.intersect_ray(query)
     if result:
         var target = result.collider
         if target.has_method("take_damage"):
-            target.take_damage(payload)
+            target.take_damage(payload.clone({"damage": current_damage}))
+            current_damage = current_damage * payload.pierce_damage_retention;
 
         excluded_rids.append(result.rid)
         query.exclude = excluded_rids
