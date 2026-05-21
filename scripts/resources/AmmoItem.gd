@@ -2,8 +2,8 @@ extends Item
 class_name AmmoItem
 
 enum AmmoType {
-  NONE,
-  BULLETS,
+	NONE,
+	BULLETS,
 }
 
 @export

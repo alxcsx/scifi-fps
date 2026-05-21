@@ -2,11 +2,11 @@ extends Item
 class_name WeaponItem
 
 enum WeaponType {
-  NONE,
-  PISTOL,
-  RIFLE,
-  FLASHLIGHT,
-  MELEE,
+	NONE,
+	PISTOL,
+	RIFLE,
+	FLASHLIGHT,
+	MELEE,
 }
 
 
@@ -30,11 +30,11 @@ enum WeaponType {
 @export var effects: Array[WeaponEffect] = []
 
 func create_hit_payload(attacker: Node3D) -> HitPayload:
-    var payload = HitPayload.new()
-    payload.damage = self.damage
-    payload.source_position = attacker.global_position
+		var payload = HitPayload.new()
+		payload.damage = self.damage
+		payload.source_position = attacker.global_position
 
-    for effect in effects:
-        effect.apply(payload)
+		for effect in effects:
+				effect.apply(payload)
 
-    return payload
+		return payload

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bh2hu60eaifer" path="res://scripts/views/BaseWeaponView.gd" id="1_w63tp"]
 [ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="2_u7ib7"]
-[ext_resource type="Texture2D" path="res://sprites/placeholders/flashlight/flashlight.png" id="3_ecjab"]
+[ext_resource type="Texture2D" uid="uid://cgn788jeucsij" path="res://textures/placeholders/flashlight/flashlight.png" id="3_ecjab"]
 
 [node name="Flashlight" type="Control" unique_id=581189973]
 layout_mode = 3
