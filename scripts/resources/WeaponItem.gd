@@ -21,3 +21,16 @@ enum WeaponType {
 @export var starting_ammo: int = 20
 @export var ammo_type: AmmoItem.AmmoType = AmmoItem.AmmoType.BULLETS
 @export var ammo_cost: int = 1
+
+@export_category("Modifiers")
+@export var effects: Array[WeaponEffect] = []
+
+func create_hit_payload(attacker: Node3D) -> HitPayload:
+    var payload = HitPayload.new()
+    payload.damage = self.damage
+    payload.source_position = attacker.global_position
+
+    for effect in effects:
+        effect.apply(payload)
+
+    return payload

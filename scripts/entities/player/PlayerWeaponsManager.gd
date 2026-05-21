@@ -12,6 +12,7 @@ signal weapon_unequipped(weapon: WeaponItem)
 
 var weapons: Array[BaseWeaponView] = []
 var current_weapon_index := -1
+var hold_fire: bool = false
 
 func _unhandled_input(event: InputEvent) -> void:
   if event.is_action_pressed("shoot"):
@@ -49,6 +50,7 @@ func _setup_weapon_view(weapon_view: BaseWeaponView) -> void:
   weapons.append(weapon_view)
 
 func _shoot() -> void:
+  if hold_fire: return
   var current_weapon := get_current_weapon()
   if not current_weapon: return;
 

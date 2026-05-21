@@ -1,4 +1,4 @@
-extends Node3D
+extends BaseMovementManager
 class_name ChasingAIManager
 
 signal started_chasing
@@ -15,25 +15,71 @@ signal stopped_chasing
 var potential_targets: Array[Node3D] = []
 var current_target: Node3D = null
 
-var current_state: String = "IDLE"
+enum AIState { IDLE, CHASE, INVESTIGATING, RETURNING }
+var current_state: AIState = AIState.IDLE
+
+@onready var investigate_position := Vector3.ZERO
+@onready var original_idle_position := Vector3.ZERO
+@onready var investigation_timer := Timer.new();
 
 func _ready() -> void:
   detectable_area.body_entered.connect(_on_body_entered)
   detectable_area.body_exited.connect(_on_body_exited)
+  investigation_timer.one_shot = true
+  investigation_timer.timeout.connect(_on_investigation_timeout)
+  add_child(investigation_timer)
+
+func investigate(source_pos: Vector3) -> void:
+  if current_state == AIState.CHASE: return # Just keep chasing
+  if current_state == AIState.IDLE:
+    original_idle_position = get_parent().global_position
+
+  current_state = AIState.INVESTIGATING
+  investigate_position = source_pos
+  investigation_timer.start(5.0)
+
+func _on_investigation_timeout() -> void:
+  if current_state == AIState.INVESTIGATING:
+    current_state = AIState.RETURNING
 
 func calculate_movement(chaser: CharacterBody3D, _delta: float) -> Vector3:
   var previous_state = current_state
 
   _update_target_and_sight(chaser)
 
-  if current_state == "CHASE" and previous_state != "CHASE":
+  if current_state == AIState.CHASE and previous_state != AIState.CHASE:
     started_chasing.emit()
-  elif current_state == "IDLE" and previous_state != "IDLE":
+  elif current_state == AIState.IDLE and previous_state != AIState.IDLE:
     stopped_chasing.emit()
 
+  var target_pos: Vector3
+  var should_move: bool = false
   var calculated_velocity := Vector3.ZERO
-  if current_state == "CHASE" and current_target:
-    nav_agent.target_position = current_target.global_position
+
+  match current_state:
+    AIState.CHASE:
+      if current_target:
+        target_pos = current_target.global_position
+        should_move = true
+    AIState.INVESTIGATING:
+      target_pos = investigate_position
+      var flat_pos = Vector3(chaser.global_position.x, 0, chaser.global_position.z)
+      var flat_target = Vector3(investigate_position.x, 0, investigate_position.z)
+      if flat_pos.distance_squared_to(flat_target) > 1.0:
+        should_move = true
+    AIState.RETURNING:
+      target_pos = original_idle_position
+      var flat_pos = Vector3(chaser.global_position.x, 0, chaser.global_position.z)
+      var flat_target = Vector3(original_idle_position.x, 0, original_idle_position.z)
+      if flat_pos.distance_squared_to(flat_target) > 1.0:
+        should_move = true
+      else:
+        current_state = AIState.IDLE
+    AIState.IDLE:
+      should_move = false
+
+  if should_move:
+    nav_agent.target_position = target_pos
 
     var next_path_pos := nav_agent.get_next_path_position()
     next_path_pos.y = 0
@@ -51,7 +97,8 @@ func calculate_movement(chaser: CharacterBody3D, _delta: float) -> Vector3:
 
 func _update_target_and_sight(chaser: CharacterBody3D) -> void:
   if potential_targets.is_empty():
-    current_state = "IDLE"
+    if current_state == AIState.CHASE:
+      current_state = AIState.IDLE
     current_target = null
     return
 
@@ -84,10 +131,12 @@ func _update_target_and_sight(chaser: CharacterBody3D) -> void:
 
   if best_target:
     current_target = best_target
-    current_state = "CHASE"
+    current_state = AIState.CHASE
+    investigation_timer.stop()
   else:
     current_target = null
-    current_state = "IDLE"
+    if current_state == AIState.CHASE:
+      current_state = AIState.IDLE
 
 func _on_body_entered(body: Node3D) -> void:
   if body.is_in_group(chasing_group) and not potential_targets.has(body):

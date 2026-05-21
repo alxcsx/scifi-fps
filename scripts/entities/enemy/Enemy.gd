@@ -1,22 +1,15 @@
-extends CharacterBody3D
+extends BaseEntity
 class_name Enemy
 
-@onready var health_manager: HealthManager = get_node_or_null("%HealthManager")
 @onready var ai_manager: ChasingAIManager = get_node_or_null("%AIManager")
 @onready var sprite: DirectionalSprite3D = get_node_or_null("%Sprite")
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
-  _setup_health_manager()
+  movement_manager = ai_manager
   _setup_sprite()
   _setup_ai_manager()
-
-func _setup_health_manager() -> void:
-  if health_manager:
-    health_manager.player_died.connect(_on_died)
-  else:
-    print_verbose("Enemy has no HealthManager! It will not be able to take damage or die.")
 
 func _setup_sprite() -> void:
   if sprite:
@@ -32,15 +25,23 @@ func _setup_ai_manager() -> void:
     print_verbose("Enemy has no AIManager! It will not be able to chase the player.")
 
 func _physics_process(delta: float) -> void:
+  var ai_velocity := Vector3.ZERO
+  var vertical_velocity := velocity.y
   if not is_on_floor():
-    velocity.y -= gravity * delta
+     vertical_velocity -= gravity * delta
 
   if ai_manager and ai_manager.has_method("calculate_movement"):
-    var ai_velocity: Vector3 = ai_manager.calculate_movement(self, delta)
-    velocity.x = ai_velocity.x
-    velocity.z = ai_velocity.z
+    ai_velocity = ai_manager.calculate_movement(self, delta)
+    # process the knockback utilizing the manager
+    var current_knockback = ai_manager.process_knockback(delta)
+    velocity = ai_velocity + current_knockback
+  else:
+    velocity = ai_velocity
 
-  var horizontal_velocity := Vector3(velocity.x, 0, velocity.z)
+  velocity.y = vertical_velocity
+
+  # sem levar o knockback em consideração na hora de girar
+  var horizontal_velocity := Vector3(ai_velocity.x, 0, ai_velocity.z)
   if horizontal_velocity.length_squared() > 0.1:
     var look_target := global_position + horizontal_velocity
     look_at(look_target, Vector3.UP)
@@ -48,10 +49,11 @@ func _physics_process(delta: float) -> void:
   move_and_slide()
 
 ## Health | Combat
-
-func take_damage(amount: float) -> void:
-  if health_manager:
-    health_manager.take_damage(amount)
+func take_damage(payload: HitPayload) -> void:
+    super.take_damage(payload)
+    if ai_manager and not payload.is_stealthy:
+        if ai_manager.has_method("investigate"):
+            ai_manager.investigate(payload.source_position)
 
 func _on_died() -> void:
   print("Enemy destroyed!")
