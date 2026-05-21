@@ -22,6 +22,10 @@ enum WeaponType {
 @export var ammo_type: AmmoItem.AmmoType = AmmoItem.AmmoType.BULLETS
 @export var ammo_cost: int = 1
 
+@export_category("Sight")
+@export var zoom_enabled: bool = true
+@export var zoom_fov: float = 40.0
+
 @export_category("Modifiers")
 @export var effects: Array[WeaponEffect] = []
 

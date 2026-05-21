@@ -13,7 +13,6 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 # "Constants" that can be edited from the menu
 var mouse_sensitivity = 0.09
 
-@export var camera: Camera3D
 # State
 var is_crouching 	:= false
 var direction 		:= Vector3.ZERO
@@ -21,20 +20,15 @@ var direction 		:= Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-  if camera == null: camera = %Camera
-
   Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 
 func calculate_movement(player: CharacterBody3D, delta: float) -> Vector3:
   _process_input(player, delta)
   return process_movement(player, delta)
 
-
 func _process_input(player: CharacterBody3D, _delta: float) -> void:
   mouse_capture_control();
   crounching_control();
-
   var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
   direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 

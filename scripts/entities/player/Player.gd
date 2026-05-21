@@ -11,6 +11,7 @@ class_name Player
 @onready var camera_pivot: Node3D = %Pivot
 
 func _ready() -> void:
+  super();
   movement_manager = %MovementManager
   inventory_manager.item_picked_up.connect(_on_item_picked_up)
   player_vision.targeting_interactable.connect(_on_is_looking_at_interactable)
