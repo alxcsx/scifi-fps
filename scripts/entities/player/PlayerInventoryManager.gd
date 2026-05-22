@@ -28,12 +28,15 @@ func _on_item_picked_up(item_data: Item) -> void:
 	else:
 		print("Picked up Item: %s! The Inventory Manager doesn't know how to handle it." % item_data.item_name)
 
+func get_ammo_count(type: AmmoItem.AmmoType) -> int:
+	return ammo_inventory.get(type, 0)
 
-func add_ammo(type: AmmoItem.AmmoType, amount: int) -> void:
+func add_ammo(type: AmmoItem.AmmoType, amount: int, broadcast: bool = true) -> void:
 	if amount == 0: return
 	if ammo_inventory.has(type):
 		ammo_inventory[type] += amount
-		ammo_changed.emit(type, ammo_inventory[type])
+		if broadcast:
+			ammo_changed.emit(type, ammo_inventory[type])
 
 func unlock_weapon(weaponType: WeaponItem.WeaponType) -> void:
 	if not unlocked_weapons.has(weaponType):

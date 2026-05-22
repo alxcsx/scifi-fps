@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://crji7ht0mwcnu"
 [resource]
 script = ExtResource("1_1vsk4")
 weaponType = 1
-starting_ammo = 5
+starting_ammo = 6
 effects = Array[ExtResource("1_i4ekl")]([SubResource("Resource_ikjd2"), SubResource("Resource_xt237")])
 item_name = "Pistol"
 icon = ExtResource("1_uny8x")

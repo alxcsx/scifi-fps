@@ -21,6 +21,7 @@ enum WeaponType {
 @export var starting_ammo: int = 20
 @export var ammo_type: AmmoItem.AmmoType = AmmoItem.AmmoType.BULLETS
 @export var ammo_cost: int = 1
+@export var magazine_size: int = 6
 
 @export_category("Sight")
 @export var zoom_enabled: bool = true

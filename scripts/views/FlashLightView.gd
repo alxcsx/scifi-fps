@@ -12,7 +12,7 @@ func _ready() -> void:
 	else:
 		flashlight.hide()
 
-func use(_inventory: PlayerInventoryManager) -> void:
+func use(_manager: PlayerWeaponsManager) -> void:
 	if is_busy() or not weapon_data: return
 	is_on = !is_on
 	flashlight.visible = is_on
