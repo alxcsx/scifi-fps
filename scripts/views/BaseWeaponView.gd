@@ -4,22 +4,25 @@ class_name BaseWeaponView
 @export 	var weapon_data: WeaponItem
 @onready 	var anim_player: AnimationPlayer = $AnimationPlayer
 
-signal fired(weapon_data: WeaponItem)
-
 func _ready() -> void:
 	hide();
 
 func is_busy() -> bool: return anim_player.is_playing()
 
-func use(manager: PlayerWeaponsManager) -> void:
-	if is_busy() or not weapon_data: return
+func setup(manager: BaseWeaponsManager) -> void:
+	manager.weapon_fired.connect(_on_weapon_fired)
 
-	if _use_ammo(manager):
-		fired.emit(weapon_data)
+func _on_weapon_fired(weapon: WeaponItem, _origin: Vector3, _direction: Vector3) -> void:
+	if is_busy() or not weapon_data: return
+	if weapon == weapon_data:
 		play_shoot_effects()
 
 func on_reload():
-	pass # TODO: add animaçõo
+	if anim_player.has_animation("reload"):
+		anim_player.play("reload")
+		await anim_player.animation_finished
+	else:
+		await get_tree().process_frame
 
 func play_shoot_effects() -> void:
 	anim_player.stop()
@@ -27,13 +30,6 @@ func play_shoot_effects() -> void:
 
 func play_equip_effects() -> void:
 	if anim_player.has_animation("equip"): anim_player.play("equip")
-
-func _use_ammo(manager: PlayerWeaponsManager) -> bool:
-	if not weapon_data: return false
-	var type := weapon_data.ammo_type
-	var cost := weapon_data.ammo_cost
-
-	return manager.use_ammo(type, cost)
 
 func equip() -> void:
 	show()

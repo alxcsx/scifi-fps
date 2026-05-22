@@ -34,6 +34,7 @@ func investigate(source_pos: Vector3) -> void:
 	if current_state == AIState.IDLE:
 		original_idle_position = get_parent().global_position
 
+	print("AI Manager: Investigating position %s" % source_pos)
 	current_state = AIState.INVESTIGATING
 	investigate_position = source_pos
 	investigation_timer.start(5.0)

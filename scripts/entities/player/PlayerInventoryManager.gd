@@ -16,7 +16,7 @@ func is_weapon_unlocked(weaponType: WeaponItem.WeaponType) -> bool:
 	return weaponType in unlocked_weapons
 
 
-func _on_item_picked_up(item_data: Item) -> void:
+func on_item_picked_up(item_data: Item) -> void:
 	item_picked_up.emit(item_data)
 	if item_data is AmmoItem:
 		print("Picked up %d %s!" % [item_data.amount, item_data.ammo_type])

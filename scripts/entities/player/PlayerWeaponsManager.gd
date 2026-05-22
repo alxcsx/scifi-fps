@@ -1,10 +1,8 @@
-extends Node
+extends BaseWeaponsManager
 class_name PlayerWeaponsManager
 
-signal weapon_fired(weapon:WeaponItem)
 signal weapon_equipped(weapon: WeaponItem)
 signal weapon_unequipped(weapon: WeaponItem)
-signal ammo_changed(ammoType: AmmoItem.AmmoType, magazine: int, reserve: int)
 
 @export var player_vision: PlayerVision
 @export var camera: Camera3D
@@ -13,27 +11,21 @@ signal ammo_changed(ammoType: AmmoItem.AmmoType, magazine: int, reserve: int)
 @onready var inventory: PlayerInventoryManager = %InventoryManager
 @onready var crosshair_ui: TextureRect = $WeaponsHUD/UI_Root/CrossHair
 
-var weapons: Array[BaseWeaponView] = []
-var current_weapon_index := -1
-var hold_fire: bool = false
+var views: Dictionary[WeaponItem.WeaponType, BaseWeaponView] = {}
+
 var is_zooming: bool = false
 var default_camera_fov: float = 75.0
 var weapon_zoom_fov: float = 75.0
 
-var weapon_magazines: Dictionary[WeaponItem.WeaponType, int] = {
-  WeaponItem.WeaponType.PISTOL: 0,
-  WeaponItem.WeaponType.RIFLE: 0,
-}
-
 func _unhandled_input(event: InputEvent) -> void:
   if event.is_action_pressed("shoot"):
-    _shoot()
+    request_fire()
   elif event.is_action_pressed("weapon_next"):
-    equip_weapon(_get_next_unlocked_weapon_index(1))
+    equip_weapon(_get_next_unlocked_weapon(1))
   elif event.is_action_pressed("weapon_prev"):
-    equip_weapon(_get_next_unlocked_weapon_index(-1))
+    equip_weapon(_get_next_unlocked_weapon(-1))
   elif event.is_action_pressed("reload"):
-    reload_weapon()
+    reload()
   elif event is InputEventMouseButton and event.is_action_pressed("zoom"):
     is_zooming = not is_zooming
 
@@ -55,18 +47,15 @@ func _ready() -> void:
     player_vision.targeting_enemy.connect(_on_target_enemy)
 
   inventory.weapon_unlocked.connect(_on_weapon_unlocked)
-  inventory.ammo_changed.connect(func(ammo_type, new_amount): ammo_changed.emit(ammo_type, get_magazine_ammo(ammo_type), new_amount))
+  inventory.ammo_changed.connect(
+    func(ammo_type, _new_amount):
+      if current_weapon and ammo_type == current_weapon.ammo_type:
+        ammo_changed.emit(get_loaded_ammo(ammo_type))
+  )
 
   for c in %Weapons.get_children():
     if c is BaseWeaponView:
       _setup_weapon_view(c)
-
-func use_ammo(ammo_type: AmmoItem.AmmoType, amount: int) -> bool:
-  if weapon_magazines.get(ammo_type,0) >= amount:
-    weapon_magazines[ammo_type] -= amount
-    _broadcast_ammo_update()
-    return true
-  return false
 
 func _setup_weapon_view(weapon_view: BaseWeaponView) -> void:
   if not weapon_view.weapon_data:
@@ -75,107 +64,72 @@ func _setup_weapon_view(weapon_view: BaseWeaponView) -> void:
     return
 
   print("Registering weapon view: %s" % weapon_view.name)
-  weapon_view.fired.connect(weapon_fired.emit)
   weapon_view.hide()
-  weapons.append(weapon_view)
+  weapon_view.setup(self)
+  views.set(weapon_view.weapon_data.weaponType, weapon_view)
 
-func _shoot() -> void:
-  if hold_fire: return
-  var current_weapon := get_current_weapon()
-  if not current_weapon: return;
-  current_weapon.use(self)
-
-func reload_weapon() -> void:
-  var current_weapon := get_current_weapon()
+func reload() -> void:
   if not current_weapon: return;
 
-  hold_fire = true
-  await current_weapon.on_reload()
-  hold_fire = false
-
-  var current_ammo = get_magazine_ammo(current_weapon.weapon_data.weaponType)
-  var max_ammo = current_weapon.weapon_data.magazine_size
-
+  var current_ammo := get_loaded_ammo(current_weapon.ammo_type)
+  var max_ammo := current_weapon.magazine_size
   if current_ammo >= max_ammo: return
 
+  hold_fire = true
+  await get_current_view().on_reload()
+  hold_fire = false
+
   var bullets_needed = max_ammo - current_ammo
-  var reserve = inventory.get_ammo_count(current_weapon.weapon_data.ammo_type)
-  if reserve > 0:
-    var bullets_to_load = min(bullets_needed, reserve)
+  var reserve = inventory.get_ammo_count(current_weapon.ammo_type)
 
-    inventory.add_ammo(current_weapon.weapon_data.ammo_type, -bullets_to_load, false)
-    add_magazine_ammo(current_weapon.weapon_data.weaponType, bullets_to_load)
+  if reserve <= 0: return
 
+  var bullets_to_load = min(bullets_needed, reserve)
+  inventory.add_ammo(current_weapon.ammo_type, -bullets_to_load, false)
+  load_ammo(current_weapon.ammo_type, bullets_to_load)
 
-func _broadcast_ammo_update() -> void:
-  var current_weapon := get_current_weapon()
-  if not current_weapon: return;
-  var mag = weapon_magazines[current_weapon.weapon_data.weaponType]
-  var res = inventory.get_ammo_count(current_weapon.weapon_data.ammo_type)
-  ammo_changed.emit(current_weapon.weapon_data.ammo_type, mag, res)
+func get_current_view() -> BaseWeaponView:
+  return views.get(current_weapon.weaponType, null)
 
-func get_magazine_ammo(weaponType: WeaponItem.WeaponType) -> int:
-  return weapon_magazines.get(weaponType, 0)
+func equip_weapon(type: WeaponItem.WeaponType) -> void:
+  if type == WeaponItem.WeaponType.NONE or not views.has(type): return
+  if current_weapon and current_weapon.weaponType == type: return
 
-func add_magazine_ammo(weaponType: WeaponItem.WeaponType, amount: int) -> void:
-  if weapon_magazines.has(weaponType):
-    weapon_magazines[weaponType] += amount
-    _broadcast_ammo_update()
+  if current_weapon:
+    views[current_weapon.weaponType].unequip()
+    weapon_unequipped.emit(views[current_weapon.weaponType].weapon_data)
+    print("Unequipping weapon: %s" % views[current_weapon.weaponType].name)
 
-func get_current_weapon() -> BaseWeaponView:
-  if current_weapon_index == -1 or weapons.size() == 0: return null
-  return weapons[current_weapon_index]
+  print("Equipping weapon: %s" % views[type].name)
+  current_weapon = views[type].weapon_data
+  views[type].equip()
 
-func get_current_ammo_status() -> Dictionary[String, int]:
-  var current_weapon := get_current_weapon()
-  if not current_weapon: return { "type": AmmoItem.AmmoType.NONE, "magazine": 0, "reserve": 0 }
-  return {
-    "type": current_weapon.weapon_data.ammo_type,
-    "magazine": weapon_magazines.get(current_weapon.weapon_data.weaponType, 0),
-    "reserve": inventory.get_ammo_count(current_weapon.weapon_data.ammo_type)
-  }
-
-func equip_weapon(index: int) -> void:
-  if index < 0 or index >= weapons.size() or index == current_weapon_index: return;
-  if not inventory.is_weapon_unlocked(weapons[index].weapon_data.weaponType): return;
-
-  if current_weapon_index >= 0:
-    weapons[current_weapon_index].unequip()
-    weapon_unequipped.emit(weapons[current_weapon_index].weapon_data)
-    print("Unequipping weapon: %s" % weapons[current_weapon_index].name)
-
-  print("Equipping weapon: %s" % weapons[index].name)
-  current_weapon_index = index
-  var new_weapon := weapons[current_weapon_index]
-  new_weapon.equip()
-  weapon_equipped.emit(new_weapon.weapon_data)
-
-  player_vision.current_weapon_range = new_weapon.weapon_data.attack_range
-  weapon_zoom_fov = new_weapon.weapon_data.zoom_fov if new_weapon.weapon_data.zoom_enabled else default_camera_fov
+  # ZOOM
+  weapon_zoom_fov = current_weapon.zoom_fov if current_weapon.zoom_enabled else default_camera_fov
   is_zooming = false
+  # Range Detection
+  player_vision.current_weapon_range = current_weapon.attack_range
+  #
+  weapon_equipped.emit(current_weapon)
 
-  print("Current weapon range set to: %f" % player_vision.current_weapon_range)
+func _get_next_unlocked_weapon(direction: int) -> WeaponItem.WeaponType:
+  if not current_weapon or inventory.unlocked_weapons.is_empty():
+    return WeaponItem.WeaponType.NONE
 
-func _get_next_unlocked_weapon_index(direction: int) -> int:
-  var max_weapons := weapons.size()
-  var start_search_index := 0 if current_weapon_index == -1 else current_weapon_index
+  var current_index := inventory.unlocked_weapons.find(current_weapon.weaponType)
+  var next_index := (current_index + direction) % inventory.unlocked_weapons.size()
+  if next_index < 0:
+    next_index = inventory.unlocked_weapons.size() - 1
 
-  for i in range(1, max_weapons + 1):
-    var check_index := (start_search_index + (direction * i) + max_weapons) % max_weapons
-    var weapon_type := weapons[check_index].weapon_data.weaponType
-    if inventory.is_weapon_unlocked(weapon_type):
-      return check_index
-
-  return -1
+  return inventory.unlocked_weapons.get(next_index)
 
 func _on_weapon_unlocked(weaponType: WeaponItem.WeaponType) -> void:
-  var id := weapons.find_custom(func(w: BaseWeaponView): return w.weapon_data.weaponType == weaponType)
-  print("Weapon unlocked: %s (%d)" % [weaponType, id])
-  if id != -1:
-    equip_weapon(id)
-    reload_weapon()
+  print("Weapon unlocked: %s" % [weaponType])
+  if views.has(weaponType):
+    equip_weapon(weaponType)
+    reload()
   else:
-    push_warning("Unlocked weapon '%s' not found in weapons list!" % weaponType)
+    push_warning("Unlocked weapon '%s' not found in views list!" % weaponType)
 
 func _on_target_enemy(is_targeting: bool) -> void:
   print("Targeting enemy: %s" % is_targeting)

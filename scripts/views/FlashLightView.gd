@@ -12,14 +12,9 @@ func _ready() -> void:
 	else:
 		flashlight.hide()
 
-func use(_manager: PlayerWeaponsManager) -> void:
-	if is_busy() or not weapon_data: return
+func play_shoot_effects() -> void:
 	is_on = !is_on
 	flashlight.visible = is_on
-	fired.emit(weapon_data)
-	play_shoot_effects()
-
-func play_shoot_effects() -> void:
 	anim_player.stop()
 	if is_on:
 		if anim_player.has_animation("turn_on"):
