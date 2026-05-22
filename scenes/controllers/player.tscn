@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://d2q325h3ul3s0" path="res://scripts/entities/player/PlayerMovementManager.gd" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://dh65p6lyige1w" path="res://scenes/controllers/weapons_manager.tscn" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://dmjyqs7aqro33" path="res://scripts/ui/StatusUi.gd" id="6_4p0md"]
+[ext_resource type="Script" uid="uid://cplpx1fqicg5r" path="res://scripts/entities/player/MouseCameraManager.gd" id="7_ota6u"]
 [ext_resource type="Script" uid="uid://ci7fb3r8ilme8" path="res://scripts/entities/player/PlayerVisionRaycast.gd" id="8_iavnn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
@@ -43,6 +44,11 @@ player_vision = NodePath("../Pivot/Camera/PlayerVision")
 
 [node name="Flashlight" parent="WeaponsManager/WeaponsHUD/UI_Root/Weapons" parent_id_path=PackedInt32Array(1126807396, 814892083) index="1" unique_id=581189973 node_paths=PackedStringArray("flashlight")]
 flashlight = NodePath("../../../../../Pivot/Flashlight")
+
+[node name="MouseCameraManager" type="Node" parent="." unique_id=1278965141 node_paths=PackedStringArray("pivot_node", "base_node")]
+script = ExtResource("7_ota6u")
+pivot_node = NodePath("../Pivot")
+base_node = NodePath("..")
 
 [node name="Pivot" type="Node3D" parent="." unique_id=2037270985]
 unique_name_in_owner = true

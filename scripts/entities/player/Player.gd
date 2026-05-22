@@ -3,6 +3,7 @@ class_name Player
 
 @export var combat_raycast: RayCast3D
 # Managers
+@onready var CameraManager: MouseCameraManager = %CameraManager
 @onready var weapons_manager: PlayerWeaponsManager = %WeaponsManager
 @onready var inventory_manager: PlayerInventoryManager = %InventoryManager
 @onready var interaction_manager: PlayerInteractionManager = %InteractionManager
@@ -16,10 +17,6 @@ func _ready() -> void:
   inventory_manager.item_picked_up.connect(_on_item_picked_up)
   player_vision.targeting_interactable.connect(_on_is_looking_at_interactable)
   weapons_manager.weapon_fired.connect(_on_weapon_fired)
-
-func _unhandled_input(event: InputEvent) -> void:
-  if movement_manager and movement_manager.has_method("handle_camera_rotation"):
-    movement_manager.handle_camera_rotation(camera_pivot,self, event)
 
 func _on_is_looking_at_interactable(is_targeting: bool, _interactable: Node3D) -> void:
   weapons_manager.hold_fire = is_targeting
@@ -49,7 +46,7 @@ func _on_weapon_fired(weapon_data: WeaponItem) -> void:
     var result := space_state.intersect_ray(query)
     if result:
         var target = result.collider
-        if target.has_method("take_damage"):
+        if target is BaseEntity and target != self:
             target.take_damage(payload.clone({"damage": current_damage}))
             current_damage = current_damage * payload.pierce_damage_retention;
 

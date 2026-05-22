@@ -1,15 +1,18 @@
 extends CharacterBody3D
 class_name BaseEntity
 
-@onready var health_manager: HealthManager = get_node_or_null("%HealthManager")
+@export var health_manager: HealthManager
 var movement_manager: BaseMovementManager
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var use_gravity: bool = true
 
 func _ready() -> void:
+	if not health_manager:
+		health_manager = get_node_or_null("%HealthManager")
+
 	if health_manager:
-		health_manager.player_died.connect(_on_died)
+		health_manager.entity_died.connect(_on_died)
 
 func _physics_process(delta: float) -> void:
 	var intended_velocity := Vector3.ZERO

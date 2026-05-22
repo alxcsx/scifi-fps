@@ -35,8 +35,7 @@ func _physics_process(delta: float) -> void:
 func take_damage(payload: HitPayload) -> void:
 		super.take_damage(payload)
 		if ai_manager and not payload.is_stealthy:
-				if ai_manager.has_method("investigate"):
-						ai_manager.investigate(payload.source_position)
+			ai_manager.investigate(payload.source_position)
 
 func _on_died() -> void:
 	print("Enemy destroyed!")
