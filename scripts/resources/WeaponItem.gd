@@ -2,13 +2,18 @@ extends Item
 class_name WeaponItem
 
 enum WeaponType {
-  NONE,
-  PISTOL,
-  RIFLE,
-  FLASHLIGHT,
-  MELEE,
+	NONE,
+	PISTOL,
+	RIFLE,
+	FLASHLIGHT,
+	MELEE,
 }
 
+enum UseResult {
+	SUCCESS,
+	NO_AMMO,
+	NOT_EQUIPPED,
+}
 
 @export var weaponType: WeaponType = WeaponType.NONE
 
@@ -21,6 +26,7 @@ enum WeaponType {
 @export var starting_ammo: int = 20
 @export var ammo_type: AmmoItem.AmmoType = AmmoItem.AmmoType.BULLETS
 @export var ammo_cost: int = 1
+@export var magazine_size: int = 6
 
 @export_category("Sight")
 @export var zoom_enabled: bool = true
@@ -29,12 +35,23 @@ enum WeaponType {
 @export_category("Modifiers")
 @export var effects: Array[WeaponEffect] = []
 
-func create_hit_payload(attacker: Node3D) -> HitPayload:
-    var payload = HitPayload.new()
-    payload.damage = self.damage
-    payload.source_position = attacker.global_position
+func create_hit_payload(origin: Vector3, direction: Vector3) -> HitPayload:
+		var payload = HitPayload.new()
+		payload.damage = self.damage
+		payload.source_position = origin
+		payload.hit_direction = direction
 
-    for effect in effects:
-        effect.apply(payload)
+		for effect in effects:
+				effect.apply(payload)
 
-    return payload
+		return payload
+
+func try_use(manager: BaseWeaponsManager) -> UseResult:
+	if not manager or manager.current_weapon != self: return UseResult.NOT_EQUIPPED
+	if ammo_cost == 0 or ammo_type == AmmoItem.AmmoType.NONE:
+		return UseResult.SUCCESS
+	elif manager.has_ammo(ammo_type, ammo_cost):
+		manager.spend_ammo(ammo_cost)
+		return UseResult.SUCCESS
+
+	return UseResult.NO_AMMO

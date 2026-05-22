@@ -12,7 +12,10 @@ var max_pierces: int = 0
 var pierce_damage_retention: float = 1.0
 
 func clone(overrides: Dictionary = {}) -> HitPayload:
-	var copy = HitPayload.new()
-	for key in overrides:
-		copy.set(key, overrides[key])
-	return copy
+  var copy = HitPayload.new()
+
+  for property in get_property_list():
+    var name = property.name
+    copy.set(name, overrides.get(name, self.get(name)))
+
+  return copy

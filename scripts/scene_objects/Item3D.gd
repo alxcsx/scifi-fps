@@ -26,5 +26,5 @@ func on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		var inventory: PlayerInventoryManager = body.get_node_or_null("InventoryManager")
 		if inventory:
-			inventory._on_item_picked_up(item_to_give)
+			inventory.on_item_picked_up(item_to_give)
 			queue_free()

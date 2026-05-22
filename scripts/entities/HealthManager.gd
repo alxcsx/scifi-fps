@@ -3,7 +3,7 @@ class_name HealthManager
 # Tracks Health for an entity (players or enemies)
 
 signal health_changed(current_health: float, max_health: float)
-signal player_died()
+signal entity_died()
 
 @export var max_health: float = 100.0
 @onready var current_health: float = max_health
@@ -29,4 +29,4 @@ func heal(amount: float) -> void:
 
 func _die() -> void:
 	print("%s has died!" % [owner.name])
-	player_died.emit()
+	entity_died.emit()
