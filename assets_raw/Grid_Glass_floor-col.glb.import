@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c4aqd0sv8sa8g"
+uid="uid://p0ds3n74mjv5"
 path="res://.godot/imported/Grid_Glass_floor-col.glb-eae89d1fbe01500ee278b616289898c2.scn"
 
 [deps]
@@ -37,14 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"ATLAS_MATERIAL": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://assets_raw/GLASS_MATERIAL.tres",
-"use_external/path": "uid://cdtwnaqv80swc"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

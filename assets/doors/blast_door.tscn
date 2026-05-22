@@ -122,7 +122,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ir1hl"]
-size = Vector3(11, 4, 11)
+size = Vector3(11, 6, 13)
 
 [node name="Blast_door" type="Node3D" unique_id=1086876818 node_paths=PackedStringArray("animation")]
 script = ExtResource("1_mvuay")

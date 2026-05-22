@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dqio83f11eii8"
+uid="uid://dayidipmp85fj"
 path="res://.godot/imported/Fence_Circles-col.glb-08a788cc38323db2630e84ecd2365cfc.scn"
 
 [deps]
@@ -33,18 +33,10 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path=""
+import_script/path="uid://6wlgas77g1m3"
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"ATLAS_MATERIAL": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://assets_raw/GLASS_MATERIAL.tres",
-"use_external/path": "uid://cdtwnaqv80swc"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

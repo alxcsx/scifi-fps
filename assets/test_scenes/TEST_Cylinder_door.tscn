@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bppt3ieqgtpbf"]
+
+[ext_resource type="PackedScene" uid="uid://b7irwp0rsucj8" path="res://assets/doors/cylinder_door.tscn" id="1_831ey"]
+[ext_resource type="PackedScene" uid="uid://crom4dfaanju4" path="res://assets_raw/Red_Metal_floor-col.glb" id="2_qyii7"]
+[ext_resource type="PackedScene" uid="uid://buioxy5ag4gc6" path="res://scenes/controllers/player.tscn" id="3_qyii7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u4ecb"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_wwfh5"]
+sky_material = SubResource("ProceduralSkyMaterial_u4ecb")
+
+[sub_resource type="Environment" id="Environment_63hos"]
+background_mode = 2
+sky = SubResource("Sky_wwfh5")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="TestCylinderDoor" type="Node3D" unique_id=1365883298]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=746158417]
+environment = SubResource("Environment_63hos")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1540917865]
+transform = Transform3D(-0.840986, -0.13883421, -0.5229414, -0.45154342, 0.7125682, 0.5369868, 0.29807925, 0.687729, -0.6619495, -11, 13, 0)
+shadow_enabled = true
+
+[node name="Cylinder_door" parent="." unique_id=1703856036 instance=ExtResource("1_831ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+
+[node name="Red_Metal_floor-col2" parent="." unique_id=311854041 instance=ExtResource("2_qyii7")]
+transform = Transform3D(11.5, 0, 0, 0, 1, 0, 0, 0, -12.7, 3, -1.2, -2)
+
+[node name="Player" parent="." unique_id=1601922834 instance=ExtResource("3_qyii7")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 8, 1, -2)
