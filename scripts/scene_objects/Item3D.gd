@@ -1,6 +1,8 @@
 extends Area3D
 class_name Item3D
 
+const OUTLINE_MAT = preload("res://assets_raw/OUTLINE.tres")
+
 @export var item_to_give: Item
 
 var float_speed := 2.0
@@ -10,8 +12,6 @@ var float_height := 0.5
 @onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
 
 func _ready() -> void:
-	body_entered.connect(on_body_entered)
-
 	if item_to_give and item_to_give.icon:
 		var frames := SpriteFrames.new()
 		frames.add_animation("idle")
@@ -22,9 +22,15 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	position.y = start_y + (sin(Time.get_ticks_msec() / 1000.0 * float_speed) * float_height)
 
-func on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Player"):
-		var inventory: PlayerInventoryManager = body.get_node_or_null("InventoryManager")
-		if inventory:
-			inventory.on_item_picked_up(item_to_give)
+func interact(player: Node3D) -> void:
+	var inventory: PlayerInventoryManager = player.get_node_or_null("InventoryManager")
+	if inventory:
+		if inventory.try_add_item(item_to_give):
 			queue_free()
+
+
+func add_outline() -> void:
+	sprite.material_overlay = OUTLINE_MAT
+	
+func remove_outline() -> void:
+	sprite.material_overlay = null

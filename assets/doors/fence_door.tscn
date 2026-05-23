@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://5feuriwyqf53"]
+
+[ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_o1oo4"]
+[ext_resource type="PackedScene" uid="uid://bcvv71pq8cvp1" path="res://assets_raw/Fence_Door-col.glb" id="1_pxykx"]
+[ext_resource type="PackedScene" uid="uid://ch6n4j8783y00" path="res://assets_raw/Lock_fence_door-col.glb" id="2_o1oo4"]
+[ext_resource type="PackedScene" uid="uid://cq84gywjxgwmc" path="res://assets_raw/Pivot_fence_door-col.glb" id="3_5af8g"]
+
+[sub_resource type="Animation" id="Animation_xsab7"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fence_Door-col2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5af8g"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fence_Door-col2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5707964, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mytsf"]
+_data = {
+&"Close": SubResource("Animation_xsab7"),
+&"Open": SubResource("Animation_5af8g")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xsab7"]
+size = Vector3(1.3000001, 2.9, 2.6000001)
+
+[node name="FenceDoor" type="Node3D" unique_id=1638623496 node_paths=PackedStringArray("animation")]
+script = ExtResource("1_o1oo4")
+animation = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=793724001]
+libraries/ = SubResource("AnimationLibrary_mytsf")
+
+[node name="Fence_Door-col2" parent="." unique_id=1979552922 instance=ExtResource("1_pxykx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.0999999)
+
+[node name="Lock_fence_door-col2" parent="." unique_id=2015862982 instance=ExtResource("2_o1oo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1)
+
+[node name="Pivot_fence_door-col2" parent="." unique_id=1817097456 instance=ExtResource("3_5af8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=143584747]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=452373536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050000012, 1.55, -1.1920929e-07)
+shape = SubResource("BoxShape3D_xsab7")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

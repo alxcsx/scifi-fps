@@ -6,6 +6,7 @@ class_name MouseCameraManager
 
 # "Constants" that can be edited from the menu
 var mouse_sensitivity = 0.09
+var camera_pitch: float = 0.0
 
 func _unhandled_input(event: InputEvent) -> void:
 	mouse_capture_control()
@@ -20,8 +21,15 @@ func mouse_capture_control():
 
 func handle_camera_rotation(x_axis: Node3D, y_axis: Node3D, event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		x_axis.rotate_x(deg_to_rad(event.relative.y * mouse_sensitivity * -1))
+		
+		# Rotate body left/right
 		y_axis.rotate_y(deg_to_rad(event.relative.x * mouse_sensitivity * -1))
-
-		x_axis.rotation.x = clamp(x_axis.rotation.x, deg_to_rad(-70), deg_to_rad(70))
-
+		
+		# Add the mouse movement to pitch
+		camera_pitch += deg_to_rad(event.relative.y * mouse_sensitivity * -1)
+		
+		# Clamp the the pitch to avoid seeing thorugh my beautifull doors
+		camera_pitch = clamp(camera_pitch, deg_to_rad(-85.0), deg_to_rad(85.0))
+		
+		# Apply it to the camera
+		x_axis.rotation.x = camera_pitch

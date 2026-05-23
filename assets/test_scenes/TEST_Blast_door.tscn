@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d22s8xwiv7q4s"]
 
-[ext_resource type="PackedScene" uid="uid://dbrlgxusgd5m2" path="res://assets/doors/blast_door.tscn" id="1_krlnm"]
-[ext_resource type="PackedScene" uid="uid://v5kwk5ts0pej" path="res://assets_raw/Hazard_floor-col.glb" id="2_3374c"]
+[ext_resource type="PackedScene" uid="uid://dbrlgxusgd5m2" path="res://assets/doors/blast_door_hazard.tscn" id="1_krlnm"]
+[ext_resource type="PackedScene" uid="uid://dln21h36f1hkg" path="res://assets_raw/Hazard_floor-col.glb" id="2_3374c"]
 [ext_resource type="PackedScene" uid="uid://buioxy5ag4gc6" path="res://scenes/controllers/player.tscn" id="3_hjg48"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_istj1"]

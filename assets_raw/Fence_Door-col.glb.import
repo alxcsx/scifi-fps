@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://br1f3ygnatu80"
-path="res://.godot/imported/Red_Metal_Up_door-col.glb-2660689f94b5f44d02b307baa451f230.scn"
+uid="uid://bcvv71pq8cvp1"
+path="res://.godot/imported/Fence_Door-col.glb-3dd7d6bfc1dfee60f639329bb2229f10.scn"
 
 [deps]
 
-source_file="res://assets_raw/Red_Metal_Up_door-col.glb"
-dest_files=["res://.godot/imported/Red_Metal_Up_door-col.glb-2660689f94b5f44d02b307baa451f230.scn"]
+source_file="res://assets_raw/Fence_Door-col.glb"
+dest_files=["res://.godot/imported/Fence_Door-col.glb-3dd7d6bfc1dfee60f639329bb2229f10.scn"]
 
 [params]
 

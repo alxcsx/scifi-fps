@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsmcoxq2xi4ce"
-path.s3tc="res://.godot/imported/Red_Metal_Down_door-col_1024X1024_TEXTURE_ATLAS.png-e4f26724f80e7e5d64a09446a5be135b.s3tc.ctex"
+uid="uid://vmpj6h82wdtn"
+path.s3tc="res://.godot/imported/Lock_fence_door-col_1024X1024_TEXTURE_ATLAS.png-a1e8e13f5294fd568573462cd9aa63e9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets_raw/Red_Metal_Down_door-col_1024X1024_TEXTURE_ATLAS.png"
-dest_files=["res://.godot/imported/Red_Metal_Down_door-col_1024X1024_TEXTURE_ATLAS.png-e4f26724f80e7e5d64a09446a5be135b.s3tc.ctex"]
+source_file="res://assets_raw/Lock_fence_door-col_1024X1024_TEXTURE_ATLAS.png"
+dest_files=["res://.godot/imported/Lock_fence_door-col_1024X1024_TEXTURE_ATLAS.png-a1e8e13f5294fd568573462cd9aa63e9.s3tc.ctex"]
 
 [params]
 

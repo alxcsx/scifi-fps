@@ -3,16 +3,48 @@ class_name StatusUi
 
 @onready var health_label: Label = $HealthLabel
 @onready var ammo_label: Label = $AmmoLabel
+@onready var hotbar_container: HBoxContainer = $HotbarContainer
+
 @onready var weapons_manager: PlayerWeaponsManager = %WeaponsManager
 @onready var health_manager: HealthManager = %HealthManager
+@onready var inventory: PlayerInventoryManager = %InventoryManager
 
 
 func _ready() -> void:
-  setup_ammo_display()
-  setup_health_display()
+    setup_health_display()
+    setup_ammo_display()
+    setup_hotbar_display()
 
 
-## HEALTH
+## HOTBAR
+func setup_hotbar_display() -> void:
+    if inventory:
+        inventory.active_slot_changed.connect(_on_active_slot_changed)
+        inventory.item_picked_up.connect(_on_item_picked_up)
+        _on_item_picked_up(null)
+        _on_active_slot_changed(inventory.active_slot_index, null)
+
+func _on_active_slot_changed(new_index: int, _item: Item) -> void:
+    for i in range(hotbar_container.get_child_count()):
+        var slot_ui = hotbar_container.get_child(i) as TextureRect
+        
+        if i == new_index:
+            slot_ui.modulate = Color(1.0, 1.0, 1.0, 1.0) # SELECTED COLOR
+        else:
+            slot_ui.modulate = Color(0.4, 0.4, 0.4, 0.8) # Dim grey
+
+func _on_item_picked_up(_item: Item) -> void:
+    # When pick up, redraw all the icons in the slots
+    for i in range(inventory.MAX_SLOTS):
+        var slot_ui = hotbar_container.get_child(i) as TextureRect
+        var inventory_item = inventory.hotbar[i]
+        
+        if inventory_item and inventory_item.icon:
+            slot_ui.texture = inventory_item.icon
+        else:
+            slot_ui.texture = null # Empty slot
+
+## HEALTH & AMMO
 func setup_health_display() -> void:
   if not health_label:
     push_warning("No health label assigned to StatusUi!")
@@ -49,3 +81,7 @@ func _update_ammo_display() -> void:
   var total_ammo := weapons_manager.inventory.get_ammo_count(current_weapon.ammo_type)
 
   ammo_label.text = "%d / %d" % [loaded_ammo, total_ammo]
+
+  if health_manager:
+        health_manager.health_changed.connect(_on_health_changed)
+        _on_health_changed(health_manager.current_health, health_manager.max_health)

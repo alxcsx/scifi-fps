@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://br1f3ygnatu80"
-path="res://.godot/imported/Red_Metal_Up_door-col.glb-2660689f94b5f44d02b307baa451f230.scn"
+uid="uid://byyhadhvmiofl"
+path="res://.godot/imported/Cylinder_hazard_Frame_SQUARE_door-col.glb-3de5932fe19b0315bffd979f846310a0.scn"
 
 [deps]
 
-source_file="res://assets_raw/Red_Metal_Up_door-col.glb"
-dest_files=["res://.godot/imported/Red_Metal_Up_door-col.glb-2660689f94b5f44d02b307baa451f230.scn"]
+source_file="res://assets_raw/Cylinder_hazard_Frame_SQUARE_door-col.glb"
+dest_files=["res://.godot/imported/Cylinder_hazard_Frame_SQUARE_door-col.glb-3de5932fe19b0315bffd979f846310a0.scn"]
 
 [params]
 

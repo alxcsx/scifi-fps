@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://nuwl4uiqrofg"]
+
+[ext_resource type="AnimationLibrary" uid="uid://c31bmfej3govb" path="res://assets/OpennDoor_recoveryfile.res" id="1_c7vqr"]
+[ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_go3yl"]
+[ext_resource type="PackedScene" uid="uid://bo6mhddavl4bv" path="res://assets_raw/Red_Metal_Frame_door-col.glb" id="2_go3yl"]
+[ext_resource type="PackedScene" uid="uid://b0xhsmrciureh" path="res://assets_raw/Red_Metal_Down_door-col.glb" id="3_bvxms"]
+[ext_resource type="PackedScene" uid="uid://br1f3ygnatu80" path="res://assets_raw/Red_Metal_Up_door-col.glb" id="4_mu872"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mv12o"]
+size = Vector3(8, 9, 9)
+
+[node name="BlastDoorRed" type="Node3D" unique_id=204384436 node_paths=PackedStringArray("animation")]
+script = ExtResource("1_go3yl")
+animation = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=628351594]
+libraries/ = ExtResource("1_c7vqr")
+
+[node name="Red_Metal_Frame_door-col2" parent="." unique_id=76542552 instance=ExtResource("2_go3yl")]
+
+[node name="Red_Metal_Down_door-col2" parent="." unique_id=1903204064 instance=ExtResource("3_bvxms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Red_Metal_Up_door-col2" parent="." unique_id=1671334924 instance=ExtResource("4_mu872")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1176136042]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=936277399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4, 0)
+shape = SubResource("BoxShape3D_mv12o")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
