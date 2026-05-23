@@ -24,9 +24,10 @@ func _setup_ai_manager() -> void:
     print_verbose("Enemy has no AIManager! It will not be able to chase the player.")
 
 func _physics_process(delta: float) -> void:
-  super(delta)
+  super._physics_process(delta)
 
-  var horizontal_velocity := Vector3(velocity.x, 0, velocity.z)
+  var raw_velocity := velocity - movement_manager.knockback_velocity
+  var horizontal_velocity := Vector3(raw_velocity.x, 0, raw_velocity.z)
   if horizontal_velocity.length_squared() > 0.1:
     var look_target := global_position + horizontal_velocity
     look_at(look_target, Vector3.UP)

@@ -1,15 +1,60 @@
 [gd_scene format=3 uid="uid://dh65p6lyige1w"]
 
-[ext_resource type="Script" uid="uid://dwvfm13dhgig3" path="res://scripts/player/PlayerWeaponsManager.gd" id="1_md8hi"]
+[ext_resource type="Script" uid="uid://dwvfm13dhgig3" path="res://scripts/entities/player/PlayerWeaponsManager.gd" id="1_md8hi"]
 [ext_resource type="Texture2D" uid="uid://bq2s4kxumv5sy" path="res://textures/placeholders/crosshair003.png" id="2_dwo6c"]
 [ext_resource type="PackedScene" uid="uid://br77up73je7iu" path="res://scenes/weapons/pistol_view.tscn" id="3_dvdhn"]
 [ext_resource type="PackedScene" uid="uid://cfrjlg2gdalui" path="res://scenes/weapons/flashlight_view.tscn" id="4_dwo6c"]
+[ext_resource type="Script" uid="uid://bh2hu60eaifer" path="res://scripts/views/BaseWeaponView.gd" id="4_g1u6t"]
+[ext_resource type="Resource" uid="uid://dcnoxw5o35r4d" path="res://resources/weapons/crowbar.tres" id="4_x1tv1"]
 [ext_resource type="Script" uid="uid://txyuxgeliykh" path="res://scripts/views/FlashLightView.gd" id="5_bquqe"]
 [ext_resource type="Resource" uid="uid://c5liy3lsbp0pp" path="res://resources/weapons/flashlight.tres" id="5_dvdhn"]
+[ext_resource type="Texture2D" uid="uid://c74j3yr5ebyy4" path="res://textures/placeholders/crowbar/crowbar_rect118.png" id="6_u0amr"]
+[ext_resource type="Texture2D" uid="uid://xv6sx4xehy3f" path="res://textures/placeholders/crowbar/crowbar_rect119.png" id="7_y7ny4"]
+[ext_resource type="Texture2D" uid="uid://li3mou0ss3qg" path="res://textures/placeholders/crowbar/crowbar_rect120.png" id="8_kkgjj"]
 
-[node name="WeaponsManager" type="Node" unique_id=1126807396 node_paths=PackedStringArray("ammo_label")]
+[sub_resource type="Animation" id="Animation_g1u6t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_u0amr")]
+}
+
+[sub_resource type="Animation" id="Animation_u0amr"]
+resource_name = "reset"
+
+[sub_resource type="Animation" id="Animation_qqoix"]
+resource_name = "shoot"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_u0amr"), ExtResource("7_y7ny4"), ExtResource("8_kkgjj")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y7ny4"]
+_data = {
+&"RESET": SubResource("Animation_g1u6t"),
+&"reset": SubResource("Animation_u0amr"),
+&"shoot": SubResource("Animation_qqoix")
+}
+
+[node name="WeaponsManager" type="Node" unique_id=1126807396]
 script = ExtResource("1_md8hi")
-ammo_label = NodePath("")
 
 [node name="WeaponsHUD" type="CanvasLayer" parent="." unique_id=111736077]
 
@@ -50,7 +95,35 @@ mouse_filter = 2
 [node name="PistolView" parent="WeaponsHUD/UI_Root/Weapons" unique_id=815802002 instance=ExtResource("3_dvdhn")]
 layout_mode = 1
 
+[node name="CrowbarView" type="Control" parent="WeaponsHUD/UI_Root/Weapons" unique_id=713412632]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_g1u6t")
+weapon_data = ExtResource("4_x1tv1")
+
+[node name="WeaponSprite" type="TextureRect" parent="WeaponsHUD/UI_Root/Weapons/CrowbarView" unique_id=1566008322]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_u0amr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WeaponsHUD/UI_Root/Weapons/CrowbarView" unique_id=445551325]
+root_node = NodePath("../WeaponSprite")
+libraries/ = SubResource("AnimationLibrary_y7ny4")
+
 [node name="Flashlight" parent="WeaponsHUD/UI_Root/Weapons" unique_id=581189973 instance=ExtResource("4_dwo6c")]
 layout_mode = 1
 script = ExtResource("5_bquqe")
 weapon_data = ExtResource("5_dvdhn")
+
+[editable path="WeaponsHUD/UI_Root/Weapons/PistolView"]
