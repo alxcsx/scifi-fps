@@ -49,10 +49,12 @@ func _try_to_shoot() -> void:
 	if burst_timer > 0.0 or fire_timer > 0.0:
 		return
 
-	if weapon.try_use(self) == WeaponItem.UseResult.SUCCESS:
-		_calculate_and_fire()
-	else:
-		reload()
+	match(weapon.try_use(self)):
+		WeaponItem.UseResult.SUCCESS:
+			_calculate_and_fire()
+		var reason:
+			reload()
+			weapon_failed_to_fire.emit(weapon, reason)
 
 func _calculate_and_fire() -> void:
 	shots_in_burst += 1
@@ -69,5 +71,6 @@ func _calculate_and_fire() -> void:
 
 	var spread = deg_to_rad(inaccuracy_degrees)
 	var final_dir = perfect_dir.rotated(Vector3.UP, randf_range(-spread, spread)).rotated(Vector3.RIGHT, randf_range(-spread, spread))
-
+	before_weapon_fired.emit(weapon, origin, final_dir)
 	_execute_combat(origin, final_dir)
+	weapon_fired.emit(weapon, origin, final_dir)
