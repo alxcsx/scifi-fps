@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dmjyqs7aqro33" path="res://scripts/ui/StatusUi.gd" id="6_4p0md"]
 [ext_resource type="Script" uid="uid://cplpx1fqicg5r" path="res://scripts/entities/player/MouseCameraManager.gd" id="7_ota6u"]
 [ext_resource type="Script" uid="uid://ci7fb3r8ilme8" path="res://scripts/entities/player/PlayerVisionRaycast.gd" id="8_iavnn"]
+[ext_resource type="Shader" uid="uid://c0kdepuae4a5u" path="res://scenes/controllers/retro_shader.gdshader" id="9_5i852"]
 [ext_resource type="Texture2D" uid="uid://bq2s4kxumv5sy" path="res://textures/placeholders/crosshair003.png" id="9_buqwd"]
 [ext_resource type="PackedScene" uid="uid://br77up73je7iu" path="res://scenes/weapons/pistol_view.tscn" id="10_5i852"]
 [ext_resource type="PackedScene" uid="uid://cfrjlg2gdalui" path="res://scenes/weapons/flashlight_view.tscn" id="11_q884m"]
@@ -47,6 +48,10 @@ func _unhandled_input(event: InputEvent) -> void:
 "
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q884m"]
+shader = ExtResource("9_5i852")
+shader_parameter/pixel_size = 4
 
 [sub_resource type="LabelSettings" id="LabelSettings_4p0md"]
 font_size = 35
@@ -125,6 +130,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("6_4p0md")
+
+[node name="RetroShader" type="ColorRect" parent="HUD/UI_Root" unique_id=431568738]
+material = SubResource("ShaderMaterial_q884m")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CrossHair" type="TextureRect" parent="HUD/UI_Root" unique_id=921893583]
 unique_name_in_owner = true
