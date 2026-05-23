@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c53r138pffcwu"]
+[gd_scene format=3 uid="uid://bck54o0eh0krk"]
 
 [ext_resource type="Script" uid="uid://bh7whb50yhh3k" path="res://scripts/entities/player/Player.gd" id="1_nc8jt"]
 [ext_resource type="Script" uid="uid://dm870l2w53ue4" path="res://scripts/entities/HealthManager.gd" id="2_iutpa"]
@@ -77,7 +77,6 @@ script = ExtResource("4_gdgnu")
 unique_name_in_owner = true
 player_vision = NodePath("../Pivot/Camera/PlayerVision")
 camera = NodePath("../Pivot/Camera")
-zoom_lerp_speed = 12.0
 
 [node name="MouseCameraManager" type="Node" parent="." unique_id=1278965141 node_paths=PackedStringArray("pivot_node", "base_node")]
 unique_name_in_owner = true

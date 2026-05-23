@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://0npajwc6eiac"
-path="res://.godot/imported/Deprecated_Concrete_Fat_wall-col.glb-3e273299dde782d3ee565e0c0ea55380.scn"
+uid="uid://5va5bbkuiq4a"
+path="res://.godot/imported/Lever.glb-bda9eee615b07ec1b52e82dfd6559eb9.scn"
 
 [deps]
 
-source_file="res://assets_raw/Deprecated_Concrete_Fat_wall-col.glb"
-dest_files=["res://.godot/imported/Deprecated_Concrete_Fat_wall-col.glb-3e273299dde782d3ee565e0c0ea55380.scn"]
+source_file="res://assets_raw/Lever.glb"
+dest_files=["res://.godot/imported/Lever.glb-bda9eee615b07ec1b52e82dfd6559eb9.scn"]
 
 [params]
 

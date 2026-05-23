@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://0npajwc6eiac"
-path="res://.godot/imported/Deprecated_Concrete_Fat_wall-col.glb-3e273299dde782d3ee565e0c0ea55380.scn"
+uid="uid://7w7ky13ss5l"
+path="res://.godot/imported/Red_Hazard_Cylinder_Hallway_TRI_WALL-col.001.glb-a032134756f6af589e2ee34c8bf28607.scn"
 
 [deps]
 
-source_file="res://assets_raw/Deprecated_Concrete_Fat_wall-col.glb"
-dest_files=["res://.godot/imported/Deprecated_Concrete_Fat_wall-col.glb-3e273299dde782d3ee565e0c0ea55380.scn"]
+source_file="res://assets_raw/Red_Hazard_Cylinder_Hallway_TRI_WALL-col.001.glb"
+dest_files=["res://.godot/imported/Red_Hazard_Cylinder_Hallway_TRI_WALL-col.001.glb-a032134756f6af589e2ee34c8bf28607.scn"]
 
 [params]
 

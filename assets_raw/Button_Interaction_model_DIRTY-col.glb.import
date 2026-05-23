@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://0npajwc6eiac"
-path="res://.godot/imported/Deprecated_Concrete_Fat_wall-col.glb-3e273299dde782d3ee565e0c0ea55380.scn"
+uid="uid://djk1g1s1o0hxd"
+path="res://.godot/imported/Button_Interaction_model_DIRTY-col.glb-b84a43e82c1638eb2914c4409f528ae8.scn"
 
 [deps]
 
-source_file="res://assets_raw/Deprecated_Concrete_Fat_wall-col.glb"
-dest_files=["res://.godot/imported/Deprecated_Concrete_Fat_wall-col.glb-3e273299dde782d3ee565e0c0ea55380.scn"]
+source_file="res://assets_raw/Button_Interaction_model_DIRTY-col.glb"
+dest_files=["res://.godot/imported/Button_Interaction_model_DIRTY-col.glb-b84a43e82c1638eb2914c4409f528ae8.scn"]
 
 [params]
 

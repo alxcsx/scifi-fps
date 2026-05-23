@@ -36,8 +36,15 @@ func open_door() -> void:
 
 func close_door() -> void:
 	if state != STATE.CLOSED and animation:
-		animation.queue("Close")
-		state = STATE.CLOSED
+		if trigger_type == TRIGGER.PROXIMITY or not animation.is_playing():
+			animation.queue("Close")
+			state = STATE.CLOSED
+
+func is_open() -> bool:
+	if state == STATE.OPEN:
+		return true
+	else:
+		return false
 
 # Proximity doors --------------------------------------------------------------
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -47,15 +54,3 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if trigger_type == TRIGGER.PROXIMITY:
 		close_door()
-
-# Interact/Locked doors --------------------------------------------------------
-func interact(player_inventory: Array = []) -> void:
-	if trigger_type == TRIGGER.INTERACT:
-		open_door()
-	elif trigger_type == TRIGGER.LOCKED:
-		if required_key in player_inventory:
-			print("Access Granted!")
-			open_door()
-		else:
-			print("Access Denied. Required: ", required_key)
-			# Play error sound/animation
