@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://bm82j8rrewjpk" path="res://scripts/entities/enemy/Enemy.gd" id="1_j1ss0"]
 [ext_resource type="Script" uid="uid://dm870l2w53ue4" path="res://scripts/entities/HealthManager.gd" id="1_sw0xa"]
 [ext_resource type="Texture2D" uid="uid://em05fgdtion7" path="res://textures/placeholders/enemies/Alien_Back_Idle.png" id="3_hxr1d"]
+[ext_resource type="Script" uid="uid://dtpbmu40w4hb7" path="res://scripts/entities/enemy/EnemyWeaponsManager.gd" id="3_sn6ap"]
 [ext_resource type="Texture2D" uid="uid://e6bkdemd77f" path="res://textures/placeholders/enemies/Alien_Back_L.png" id="4_e42xm"]
+[ext_resource type="Resource" uid="uid://dcnoxw5o35r4d" path="res://resources/weapons/crowbar.tres" id="4_p8dd5"]
 [ext_resource type="Script" uid="uid://ylqa4a3k3hac" path="res://scripts/entities/DebugHealthLabel.gd" id="4_vv3x1"]
 [ext_resource type="Texture2D" uid="uid://c60owl5ebavs2" path="res://textures/placeholders/enemies/Alien_Back_R.png" id="5_okkm7"]
 [ext_resource type="Texture2D" uid="uid://xvfxdryugaxs" path="res://textures/placeholders/enemies/Alien_Front_IDLE.png" id="6_sn6ap"]
@@ -80,15 +82,21 @@ subpixel_positioning = 0
 [sub_resource type="SphereShape3D" id="SphereShape3D_okkm7"]
 radius = 20.0
 
-[node name="EnemyBase" type="CharacterBody3D" unique_id=2019205864 groups=["Enemy"]]
+[node name="EnemyBase" type="CharacterBody3D" unique_id=2019205864 node_paths=PackedStringArray("health_manager") groups=["Enemy"]]
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_j1ss0")
+health_manager = NodePath("HealthManager")
 
 [node name="HealthManager" type="Node" parent="." unique_id=1480613007]
 unique_name_in_owner = true
 script = ExtResource("1_sw0xa")
 max_health = 20.0
+
+[node name="WeaponManager" type="Node" parent="." unique_id=1581248395 node_paths=PackedStringArray("sight_raycast")]
+script = ExtResource("3_sn6ap")
+weapon = ExtResource("4_p8dd5")
+sight_raycast = NodePath("../AIManager/SightRayCast")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=868043640 node_paths=PackedStringArray("target_node")]
 unique_name_in_owner = true
