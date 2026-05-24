@@ -124,7 +124,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 256.0
 offset_top = 256.0
-offset_bottom = 0.0073242188
+offset_bottom = 0.0075683594
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_ttg3c")
@@ -137,4 +137,5 @@ libraries/ = SubResource("AnimationLibrary_57y1b")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=478660908]
 position = Vector2(1344, 768)
-volume_db = 15.0
+volume_db = 20.0
+pitch_scale = 2.0

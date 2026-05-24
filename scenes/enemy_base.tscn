@@ -125,11 +125,11 @@ health_manager = NodePath("../HealthManager")
 [node name="AIManager" type="Node3D" parent="." unique_id=320697715]
 unique_name_in_owner = true
 script = ExtResource("14_e42xm")
-move_speed = 2.5
-field_of_view = 180.0
+field_of_view = 360.0
 knockback_friction = 15.0
 
 [node name="DetectableArea" type="Area3D" parent="AIManager" unique_id=730196427]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 collision_layer = 0
 collision_mask = 2
 

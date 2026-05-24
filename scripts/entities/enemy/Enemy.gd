@@ -8,6 +8,8 @@ class_name Enemy
 @onready var ai_manager: ChasingAIManager = get_node_or_null("%AIManager")
 @onready var sprite: DirectionalSprite3D = get_node_or_null("%Sprite")
 
+signal enemy_killed
+
 func _ready() -> void:
   super();
   movement_manager = ai_manager
@@ -43,6 +45,7 @@ func take_damage(payload: HitPayload) -> void:
       ai_manager.investigate(payload.source_position)
 
 func _on_died() -> void:
+  emit_signal("enemy_killed")
   print("Enemy destroyed!")
   _drop_loot()
   queue_free()

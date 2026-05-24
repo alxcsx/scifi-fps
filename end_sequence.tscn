@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://16e63g5sunu3" path="res://assets_raw/Icosphere.glb" id="1_mrpp8"]
 [ext_resource type="PackedScene" uid="uid://cymaks0bd3r2s" path="res://assets_raw/END_TELEPORTER001.001.glb" id="2_k0lwy"]
 [ext_resource type="PackedScene" uid="uid://cuhj2liygfel5" path="res://assets_raw/Tech_floor-col.glb" id="4_452na"]
+[ext_resource type="AudioStream" uid="uid://crwcwgeuyon86" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Ambient/Elevator/Elevator.mp3" id="4_cja2t"]
 [ext_resource type="PackedScene" uid="uid://bw1g8ffv8i6sp" path="res://interact_button.tscn" id="5_cja2t"]
 
 [sub_resource type="Animation" id="Animation_452na"]
@@ -177,6 +178,49 @@ tracks/13/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0, 1, 0.16470589, 1), Color(0, 1, 1, 1), Color(0.5256239, 0.61921823, 0, 1), Color(0.94296974, 0.00029956579, 0.84592146, 1), Color(1, 1, 1, 1)]
 }
+tracks/14/type = "audio"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("AudioStreamPlayer3D")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_cja2t")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_cja2t")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_cja2t")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_cja2t")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_cja2t")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_cja2t")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_cja2t")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_cja2t")
+}],
+"times": PackedFloat32Array(0, 3.2, 6.2, 9.2, 12.2, 14.2, 15.2, 18.4)
+}
+tracks/14/use_blend = true
 
 [sub_resource type="Animation" id="Animation_kluuo"]
 length = 0.001
@@ -1099,3 +1143,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, -8)
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.5, 20, 0)
 linked_door = NodePath("..")
 triggers_win_screen = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=340973841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.5, 0)
+volume_db = 20.0
+max_distance = 100.0

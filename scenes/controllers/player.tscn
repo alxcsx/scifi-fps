@@ -83,6 +83,7 @@ script = ExtResource("2_dqkch")
 
 [node name="WeaponsManager" parent="." unique_id=1126807396 node_paths=PackedStringArray("player_vision", "camera") instance=ExtResource("3_qhqgy")]
 unique_name_in_owner = true
+zoom_lerp_speed = null
 player_vision = NodePath("../Pivot/Camera/PlayerVision")
 camera = NodePath("../Pivot/Camera")
 

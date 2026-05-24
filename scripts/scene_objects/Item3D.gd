@@ -5,8 +5,8 @@ const OUTLINE_MAT = preload("res://assets_raw/OUTLINE.tres")
 
 @export var item_to_give: Item
 
-var float_speed := 2.0
-var float_height := 0.5
+var float_speed := 1.0
+var float_height := 0.25
 
 @onready var start_y: float = global_position.y
 @onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
