@@ -2,12 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bm82j8rrewjpk" path="res://scripts/entities/enemy/Enemy.gd" id="1_j1ss0"]
 [ext_resource type="Script" uid="uid://dm870l2w53ue4" path="res://scripts/entities/HealthManager.gd" id="1_sw0xa"]
-[ext_resource type="Script" path="res://scripts/entities/enemy/EnemyWeaponsManager.gd" id="3_sn6ap"]
+[ext_resource type="Script" uid="uid://dtpbmu40w4hb7" path="res://scripts/entities/enemy/EnemyWeaponsManager.gd" id="3_sn6ap"]
 [ext_resource type="Resource" uid="uid://dcnoxw5o35r4d" path="res://resources/weapons/crowbar.tres" id="4_p8dd5"]
 [ext_resource type="Script" uid="uid://ylqa4a3k3hac" path="res://scripts/entities/DebugHealthLabel.gd" id="4_vv3x1"]
 [ext_resource type="Texture2D" uid="uid://fr21dwohal7i" path="res://SPRITES/laje/2 Sem Título_20260523184818.png" id="5_7t5mr"]
+[ext_resource type="Texture2D" uid="uid://ts2ujye8n8a" path="res://SPRITES/laje/inimigos/verde_back.png" id="5_hxr1d"]
 [ext_resource type="Texture2D" uid="uid://dgg2vir8xmt26" path="res://SPRITES/laje/2 Sem Título_20260523184759.png" id="6_y8vm1"]
 [ext_resource type="Texture2D" uid="uid://bv3kv3831ng21" path="res://SPRITES/laje/2 Sem Título_20260523184809.png" id="7_e2rqu"]
+[ext_resource type="Texture2D" uid="uid://bnhc3ikj48jcp" path="res://SPRITES/laje/inimigos/verde_lado.png" id="9_e42xm"]
+[ext_resource type="Texture2D" uid="uid://bwl2llp86ebcw" path="res://SPRITES/laje/inimigos/verde_lado_l.png" id="10_okkm7"]
+[ext_resource type="Texture2D" uid="uid://dreynsc2it7ya" path="res://SPRITES/laje/inimigos/verde_lado_r.png" id="11_sn6ap"]
 [ext_resource type="AudioStream" uid="uid://e34qni4xexde" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Mobs/Creatures/CreaturesBreath.mp3" id="11_y8vm1"]
 [ext_resource type="Script" uid="uid://dy8bndlychh60" path="res://scripts/entities/DirectionalSprite3D.gd" id="12_6rri4"]
 [ext_resource type="Script" uid="uid://ish4ng6ubupt" path="res://scripts/entities/enemy/ChasingAIManager.gd" id="14_e42xm"]
@@ -16,20 +20,20 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_7t5mr")
+"texture": ExtResource("5_hxr1d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_y8vm1")
+"texture": ExtResource("5_hxr1d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_7t5mr")
+"texture": ExtResource("5_hxr1d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_e2rqu")
+"texture": ExtResource("5_hxr1d")
 }],
 "loop": true,
 "name": &"back",
-"speed": 5.0
+"speed": 2.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -50,20 +54,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_7t5mr")
+"texture": ExtResource("9_e42xm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_y8vm1")
+"texture": ExtResource("10_okkm7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_7t5mr")
+"texture": ExtResource("11_sn6ap")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_e2rqu")
+"texture": ExtResource("9_e42xm")
 }],
 "loop": true,
 "name": &"left",
-"speed": 5.0
+"speed": 2.5
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vv3x1"]
@@ -122,6 +126,7 @@ health_manager = NodePath("../HealthManager")
 unique_name_in_owner = true
 script = ExtResource("14_e42xm")
 move_speed = 1.0
+field_of_view = 120.0
 
 [node name="DetectableArea" type="Area3D" parent="AIManager" unique_id=730196427]
 collision_layer = 0
@@ -129,6 +134,7 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AIManager/DetectableArea" unique_id=137430240]
 shape = SubResource("SphereShape3D_okkm7")
+debug_color = Color(0.92748153, 0.2615253, 0.17295739, 0.41960785)
 
 [node name="SightRayCast" type="RayCast3D" parent="AIManager" unique_id=1282418689 groups=["Enemy"]]
 collision_mask = 3
