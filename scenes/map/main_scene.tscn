@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dq6lfu8nlr8kg"]
+[gd_scene format=3 uid="uid://k2l4cmysqu2m"]
 
 [ext_resource type="Material" uid="uid://cy6j6mhcoopj" path="res://textures/map/triplanar.tres" id="1_0f027"]
 [ext_resource type="Texture2D" uid="uid://bqkp8x3rlsk5u" path="res://textures/map/Reference.png" id="2_2c62f"]

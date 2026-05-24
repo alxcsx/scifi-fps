@@ -10,9 +10,9 @@ signal weapon_unequipped(weapon: WeaponItem)
 
 @onready var player: Player = get_tree().get_first_node_in_group("Player")
 
-@onready var inventory: PlayerInventoryManager = player.get_node("%InventoryManager")
-@onready var crosshair_ui: TextureRect = player.get_node("%CrossHair")
-@onready var weapons_container: Node = player.get_node("%Weapons")
+@onready var inventory: PlayerInventoryManager = player.get_node_or_null("%InventoryManager")
+@onready var crosshair_ui: TextureRect = player.get_node_or_null("%CrossHair")
+@onready var weapons_container: Node = player.get_node_or_null("%Weapons")
 
 var views: Dictionary = {}
 

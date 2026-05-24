@@ -124,6 +124,7 @@ shape = SubResource("CapsuleShape3D_onrkg")
 
 [node name="PauseMenuLayer" type="CanvasLayer" parent="." unique_id=2007476488]
 process_mode = 3
+layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenuLayer" unique_id=813252434]
 anchors_preset = 15
