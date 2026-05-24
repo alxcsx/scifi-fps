@@ -1,11 +1,11 @@
 extends BaseMovementManager
 class_name PlayerMovementManager
 # Constants
-const MAX_SPEED = 10
+const MAX_SPEED = 5
 const MAX_CROUCH_SPEED = 5
 
 const CROUCH_ACCEL = 1.0
-const ACCEL = 2.5
+const ACCEL = 1.5
 const DEACCEL= 16.0
 
 # "Constants" that can be edited from project settings
@@ -27,11 +27,15 @@ func _process_input(player: CharacterBody3D, _delta: float) -> void:
 	crounching_control();
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
 	direction = (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
+	if Input.is_action_just_pressed("jump"):
+		try_jump(player)
 
 func crounching_control():
 	is_crouching = Input.is_action_pressed("crouch")
 
+func try_jump(player: CharacterBody3D) -> void:
+	if player.is_on_floor():
+		player.velocity.y = 5.0
 
 func process_movement(player: CharacterBody3D, delta: float) -> Vector3:
 	var calculated_velocity := player.velocity
@@ -43,7 +47,7 @@ func process_movement(player: CharacterBody3D, delta: float) -> Vector3:
 
 	var target_speed := MAX_CROUCH_SPEED if is_crouching else MAX_SPEED
 	var target_velocity := direction * target_speed
-	
+
 	var current_accel := (CROUCH_ACCEL if is_crouching else ACCEL) * MAX_SPEED
 	var current_friction := DEACCEL * MAX_SPEED
 
