@@ -4,7 +4,7 @@ class_name PlayerWeaponsManager
 signal weapon_equipped(weapon: WeaponItem)
 signal weapon_unequipped(weapon: WeaponItem)
 
-@export var player_vision: PlayerVision 
+@export var player_vision: PlayerVision
 @export var camera: Camera3D
 @export var zoom_lerp_speed: float = 12.0
 
@@ -25,19 +25,19 @@ func _ready() -> void:
 		push_error("No PlayerInventoryManager found! Weapons will not function without it.")
 		queue_free()
 		return
-		
-	if camera == null: 
+
+	if camera == null:
 		camera = player.get_node("%Camera") # Make sure your Camera is %Camera in the Player scene!
-		
+
 	if camera:
 		default_camera_fov = camera.fov
 		weapon_zoom_fov = camera.fov
-		
+
 	if player_vision:
 		player_vision.targeting_enemy.connect(_on_target_enemy)
 
 	inventory.active_slot_changed.connect(_on_active_slot_changed)
-	
+
 	inventory.ammo_changed.connect(
 		func(ammo_type, _new_amount):
 			if current_weapon and ammo_type == current_weapon.ammo_type:
@@ -77,7 +77,7 @@ func _setup_weapon_view(weapon_view: BaseWeaponView) -> void:
 	var ammo_type = weapon_view.weapon_data.ammo_type
 	if not current_loaded_ammo.has(ammo_type):
 		current_loaded_ammo[ammo_type] = weapon_view.weapon_data.magazine_size
-		
+
 	views[weapon_view.weapon_data.weaponType] = weapon_view
 
 func reload() -> void:
@@ -110,18 +110,18 @@ func _unequip_current() -> void:
 		weapon_unequipped.emit(views[current_weapon.weaponType].weapon_data)
 		print("Unequipping weapon: %s" % views[current_weapon.weaponType].name)
 		current_weapon = null
-		
+
 		is_zooming = false
 		weapon_zoom_fov = default_camera_fov
 		if player_vision:
 			player_vision.current_weapon_range = 0.0
 
 func equip_weapon(type: WeaponItem.WeaponType) -> void:
-	if type == WeaponItem.WeaponType.NONE or not views.has(type): 
+	if type == WeaponItem.WeaponType.NONE or not views.has(type):
 		_unequip_current()
 		return
-		
-	if current_weapon and current_weapon.weaponType == type: 
+
+	if current_weapon and current_weapon.weaponType == type:
 		return
 
 	# Clean up the old weapon before pulling out the new one
@@ -134,11 +134,11 @@ func equip_weapon(type: WeaponItem.WeaponType) -> void:
 	# ZOOM
 	weapon_zoom_fov = current_weapon.zoom_fov if current_weapon.zoom_enabled else default_camera_fov
 	is_zooming = false
-	
+
 	# Range Detection
 	if player_vision:
 		player_vision.current_weapon_range = current_weapon.attack_range
-		
+
 	weapon_equipped.emit(current_weapon)
 
 # Signal receiver from the Inventory Manager

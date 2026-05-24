@@ -48,18 +48,20 @@ func _on_died() -> void:
   queue_free()
 
 func _drop_loot() -> void:
-    if not drop_scene or not drop_item:
-        return
-        
-    if randf() > drop_chance:
-        return
-        
-    var loot_instance = drop_scene.instantiate()
-    get_tree().current_scene.add_child(loot_instance)
-    loot_instance.global_position = global_position + Vector3(0, 0.5, 0)
-    
-    if "item_to_give" in loot_instance:
-        loot_instance.item_to_give = drop_item
+  if not drop_scene or not drop_item:
+    return
+
+  if randf() > drop_chance:
+    return
+
+  print("Dropping loot: %s" % drop_item.item_name)
+  var loot_instance = drop_scene.instantiate()
+  get_tree().current_scene.add_child(loot_instance)
+  loot_instance.global_position = global_position + Vector3(0, 0.5, 0)
+  if loot_instance is Item3D:
+    loot_instance.start_y += global_position.y + 0.5
+    loot_instance.item_to_give = drop_item
+    loot_instance.setup()
 
 ## AI
 

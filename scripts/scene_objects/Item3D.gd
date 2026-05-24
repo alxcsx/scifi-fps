@@ -12,6 +12,9 @@ var float_height := 0.5
 @onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
 
 func _ready() -> void:
+	setup()
+
+func setup() -> void:
 	if item_to_give and item_to_give.icon:
 		var frames := SpriteFrames.new()
 		frames.add_animation("idle")
@@ -31,6 +34,6 @@ func interact(player: Node3D) -> void:
 
 func add_outline() -> void:
 	sprite.material_overlay = OUTLINE_MAT
-	
+
 func remove_outline() -> void:
 	sprite.material_overlay = null

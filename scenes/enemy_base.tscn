@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bm82j8rrewjpk" path="res://scripts/entities/enemy/Enemy.gd" id="1_j1ss0"]
 [ext_resource type="Script" uid="uid://dm870l2w53ue4" path="res://scripts/entities/HealthManager.gd" id="1_sw0xa"]
 [ext_resource type="Script" uid="uid://dtpbmu40w4hb7" path="res://scripts/entities/enemy/EnemyWeaponsManager.gd" id="3_sn6ap"]
-[ext_resource type="Resource" uid="uid://dcnoxw5o35r4d" path="res://resources/weapons/crowbar.tres" id="4_p8dd5"]
+[ext_resource type="Resource" uid="uid://vtyyk7f3l6pv" path="res://resources/weapons/enemy_attack.tres" id="4_okkm7"]
 [ext_resource type="Script" uid="uid://ylqa4a3k3hac" path="res://scripts/entities/DebugHealthLabel.gd" id="4_vv3x1"]
 [ext_resource type="Texture2D" uid="uid://fr21dwohal7i" path="res://SPRITES/laje/2 Sem Título_20260523184818.png" id="5_7t5mr"]
 [ext_resource type="Texture2D" uid="uid://ts2ujye8n8a" path="res://SPRITES/laje/inimigos/verde_back.png" id="5_hxr1d"]
@@ -95,7 +95,7 @@ max_health = 20.0
 
 [node name="WeaponManager" type="Node" parent="." unique_id=1581248395 node_paths=PackedStringArray("sight_raycast")]
 script = ExtResource("3_sn6ap")
-weapon = ExtResource("4_p8dd5")
+weapon = ExtResource("4_okkm7")
 sight_raycast = NodePath("../AIManager/SightRayCast")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=868043640 node_paths=PackedStringArray("target_node")]
