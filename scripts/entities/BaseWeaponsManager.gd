@@ -47,7 +47,7 @@ func request_fire() -> void:
   var current_time := Time.get_ticks_msec() / 1000.0
   if current_time - last_fire_time < current_weapon.fire_rate:
     return
-
+    
   match current_weapon.try_use(self):
     WeaponItem.UseResult.SUCCESS:
       last_fire_time = current_time

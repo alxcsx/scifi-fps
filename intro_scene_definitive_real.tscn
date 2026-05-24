@@ -40,7 +40,7 @@
 [ext_resource type="Script" uid="uid://b6g3ghwigtquc" path="res://scripts/resources/WeaponEffects/WeaponEffect.gd" id="37_tcqj4"]
 [ext_resource type="Texture2D" uid="uid://bs0yudkdl4rp0" path="res://SPRITES/laje/pistolita.png" id="38_tk5sl"]
 [ext_resource type="Script" uid="uid://bo4xwaru6jy3j" path="res://scripts/resources/WeaponItem.gd" id="39_ha4y8"]
-[ext_resource type="PackedScene" uid="uid://b4sxldqltqrn2" path="res://scenes/enemy_eye_green.tscn" id="40_tk5sl"]
+[ext_resource type="PackedScene" uid="uid://dxw0gquebh70h" path="res://scenes/enemy_eye_green.tscn" id="40_tk5sl"]
 [ext_resource type="PackedScene" uid="uid://dwm8hnm2vnbrs" path="res://end_sequence.tscn" id="43_k3wxk"]
 
 [sub_resource type="Sky" id="Sky_q3p6o"]
@@ -93,8 +93,8 @@ light_color = Color(2.6470056, 0, 0, 1)
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 75.0
-omni_range = 4.0
-omni_attenuation = 2.0
+omni_range = 6.0
+omni_attenuation = -1.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/LEVEL/START+CENTER/Lights" unique_id=287566061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.650001, 2.8, 1.8000001)
@@ -294,8 +294,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -2.5, 2)
 
 [node name="BlastDoorRed_BUT" parent="NavigationRegion3D/LEVEL/START+CENTER/Doors" unique_id=204384436 instance=ExtResource("11_20v6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.85, -1.8000001, 2)
-initial_state = 0
-trigger_type = 2
+trigger_type = 1
 
 [node name="FenceDoor2" parent="NavigationRegion3D/LEVEL/START+CENTER/Doors" unique_id=719717544 instance=ExtResource("14_o6pme")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 42.7, 0, 11.5)
@@ -318,7 +317,7 @@ required_key_name = ""
 
 [node name="InteractButton_BUTT2" parent="NavigationRegion3D/LEVEL/START+CENTER/Interactables" unique_id=917626421 node_paths=PackedStringArray("linked_door") instance=ExtResource("15_2cu1t")]
 transform = Transform3D(-0.7071066, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071066, 63.90951, 0.19711679, 5)
-linked_door = NodePath("../../Doors/Cylinder_door_BUTT")
+linked_door = NodePath("../../Doors/BlastDoorRed_BUT")
 requires_key = true
 required_key_name = "green_eye_key"
 

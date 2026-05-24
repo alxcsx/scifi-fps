@@ -6,9 +6,11 @@ class_name InteractButton
 @export var requires_key: bool = false
 @export var required_key_name: String = "Red Keycard"
 
+@export_category("Win Condition")
+@export var triggers_win_screen: bool = false
+
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-
 const OUTLINE_MAT = preload("res://assets_raw/OUTLINE.tres")
 
 func apply_material_to_meshes(node: Node, mat: Material) -> void:
@@ -27,7 +29,10 @@ func remove_outline() -> void:
 func interact(player: Node3D) -> void:
   if anim_player and anim_player.has_animation("press"):
     anim_player.queue("press")
-
+  if triggers_win_screen:
+    print("Win button pushed! Initiating sequence...")
+    $WinTimer.start()
+    
   if requires_key:
     var inventory = player.get_node_or_null("%InventoryManager")
     if not inventory: return
@@ -37,10 +42,7 @@ func interact(player: Node3D) -> void:
       print("Console: Authorization Accepted!")
       if linked_door: 
         anim_player.queue("allowed") 
-        if linked_door.is_open():
-          linked_door.close_door()
-        else:
-          linked_door.open_door()
+        linked_door.open_door()
 
     else:
       print("Console: Access Denied. Requires: " + required_key_name)
@@ -54,3 +56,10 @@ func interact(player: Node3D) -> void:
         linked_door.close_door()
       else:
         linked_door.open_door()
+
+
+func _on_win_timer_timeout() -> void:
+    get_tree().paused = false
+    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+    get_tree().change_scene_to_file("res://win_screen.tscn")
+    return

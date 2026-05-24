@@ -1098,3 +1098,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, -8)
 [node name="InteractButton" parent="." unique_id=1475975694 node_paths=PackedStringArray("linked_door") instance=ExtResource("5_cja2t")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.5, 20, 0)
 linked_door = NodePath("..")
+triggers_win_screen = true

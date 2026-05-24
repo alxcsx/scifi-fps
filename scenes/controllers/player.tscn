@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://txyuxgeliykh" path="res://scripts/views/FlashLightView.gd" id="12_rd8t8"]
 [ext_resource type="Resource" uid="uid://c5liy3lsbp0pp" path="res://resources/weapons/flashlight.tres" id="13_8y8yp"]
 [ext_resource type="PackedScene" uid="uid://br1t8qo4lnopp" path="res://scenes/weapons/green_eye_view.tscn" id="15_q884m"]
+[ext_resource type="Script" uid="uid://bh2hu60eaifer" path="res://scripts/views/BaseWeaponView.gd" id="16_rd8t8"]
 
 [sub_resource type="GDScript" id="GDScript_a8rl6"]
 script/source = "extends Node
@@ -121,6 +122,42 @@ spot_angle = 44.42
 [node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=1138739066]
 shape = SubResource("CapsuleShape3D_onrkg")
 
+[node name="PauseMenuLayer" type="CanvasLayer" parent="." unique_id=2007476488]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenuLayer" unique_id=813252434]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuLayer" unique_id=182950408]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="UnpauseButton" type="Button" parent="PauseMenuLayer/VBoxContainer" unique_id=2077632091]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "CONTINUE"
+
+[node name="SettingsButton" type="Button" parent="PauseMenuLayer/VBoxContainer" unique_id=1004970761]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "SETTINGS"
+
+[node name="MainMenuButton" type="Button" parent="PauseMenuLayer/VBoxContainer" unique_id=2012426309]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "MAIN MENU"
+
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1751736324]
 
 [node name="UI_Root" type="Control" parent="HUD" unique_id=965991680]
@@ -207,6 +244,7 @@ weapon_data = ExtResource("13_8y8yp")
 
 [node name="GreenEyeView" parent="HUD/UI_Root/Weapons" unique_id=1902718890 instance=ExtResource("15_q884m")]
 layout_mode = 1
+script = ExtResource("16_rd8t8")
 
 [node name="HotbarContainer" type="HBoxContainer" parent="HUD/UI_Root" unique_id=1576298704]
 modulate = Color(0.17641911, 0.17641908, 0.17641908, 1)
@@ -275,5 +313,9 @@ modulate = Color(0.16924527, 0.1692453, 0.16924527, 1)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 expand_mode = 1
+
+[connection signal="pressed" from="PauseMenuLayer/VBoxContainer/UnpauseButton" to="." method="_on_unpause_button_pressed"]
+[connection signal="pressed" from="PauseMenuLayer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PauseMenuLayer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 
 [editable path="WeaponsManager"]

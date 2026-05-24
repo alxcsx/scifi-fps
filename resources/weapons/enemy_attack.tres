@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://vtyyk7f3l6pv"]
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://b3bv00r30caws"]
 
 [ext_resource type="Script" uid="uid://b6g3ghwigtquc" path="res://scripts/resources/WeaponEffects/WeaponEffect.gd" id="1_jyg7f"]
 [ext_resource type="Script" uid="uid://b313hl63k85oq" path="res://scripts/resources/WeaponEffects/KnockbackEffect.gd" id="2_gv1t1"]
