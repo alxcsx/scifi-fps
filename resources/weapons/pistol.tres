@@ -7,7 +7,6 @@
 [resource]
 script = ExtResource("1_1vsk4")
 weaponType = 1
-damage = 50.0
 fire_rate = 0.85
 starting_ammo = 6
 zoom_fov = 30.0
