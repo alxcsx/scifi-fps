@@ -103,7 +103,7 @@ _data = {
 &"shoot": SubResource("Animation_1mxuq")
 }
 
-[node name="PistolView" type="Control" unique_id=815802002]
+[node name="PistolView" type="Control" unique_id=815802002 node_paths=PackedStringArray("texture", "anim_player", "audio_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,6 +113,9 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_ok3if")
 weapon_data = ExtResource("2_mo4cc")
+texture = NodePath("WeaponSprite")
+anim_player = NodePath("AnimationPlayer")
+audio_player = NodePath("AudioStreamPlayer2D")
 
 [node name="WeaponSprite" type="TextureRect" parent="." unique_id=1566008322]
 layout_mode = 1

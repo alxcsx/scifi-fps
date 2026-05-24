@@ -1,10 +1,10 @@
 extends Control
 class_name BaseWeaponView
 
-@export  var weapon_data  : Item
-@onready var texture			: TextureRect = get_node_or_null("%WeaponSprite")
-@onready var anim_player  : AnimationPlayer = get_node_or_null("$AnimationPlayer")
-@onready var audio_player : AudioStreamPlayer2D = get_node_or_null("$AudioStreamPlayer2D")
+@export var weapon_data  : Item
+@export var texture			: TextureRect
+@export var anim_player  : AnimationPlayer
+@export var audio_player : AudioStreamPlayer2D
 
 func _ready() -> void:
   hide();
@@ -27,9 +27,12 @@ func on_reload():
     await get_tree().process_frame
 
 func play_shoot_effects() -> void:
+  print("Playing shoot effects for %s. Has %s" % weapon_data.item_name, anim_player.get_animation_list())
   if not anim_player: return
   anim_player.stop()
-  if anim_player.has_animation("shoot"): anim_player.play("shoot")
+  if anim_player.has_animation("shoot"):
+    print("has shoot animatino")
+    anim_player.play("shoot")
 
 func play_equip_effects() -> void:
   if not anim_player: return
