@@ -13,7 +13,6 @@ metadata/_custom_type_script = "uid://b313hl63k85oq"
 [resource]
 script = ExtResource("4_m0cg2")
 weaponType = 4
-damage = 4.0
 fire_rate = 1.0
 attack_range = 1.0
 starting_ammo = 0
