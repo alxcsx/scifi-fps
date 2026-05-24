@@ -1,6 +1,10 @@
 extends BaseEntity
 class_name Enemy
 
+@export_category("Loot Drops")
+@export var drop_scene: PackedScene # .tscn
+@export var drop_item: Item # .tres
+@export var drop_chance: float = 1.0
 @onready var ai_manager: ChasingAIManager = get_node_or_null("%AIManager")
 @onready var sprite: DirectionalSprite3D = get_node_or_null("%Sprite")
 
@@ -40,7 +44,22 @@ func take_damage(payload: HitPayload) -> void:
 
 func _on_died() -> void:
   print("Enemy destroyed!")
+  _drop_loot()
   queue_free()
+
+func _drop_loot() -> void:
+    if not drop_scene or not drop_item:
+        return
+        
+    if randf() > drop_chance:
+        return
+        
+    var loot_instance = drop_scene.instantiate()
+    get_tree().current_scene.add_child(loot_instance)
+    loot_instance.global_position = global_position + Vector3(0, 0.5, 0)
+    
+    if "item_to_give" in loot_instance:
+        loot_instance.item_to_give = drop_item
 
 ## AI
 

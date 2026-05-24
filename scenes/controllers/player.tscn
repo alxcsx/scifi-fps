@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cfrjlg2gdalui" path="res://scenes/weapons/flashlight_view.tscn" id="11_q884m"]
 [ext_resource type="Script" uid="uid://txyuxgeliykh" path="res://scripts/views/FlashLightView.gd" id="12_rd8t8"]
 [ext_resource type="Resource" uid="uid://c5liy3lsbp0pp" path="res://resources/weapons/flashlight.tres" id="13_8y8yp"]
+[ext_resource type="PackedScene" uid="uid://br1t8qo4lnopp" path="res://scenes/weapons/green_eye_view.tscn" id="15_q884m"]
 
 [sub_resource type="GDScript" id="GDScript_a8rl6"]
 script/source = "extends Node
@@ -202,6 +203,9 @@ layout_mode = 1
 layout_mode = 1
 script = ExtResource("12_rd8t8")
 weapon_data = ExtResource("13_8y8yp")
+
+[node name="GreenEyeView" parent="HUD/UI_Root/Weapons" unique_id=653004099 instance=ExtResource("15_q884m")]
+layout_mode = 1
 
 [node name="HotbarContainer" type="HBoxContainer" parent="HUD/UI_Root" unique_id=1576298704]
 modulate = Color(0.17641911, 0.17641908, 0.17641908, 1)

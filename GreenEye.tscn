@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d2j1blccqkemh"]
+
+[ext_resource type="Script" uid="uid://bxl5bmegwe25p" path="res://green_eye.gd" id="1_lcrgi"]
+
+[node name="GreenEye" type="Node3D" unique_id=522056158]
+script = ExtResource("1_lcrgi")

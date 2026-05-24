@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="2_mo4cc"]
 [ext_resource type="Texture2D" uid="uid://cmvh1r4i8qsed" path="res://SPRITES/laje/6 Sem Título_20260523184656.png" id="3_ttg3c"]
 [ext_resource type="Texture2D" uid="uid://be7rd18dxkis7" path="res://SPRITES/laje/6 Sem Título_20260523184633.png" id="4_2tb2r"]
+[ext_resource type="AudioStream" uid="uid://d2wwualuvv5ug" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Objects/Gun/RechargeSound.mp3" id="4_a7l2r"]
 [ext_resource type="AudioStream" uid="uid://cbqj1fmyph1rk" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Objects/Gun/GunShot.mp3" id="5_2tb2r"]
 
 [sub_resource type="Animation" id="Animation_k1fdf"]
@@ -35,6 +36,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_2tb2r"]
 resource_name = "reload"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -42,11 +44,26 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(256, 256), Vector2(288, 832), Vector2(256, 256)]
+"values": [Vector2(256, 256), Vector2(288, 832), Vector2(288, 832), Vector2(256, 256)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.36000004,
+"start_offset": 0.0,
+"stream": ExtResource("4_a7l2r")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_1mxuq"]
 resource_name = "shoot"
@@ -104,7 +121,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 256.0
 offset_top = 256.0
-offset_bottom = -0.0009765625
+offset_bottom = 0.007446289
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_ttg3c")
