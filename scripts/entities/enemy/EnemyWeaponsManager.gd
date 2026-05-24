@@ -19,6 +19,9 @@ var fire_timer: float = 0.0
 var burst_timer: float = 0.0
 var shots_in_burst: int = 0
 
+func _get_target_groups() -> Array[String]:
+	return ["Player"]
+
 func _ready() -> void:
 	if not weapon:
 		queue_free()
@@ -36,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	if sight_raycast.is_colliding():
 		var collider := sight_raycast.get_collider()
 		if is_instance_valid(collider) and not collider.is_queued_for_deletion():
-			if collider.has_method("take_damage"):
+			if collider.has_method("take_damage") and collider.is_in_group("Player"):
 				current_target = collider
 				target_acquired.emit(current_target)
 				_try_to_shoot()

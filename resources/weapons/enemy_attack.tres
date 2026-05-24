@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://vtyyk7f3l6pv"]
+
+[ext_resource type="Script" uid="uid://b6g3ghwigtquc" path="res://scripts/resources/WeaponEffects/WeaponEffect.gd" id="1_jyg7f"]
+[ext_resource type="Script" uid="uid://b313hl63k85oq" path="res://scripts/resources/WeaponEffects/KnockbackEffect.gd" id="2_gv1t1"]
+[ext_resource type="Texture2D" uid="uid://w3bh8msy5agx" path="res://textures/placeholders/crowbar/crowbar_icon.png" id="3_e2yuq"]
+[ext_resource type="Script" uid="uid://bo4xwaru6jy3j" path="res://scripts/resources/WeaponItem.gd" id="4_m0cg2"]
+
+[sub_resource type="Resource" id="Resource_7efl8"]
+script = ExtResource("2_gv1t1")
+force = 4.0
+metadata/_custom_type_script = "uid://b313hl63k85oq"
+
+[resource]
+script = ExtResource("4_m0cg2")
+weaponType = 4
+damage = 4.0
+fire_rate = 1.0
+attack_range = 1.0
+starting_ammo = 0
+ammo_type = 0
+ammo_cost = 0
+zoom_enabled = false
+effects = Array[ExtResource("1_jyg7f")]([SubResource("Resource_7efl8")])
+item_name = "Crowbar"
+icon = ExtResource("3_e2yuq")
+metadata/_custom_type_script = "uid://bo4xwaru6jy3j"

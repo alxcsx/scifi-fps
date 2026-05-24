@@ -7,6 +7,7 @@ enum WeaponType {
 	RIFLE,
 	FLASHLIGHT,
 	MELEE,
+	KEY, # temp
 }
 
 enum UseResult {

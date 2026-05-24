@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://bb0iuhe7u07w8"]
+
+[ext_resource type="Script" uid="uid://b6g3ghwigtquc" path="res://scripts/resources/WeaponEffects/WeaponEffect.gd" id="1_mn8ea"]
+[ext_resource type="Script" uid="uid://bo4xwaru6jy3j" path="res://scripts/resources/WeaponItem.gd" id="2_1jicx"]
+[ext_resource type="Texture2D" uid="uid://ctw4bqi482ux0" path="res://SPRITES/laje/3 Sem Título_20260521153729.png" id="4_kl7ay"]
+
+[resource]
+script = ExtResource("2_1jicx")
+weaponType = 5
+damage = 0.0
+fire_rate = 0.0
+attack_range = 0.0
+starting_ammo = 0
+ammo_type = 0
+ammo_cost = 0
+magazine_size = 0
+zoom_enabled = false
+item_name = "green_eye_key"
+icon = ExtResource("4_kl7ay")
+metadata/_custom_type_script = "uid://bo4xwaru6jy3j"
