@@ -204,7 +204,7 @@ layout_mode = 1
 script = ExtResource("12_rd8t8")
 weapon_data = ExtResource("13_8y8yp")
 
-[node name="GreenEyeView" parent="HUD/UI_Root/Weapons" unique_id=653004099 instance=ExtResource("15_q884m")]
+[node name="GreenEyeView" parent="HUD/UI_Root/Weapons" unique_id=1902718890 instance=ExtResource("15_q884m")]
 layout_mode = 1
 
 [node name="HotbarContainer" type="HBoxContainer" parent="HUD/UI_Root" unique_id=1576298704]

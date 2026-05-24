@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ctt5jd3kwpcde" path="res://assets_raw/Dark_Concrete_floor-col.glb" id="6_yb7sx"]
 [ext_resource type="PackedScene" uid="uid://cnl3fat5kpckc" path="res://assets_raw/Red_Metal_Diagonal _structure-col.glb" id="7_w67uu"]
 [ext_resource type="PackedScene" uid="uid://dbrlgxusgd5m2" path="res://assets/doors/blast_door_hazard.tscn" id="8_gp0gd"]
+[ext_resource type="Resource" uid="uid://caq4ql0j4kocw" path="res://resources/ammo/bullets.tres" id="8_ha4y8"]
 [ext_resource type="PackedScene" uid="uid://f46yx7sa5yct" path="res://interact_lever.tscn" id="8_s1kld"]
 [ext_resource type="PackedScene" uid="uid://byyhadhvmiofl" path="res://assets_raw/Cylinder_hazard_Frame_SQUARE_door-col.glb" id="9_ea7a5"]
 [ext_resource type="PackedScene" uid="uid://c2rtwe6wikfca" path="res://assets_raw/Deprecated_Concrete_Flat_wall-col.glb" id="10_s1kld"]
@@ -40,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://bs0yudkdl4rp0" path="res://SPRITES/laje/pistolita.png" id="38_tk5sl"]
 [ext_resource type="Script" uid="uid://bo4xwaru6jy3j" path="res://scripts/resources/WeaponItem.gd" id="39_ha4y8"]
 [ext_resource type="PackedScene" uid="uid://b4sxldqltqrn2" path="res://scenes/enemy_eye_green.tscn" id="40_tk5sl"]
-[ext_resource type="Resource" uid="uid://bb0iuhe7u07w8" path="res://resources/weapons/gree_eye.tres" id="41_ha4y8"]
+[ext_resource type="PackedScene" uid="uid://dwm8hnm2vnbrs" path="res://end_sequence.tscn" id="43_k3wxk"]
 
 [sub_resource type="Sky" id="Sky_q3p6o"]
 
@@ -293,10 +294,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -2.5, 2)
 
 [node name="BlastDoorRed_BUT" parent="NavigationRegion3D/LEVEL/START+CENTER/Doors" unique_id=204384436 instance=ExtResource("11_20v6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.85, -1.8000001, 2)
+initial_state = 0
 trigger_type = 2
 
 [node name="FenceDoor2" parent="NavigationRegion3D/LEVEL/START+CENTER/Doors" unique_id=719717544 instance=ExtResource("14_o6pme")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 42.7, 0, 11.5)
+
+[node name="AMMO" parent="NavigationRegion3D/LEVEL/START+CENTER/Doors" unique_id=498381206 instance=ExtResource("36_itb77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 2, 40.5)
+item_to_give = ExtResource("8_ha4y8")
+
+[node name="AMMO2" parent="NavigationRegion3D/LEVEL/START+CENTER/Doors" unique_id=1718659197 instance=ExtResource("36_itb77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, -3, 40)
+item_to_give = ExtResource("8_ha4y8")
+metadata/_edit_group_ = true
 
 [node name="Interactables" type="Node3D" parent="NavigationRegion3D/LEVEL/START+CENTER" unique_id=798983655]
 
@@ -7059,7 +7070,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, -34.5, 49.5)
 [node name="Plane3" parent="." unique_id=1418047174 instance=ExtResource("34_2m6i5")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1.3, 0, 1, -5.6824803e-08, 33.5, -20.5, 34.5)
 
-[node name="Revolver" parent="." unique_id=498381206 instance=ExtResource("36_itb77")]
+[node name="Revolver" parent="." unique_id=1328760768 instance=ExtResource("36_itb77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 2, 31.25)
 item_to_give = SubResource("Resource_tk5sl")
 
@@ -7121,5 +7132,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 1.5, 38)
 
 [node name="EnemyBase17" parent="." unique_id=1288825819 instance=ExtResource("40_tk5sl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, -2.5, 54.85)
-drop_scene = ExtResource("40_tk5sl")
-drop_item = ExtResource("41_ha4y8")
+
+[node name="END_SEQUENCE" parent="." unique_id=1357177391 instance=ExtResource("43_k3wxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.5, -21.5, 2.15)

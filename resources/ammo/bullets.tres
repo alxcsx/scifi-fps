@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_0gyap")
+amount = 6
 item_name = "Bullets"
 icon = ExtResource("1_4ws6o")
 metadata/_custom_type_script = "uid://b4m6knhom7fdn"

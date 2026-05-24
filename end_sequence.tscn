@@ -1,0 +1,1100 @@
+[gd_scene format=3 uid="uid://dwm8hnm2vnbrs"]
+
+[ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_452na"]
+[ext_resource type="PackedScene" uid="uid://16e63g5sunu3" path="res://assets_raw/Icosphere.glb" id="1_mrpp8"]
+[ext_resource type="PackedScene" uid="uid://cymaks0bd3r2s" path="res://assets_raw/END_TELEPORTER001.001.glb" id="2_k0lwy"]
+[ext_resource type="PackedScene" uid="uid://cuhj2liygfel5" path="res://assets_raw/Tech_floor-col.glb" id="4_452na"]
+[ext_resource type="PackedScene" uid="uid://bw1g8ffv8i6sp" path="res://interact_button.tscn" id="5_cja2t"]
+
+[sub_resource type="Animation" id="Animation_452na"]
+resource_name = "Open"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("END_TELEPORTER001_0012:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.016666668, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("END_TELEPORTER001_0013:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.016666668, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("END_TELEPORTER001_0015:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.016666668, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("END_TELEPORTER001_0016:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.016666668, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("END_TELEPORTER001_0017:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("END_TELEPORTER001_0018:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("END_TELEPORTER001_0019:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("END_TELEPORTER001_0020:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("END_TELEPORTER001_0021:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("END_TELEPORTER001_0022:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("END_TELEPORTER001_0023:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("OmniLight3D:omni_range")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [125.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("OmniLight3D:omni_attenuation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, -1.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("OmniLight3D:light_color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 5, 10, 15, 18, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 1, 0.16470589, 1), Color(0, 1, 1, 1), Color(0.5256239, 0.61921823, 0, 1), Color(0.94296974, 0.00029956579, 0.84592146, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kluuo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("END_TELEPORTER001_0012:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("END_TELEPORTER001_0013:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("END_TELEPORTER001_0015:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("END_TELEPORTER001_0016:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("END_TELEPORTER001_0017:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("END_TELEPORTER001_0018:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("END_TELEPORTER001_0019:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("END_TELEPORTER001_0020:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("END_TELEPORTER001_0021:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("END_TELEPORTER001_0022:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("END_TELEPORTER001_0023:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("OmniLight3D:omni_range")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [125.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("OmniLight3D:omni_attenuation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("OmniLight3D:light_color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cja2t"]
+_data = {
+&"Open": SubResource("Animation_452na"),
+&"RESET": SubResource("Animation_kluuo")
+}
+
+[node name="END_SEQUENCE" type="Node3D" unique_id=1357177391 node_paths=PackedStringArray("animation")]
+script = ExtResource("1_452na")
+trigger_type = 1
+animation = NodePath("AnimationPlayer")
+
+[node name="Icosphere2" parent="." unique_id=1172040262 instance=ExtResource("1_mrpp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 21, 0)
+
+[node name="END_TELEPORTER001_0012" parent="." unique_id=613888452 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 9.5, -0.5)
+
+[node name="END_TELEPORTER001_0013" parent="." unique_id=1246062943 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 14, -0.5)
+
+[node name="END_TELEPORTER001_0015" parent="." unique_id=181511191 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 22, -0.5)
+
+[node name="END_TELEPORTER001_0016" parent="." unique_id=924830844 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 22, -0.5)
+
+[node name="END_TELEPORTER001_0017" parent="." unique_id=1842933932 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 27, -0.5)
+
+[node name="END_TELEPORTER001_0018" parent="." unique_id=736902176 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 30.5, -0.5)
+
+[node name="END_TELEPORTER001_0019" parent="." unique_id=517234560 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 33.5, -0.5)
+
+[node name="END_TELEPORTER001_0020" parent="." unique_id=263961320 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, 37.5, -0.5)
+
+[node name="END_TELEPORTER001_0021" parent="." unique_id=536238525 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.512, 0, 0, 0, 0.512, 0, 0, 0, 0.512, 0, 41, -0.5)
+
+[node name="END_TELEPORTER001_0022" parent="." unique_id=974710160 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.256, 0, 0, 0, 0.256, 0, 0, 0, 0.256, 0, 42, -0.5)
+
+[node name="END_TELEPORTER001_0023" parent="." unique_id=1368116452 instance=ExtResource("2_k0lwy")]
+transform = Transform3D(0.128, 0, 0, 0, 0.128, 0, 0, 0, 0.128, 0, 44.5, -0.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1752678894]
+libraries/ = SubResource("AnimationLibrary_cja2t")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1426246210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 40.5, -0.3)
+omni_range = 125.0
+
+[node name="Floor" type="Node3D" parent="." unique_id=1299926860]
+
+[node name="Tech_floor-col2" parent="Floor" unique_id=960823987 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 19.75, 2)
+
+[node name="Tech_floor-col3" parent="Floor" unique_id=1568098732 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 19.75, 0)
+
+[node name="Tech_floor-col4" parent="Floor" unique_id=1323711369 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 19.75, -2)
+
+[node name="Tech_floor-col5" parent="Floor" unique_id=490746627 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 19.75, -4)
+
+[node name="Tech_floor-col6" parent="Floor" unique_id=1537239357 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 19.75, -6)
+
+[node name="Tech_floor-col7" parent="Floor" unique_id=627386308 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 19.75, 4)
+
+[node name="Tech_floor-col10" parent="Floor" unique_id=1850753263 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 19.75, 2)
+
+[node name="Tech_floor-col11" parent="Floor" unique_id=822364941 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 19.75, 0)
+
+[node name="Tech_floor-col12" parent="Floor" unique_id=1015560537 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 19.75, -2)
+
+[node name="Tech_floor-col13" parent="Floor" unique_id=1604519794 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 19.75, -4)
+
+[node name="Tech_floor-col14" parent="Floor" unique_id=727434385 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 19.75, -6)
+
+[node name="Tech_floor-col15" parent="Floor" unique_id=323236472 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 19.75, 4)
+
+[node name="Tech_floor-col8" parent="Floor" unique_id=1411902567 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 19.75, 6)
+
+[node name="Tech_floor-col9" parent="Floor" unique_id=1594731671 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 19.75, 6)
+
+[node name="Tech_floor-col16" parent="Floor" unique_id=957012033 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 19.75, 2)
+
+[node name="Tech_floor-col17" parent="Floor" unique_id=398905143 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 19.75, 0)
+
+[node name="Tech_floor-col18" parent="Floor" unique_id=509386556 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 19.75, -2)
+
+[node name="Tech_floor-col19" parent="Floor" unique_id=1571926571 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 19.75, -4)
+
+[node name="Tech_floor-col20" parent="Floor" unique_id=1957179562 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 19.75, -6)
+
+[node name="Tech_floor-col21" parent="Floor" unique_id=1422702681 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 19.75, 4)
+
+[node name="Tech_floor-col22" parent="Floor" unique_id=670069333 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 19.75, 2)
+
+[node name="Tech_floor-col23" parent="Floor" unique_id=459327514 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 19.75, 0)
+
+[node name="Tech_floor-col24" parent="Floor" unique_id=914774011 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 19.75, -2)
+
+[node name="Tech_floor-col25" parent="Floor" unique_id=1173697602 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 19.75, -4)
+
+[node name="Tech_floor-col26" parent="Floor" unique_id=607112795 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 19.75, -6)
+
+[node name="Tech_floor-col27" parent="Floor" unique_id=483462931 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 19.75, 4)
+
+[node name="Tech_floor-col28" parent="Floor" unique_id=2126676173 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 19.75, 6)
+
+[node name="Tech_floor-col29" parent="Floor" unique_id=1504866218 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 19.75, 6)
+
+[node name="Tech_floor-col30" parent="Floor" unique_id=986828212 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 19.75, 2)
+
+[node name="Tech_floor-col31" parent="Floor" unique_id=1673075270 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 19.75, 0)
+
+[node name="Tech_floor-col32" parent="Floor" unique_id=287156745 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 19.75, -2)
+
+[node name="Tech_floor-col33" parent="Floor" unique_id=614634811 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 19.75, -4)
+
+[node name="Tech_floor-col34" parent="Floor" unique_id=837723062 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 19.75, -6)
+
+[node name="Tech_floor-col35" parent="Floor" unique_id=84305778 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 19.75, 4)
+
+[node name="Tech_floor-col36" parent="Floor" unique_id=987989481 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 19.75, 2)
+
+[node name="Tech_floor-col37" parent="Floor" unique_id=1738286416 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 19.75, 0)
+
+[node name="Tech_floor-col38" parent="Floor" unique_id=1882357945 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 19.75, -2)
+
+[node name="Tech_floor-col39" parent="Floor" unique_id=433853917 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 19.75, -4)
+
+[node name="Tech_floor-col40" parent="Floor" unique_id=858769947 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 19.75, -6)
+
+[node name="Tech_floor-col41" parent="Floor" unique_id=1142285555 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 19.75, 4)
+
+[node name="Tech_floor-col42" parent="Floor" unique_id=1654713005 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 19.75, 6)
+
+[node name="Tech_floor-col43" parent="Floor" unique_id=1036026792 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 19.75, 6)
+
+[node name="Tech_floor-col44" parent="Floor" unique_id=1518036512 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 19.75, 2)
+
+[node name="Tech_floor-col45" parent="Floor" unique_id=993411647 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 19.75, 0)
+
+[node name="Tech_floor-col46" parent="Floor" unique_id=640329991 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 19.75, -2)
+
+[node name="Tech_floor-col47" parent="Floor" unique_id=1117950247 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 19.75, -4)
+
+[node name="Tech_floor-col48" parent="Floor" unique_id=1833591871 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 19.75, -6)
+
+[node name="Tech_floor-col49" parent="Floor" unique_id=1120452334 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 19.75, 4)
+
+[node name="Tech_floor-col50" parent="Floor" unique_id=422846690 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, 2)
+
+[node name="Tech_floor-col51" parent="Floor" unique_id=1710083392 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, 0)
+
+[node name="Tech_floor-col52" parent="Floor" unique_id=1927039636 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, -2)
+
+[node name="Tech_floor-col53" parent="Floor" unique_id=1574816158 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, -4)
+
+[node name="Tech_floor-col54" parent="Floor" unique_id=1929897286 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, -6)
+
+[node name="Tech_floor-col55" parent="Floor" unique_id=1713014237 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, 4)
+
+[node name="Tech_floor-col56" parent="Floor" unique_id=665484322 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 19.75, 6)
+
+[node name="Tech_floor-col57" parent="Floor" unique_id=1666828631 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, 6)
+
+[node name="Tech_floor-col58" parent="Floor" unique_id=180313621 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, 2)
+
+[node name="Tech_floor-col59" parent="Floor" unique_id=579407176 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, 0)
+
+[node name="Tech_floor-col60" parent="Floor" unique_id=1049211863 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, -2)
+
+[node name="Tech_floor-col61" parent="Floor" unique_id=2136377088 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, -4)
+
+[node name="Tech_floor-col62" parent="Floor" unique_id=330778755 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, -6)
+
+[node name="Tech_floor-col63" parent="Floor" unique_id=986458919 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, 4)
+
+[node name="Tech_floor-col64" parent="Floor" unique_id=133416670 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 19.75, 2)
+
+[node name="Tech_floor-col65" parent="Floor" unique_id=1467923214 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 19.75, 0)
+
+[node name="Tech_floor-col66" parent="Floor" unique_id=1460736122 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 19.75, -2)
+
+[node name="Tech_floor-col67" parent="Floor" unique_id=1331488951 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 19.75, -4)
+
+[node name="Tech_floor-col68" parent="Floor" unique_id=673971038 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 19.75, -6)
+
+[node name="Tech_floor-col69" parent="Floor" unique_id=397025854 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 19.75, 4)
+
+[node name="Tech_floor-col70" parent="Floor" unique_id=104667499 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, 6)
+
+[node name="Tech_floor-col71" parent="Floor" unique_id=1079424151 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 19.75, 6)
+
+[node name="Tech_floor-col72" parent="Floor" unique_id=52007044 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 19.75, 2)
+
+[node name="Tech_floor-col73" parent="Floor" unique_id=1687906887 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 19.75, 0)
+
+[node name="Tech_floor-col74" parent="Floor" unique_id=1669642503 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 19.75, -2)
+
+[node name="Tech_floor-col75" parent="Floor" unique_id=80279082 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 19.75, -4)
+
+[node name="Tech_floor-col76" parent="Floor" unique_id=1066999837 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 19.75, -6)
+
+[node name="Tech_floor-col77" parent="Floor" unique_id=31547187 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 19.75, 4)
+
+[node name="Tech_floor-col78" parent="Floor" unique_id=88125613 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 19.75, 2)
+
+[node name="Tech_floor-col79" parent="Floor" unique_id=1349611604 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 19.75, 0)
+
+[node name="Tech_floor-col80" parent="Floor" unique_id=548466456 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 19.75, -2)
+
+[node name="Tech_floor-col81" parent="Floor" unique_id=502430283 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 19.75, -4)
+
+[node name="Tech_floor-col82" parent="Floor" unique_id=1233865293 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 19.75, -6)
+
+[node name="Tech_floor-col83" parent="Floor" unique_id=204952249 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 19.75, 4)
+
+[node name="Tech_floor-col84" parent="Floor" unique_id=1485730133 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 19.75, 6)
+
+[node name="Tech_floor-col85" parent="Floor" unique_id=939189227 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 19.75, 6)
+
+[node name="Tech_floor-col86" parent="Floor" unique_id=178516893 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.75, 2)
+
+[node name="Tech_floor-col87" parent="Floor" unique_id=485574794 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.75, 0)
+
+[node name="Tech_floor-col88" parent="Floor" unique_id=1188497382 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.75, -2)
+
+[node name="Tech_floor-col89" parent="Floor" unique_id=213558975 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.75, -4)
+
+[node name="Tech_floor-col90" parent="Floor" unique_id=79877958 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.75, -6)
+
+[node name="Tech_floor-col91" parent="Floor" unique_id=44539706 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.75, 4)
+
+[node name="Tech_floor-col92" parent="Floor" unique_id=971720404 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 19.75, 2)
+
+[node name="Tech_floor-col93" parent="Floor" unique_id=1318448909 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 19.75, 0)
+
+[node name="Tech_floor-col94" parent="Floor" unique_id=31576482 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 19.75, -2)
+
+[node name="Tech_floor-col95" parent="Floor" unique_id=281963061 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 19.75, -4)
+
+[node name="Tech_floor-col96" parent="Floor" unique_id=1554207087 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 19.75, -6)
+
+[node name="Tech_floor-col97" parent="Floor" unique_id=1395261768 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 19.75, 4)
+
+[node name="Tech_floor-col98" parent="Floor" unique_id=348470105 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.75, 6)
+
+[node name="Tech_floor-col99" parent="Floor" unique_id=405805674 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 19.75, 6)
+
+[node name="Tech_floor-col100" parent="Floor" unique_id=1357375434 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 19.75, 2)
+
+[node name="Tech_floor-col101" parent="Floor" unique_id=1222589934 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 19.75, 0)
+
+[node name="Tech_floor-col102" parent="Floor" unique_id=39653637 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 19.75, -2)
+
+[node name="Tech_floor-col103" parent="Floor" unique_id=1451782338 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 19.75, -4)
+
+[node name="Tech_floor-col104" parent="Floor" unique_id=557550108 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 19.75, -6)
+
+[node name="Tech_floor-col105" parent="Floor" unique_id=330345388 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 19.75, 4)
+
+[node name="Tech_floor-col106" parent="Floor" unique_id=449968040 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 19.75, 2)
+
+[node name="Tech_floor-col107" parent="Floor" unique_id=987683523 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 19.75, 0)
+
+[node name="Tech_floor-col108" parent="Floor" unique_id=151580269 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 19.75, -2)
+
+[node name="Tech_floor-col109" parent="Floor" unique_id=882848057 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 19.75, -4)
+
+[node name="Tech_floor-col110" parent="Floor" unique_id=207565695 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 19.75, -6)
+
+[node name="Tech_floor-col111" parent="Floor" unique_id=1417648668 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 19.75, 4)
+
+[node name="Tech_floor-col112" parent="Floor" unique_id=11133196 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 19.75, 6)
+
+[node name="Tech_floor-col113" parent="Floor" unique_id=802954368 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 19.75, 6)
+
+[node name="Tech_floor-col114" parent="Floor" unique_id=1083222909 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 19.75, 2)
+
+[node name="Tech_floor-col115" parent="Floor" unique_id=1485751733 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 19.75, 0)
+
+[node name="Tech_floor-col116" parent="Floor" unique_id=863893680 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 19.75, -2)
+
+[node name="Tech_floor-col117" parent="Floor" unique_id=1687857380 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 19.75, -4)
+
+[node name="Tech_floor-col118" parent="Floor" unique_id=1372290751 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 19.75, -6)
+
+[node name="Tech_floor-col119" parent="Floor" unique_id=2103900662 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 19.75, 4)
+
+[node name="Tech_floor-col120" parent="Floor" unique_id=437221167 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 19.75, 2)
+
+[node name="Tech_floor-col121" parent="Floor" unique_id=9214960 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 19.75, 0)
+
+[node name="Tech_floor-col122" parent="Floor" unique_id=1894705751 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 19.75, -2)
+
+[node name="Tech_floor-col123" parent="Floor" unique_id=286253007 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 19.75, -4)
+
+[node name="Tech_floor-col124" parent="Floor" unique_id=471380480 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 19.75, -6)
+
+[node name="Tech_floor-col125" parent="Floor" unique_id=1375265462 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 19.75, 4)
+
+[node name="Tech_floor-col126" parent="Floor" unique_id=112741665 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 19.75, 6)
+
+[node name="Tech_floor-col127" parent="Floor" unique_id=1201214138 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 19.75, 6)
+
+[node name="Tech_floor-col128" parent="Floor" unique_id=1784064911 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 19.75, 2)
+
+[node name="Tech_floor-col129" parent="Floor" unique_id=1111429258 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 19.75, 0)
+
+[node name="Tech_floor-col130" parent="Floor" unique_id=1144476342 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 19.75, -2)
+
+[node name="Tech_floor-col131" parent="Floor" unique_id=54553067 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 19.75, -4)
+
+[node name="Tech_floor-col132" parent="Floor" unique_id=664404793 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 19.75, -6)
+
+[node name="Tech_floor-col133" parent="Floor" unique_id=1622184454 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 19.75, 4)
+
+[node name="Tech_floor-col134" parent="Floor" unique_id=148873618 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 19.75, 2)
+
+[node name="Tech_floor-col135" parent="Floor" unique_id=1943462982 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 19.75, 0)
+
+[node name="Tech_floor-col136" parent="Floor" unique_id=413018698 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 19.75, -2)
+
+[node name="Tech_floor-col137" parent="Floor" unique_id=704252721 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 19.75, -4)
+
+[node name="Tech_floor-col138" parent="Floor" unique_id=1345739293 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 19.75, -6)
+
+[node name="Tech_floor-col139" parent="Floor" unique_id=1885384470 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 19.75, 4)
+
+[node name="Tech_floor-col140" parent="Floor" unique_id=2023670356 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 19.75, 6)
+
+[node name="Tech_floor-col141" parent="Floor" unique_id=131996600 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 19.75, 6)
+
+[node name="Tech_floor-col142" parent="Floor" unique_id=681354251 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 19.75, 2)
+
+[node name="Tech_floor-col143" parent="Floor" unique_id=1375257626 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 19.75, 0)
+
+[node name="Tech_floor-col144" parent="Floor" unique_id=130902209 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 19.75, -2)
+
+[node name="Tech_floor-col145" parent="Floor" unique_id=135552701 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 19.75, -4)
+
+[node name="Tech_floor-col146" parent="Floor" unique_id=603492165 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 19.75, -6)
+
+[node name="Tech_floor-col147" parent="Floor" unique_id=898381571 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 19.75, 4)
+
+[node name="Tech_floor-col148" parent="Floor" unique_id=1516914170 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 19.75, 2)
+
+[node name="Tech_floor-col149" parent="Floor" unique_id=250323542 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 19.75, 0)
+
+[node name="Tech_floor-col150" parent="Floor" unique_id=1726874669 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 19.75, -2)
+
+[node name="Tech_floor-col151" parent="Floor" unique_id=1094285305 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 19.75, -4)
+
+[node name="Tech_floor-col152" parent="Floor" unique_id=1569592382 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 19.75, -6)
+
+[node name="Tech_floor-col153" parent="Floor" unique_id=882322685 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 19.75, 4)
+
+[node name="Tech_floor-col154" parent="Floor" unique_id=1091698983 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 19.75, 6)
+
+[node name="Tech_floor-col155" parent="Floor" unique_id=1408326272 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 19.75, 6)
+
+[node name="Tech_floor-col156" parent="Floor" unique_id=506308090 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 19.75, 2)
+
+[node name="Tech_floor-col157" parent="Floor" unique_id=918933195 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 19.75, 0)
+
+[node name="Tech_floor-col158" parent="Floor" unique_id=1815449955 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 19.75, -2)
+
+[node name="Tech_floor-col159" parent="Floor" unique_id=1849978459 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 19.75, -4)
+
+[node name="Tech_floor-col160" parent="Floor" unique_id=1722527104 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 19.75, -6)
+
+[node name="Tech_floor-col161" parent="Floor" unique_id=24975653 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 19.75, 4)
+
+[node name="Tech_floor-col162" parent="Floor" unique_id=1621270776 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 19.75, 2)
+
+[node name="Tech_floor-col163" parent="Floor" unique_id=1183958903 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 19.75, 0)
+
+[node name="Tech_floor-col164" parent="Floor" unique_id=1204960919 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 19.75, -2)
+
+[node name="Tech_floor-col165" parent="Floor" unique_id=883367538 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 19.75, -4)
+
+[node name="Tech_floor-col166" parent="Floor" unique_id=1887266520 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 19.75, -6)
+
+[node name="Tech_floor-col167" parent="Floor" unique_id=919637663 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 19.75, 4)
+
+[node name="Tech_floor-col168" parent="Floor" unique_id=1946410957 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 19.75, 6)
+
+[node name="Tech_floor-col169" parent="Floor" unique_id=1706794086 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 19.75, 6)
+
+[node name="Tech_floor-col170" parent="Floor" unique_id=305626129 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 19.75, 2)
+
+[node name="Tech_floor-col171" parent="Floor" unique_id=569648619 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 19.75, 0)
+
+[node name="Tech_floor-col172" parent="Floor" unique_id=487153543 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 19.75, -2)
+
+[node name="Tech_floor-col173" parent="Floor" unique_id=1096046179 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 19.75, -4)
+
+[node name="Tech_floor-col174" parent="Floor" unique_id=2100338721 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 19.75, -6)
+
+[node name="Tech_floor-col175" parent="Floor" unique_id=126696155 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 19.75, 4)
+
+[node name="Tech_floor-col176" parent="Floor" unique_id=944145380 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, 2)
+
+[node name="Tech_floor-col177" parent="Floor" unique_id=1228819387 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, 0)
+
+[node name="Tech_floor-col178" parent="Floor" unique_id=915427899 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, -2)
+
+[node name="Tech_floor-col179" parent="Floor" unique_id=1477419560 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, -4)
+
+[node name="Tech_floor-col180" parent="Floor" unique_id=1034593462 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, -6)
+
+[node name="Tech_floor-col181" parent="Floor" unique_id=1526446406 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, 4)
+
+[node name="Tech_floor-col182" parent="Floor" unique_id=2006388105 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 19.75, 6)
+
+[node name="Tech_floor-col183" parent="Floor" unique_id=1079629274 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, 6)
+
+[node name="Tech_floor-col184" parent="Floor" unique_id=1875186291 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 19.75, 8)
+
+[node name="Tech_floor-col185" parent="Floor" unique_id=2040647283 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 19.75, 8)
+
+[node name="Tech_floor-col186" parent="Floor" unique_id=1813200521 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 19.75, 8)
+
+[node name="Tech_floor-col187" parent="Floor" unique_id=1644944511 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 19.75, 8)
+
+[node name="Tech_floor-col188" parent="Floor" unique_id=941788496 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 19.75, 8)
+
+[node name="Tech_floor-col189" parent="Floor" unique_id=1380845918 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 19.75, 8)
+
+[node name="Tech_floor-col190" parent="Floor" unique_id=1649230681 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 19.75, 8)
+
+[node name="Tech_floor-col191" parent="Floor" unique_id=1577749324 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, 8)
+
+[node name="Tech_floor-col192" parent="Floor" unique_id=2066669164 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 19.75, 8)
+
+[node name="Tech_floor-col193" parent="Floor" unique_id=1449108646 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 19.75, 8)
+
+[node name="Tech_floor-col194" parent="Floor" unique_id=245649951 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 19.75, 8)
+
+[node name="Tech_floor-col195" parent="Floor" unique_id=1418985365 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.75, 8)
+
+[node name="Tech_floor-col196" parent="Floor" unique_id=1178598047 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 19.75, 8)
+
+[node name="Tech_floor-col197" parent="Floor" unique_id=710513143 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 19.75, 8)
+
+[node name="Tech_floor-col198" parent="Floor" unique_id=1313647739 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 19.75, 8)
+
+[node name="Tech_floor-col199" parent="Floor" unique_id=1584502052 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 19.75, 8)
+
+[node name="Tech_floor-col200" parent="Floor" unique_id=1424330599 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 19.75, 8)
+
+[node name="Tech_floor-col201" parent="Floor" unique_id=1471106426 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 19.75, 8)
+
+[node name="Tech_floor-col202" parent="Floor" unique_id=1885941483 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 19.75, 8)
+
+[node name="Tech_floor-col203" parent="Floor" unique_id=1655747455 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 19.75, 8)
+
+[node name="Tech_floor-col204" parent="Floor" unique_id=220301503 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 19.75, 8)
+
+[node name="Tech_floor-col205" parent="Floor" unique_id=313620977 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 19.75, 8)
+
+[node name="Tech_floor-col206" parent="Floor" unique_id=616718751 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 19.75, 8)
+
+[node name="Tech_floor-col207" parent="Floor" unique_id=467212706 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, 8)
+
+[node name="Tech_floor-col208" parent="Floor" unique_id=1827306595 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 19.75, -8)
+
+[node name="Tech_floor-col209" parent="Floor" unique_id=144416625 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 19.75, -8)
+
+[node name="Tech_floor-col210" parent="Floor" unique_id=1384841088 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 19.75, -8)
+
+[node name="Tech_floor-col211" parent="Floor" unique_id=611532243 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 19.75, -8)
+
+[node name="Tech_floor-col212" parent="Floor" unique_id=688741578 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 19.75, -8)
+
+[node name="Tech_floor-col213" parent="Floor" unique_id=1645521348 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 19.75, -8)
+
+[node name="Tech_floor-col214" parent="Floor" unique_id=1795495655 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 19.75, -8)
+
+[node name="Tech_floor-col215" parent="Floor" unique_id=904813919 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 19.75, -8)
+
+[node name="Tech_floor-col216" parent="Floor" unique_id=690668663 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 19.75, -8)
+
+[node name="Tech_floor-col217" parent="Floor" unique_id=895941610 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 19.75, -8)
+
+[node name="Tech_floor-col218" parent="Floor" unique_id=937373844 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 19.75, -8)
+
+[node name="Tech_floor-col219" parent="Floor" unique_id=1561100216 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.75, -8)
+
+[node name="Tech_floor-col220" parent="Floor" unique_id=217197105 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 19.75, -8)
+
+[node name="Tech_floor-col221" parent="Floor" unique_id=253765748 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 19.75, -8)
+
+[node name="Tech_floor-col222" parent="Floor" unique_id=1739608177 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 19.75, -8)
+
+[node name="Tech_floor-col223" parent="Floor" unique_id=1381211197 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 19.75, -8)
+
+[node name="Tech_floor-col224" parent="Floor" unique_id=1410410481 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 19.75, -8)
+
+[node name="Tech_floor-col225" parent="Floor" unique_id=891077189 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 19.75, -8)
+
+[node name="Tech_floor-col226" parent="Floor" unique_id=2064517525 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 19.75, -8)
+
+[node name="Tech_floor-col227" parent="Floor" unique_id=1822385258 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 19.75, -8)
+
+[node name="Tech_floor-col228" parent="Floor" unique_id=1006801561 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 19.75, -8)
+
+[node name="Tech_floor-col229" parent="Floor" unique_id=1597443039 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 19.75, -8)
+
+[node name="Tech_floor-col230" parent="Floor" unique_id=150356277 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 19.75, -8)
+
+[node name="Tech_floor-col231" parent="Floor" unique_id=1263463492 instance=ExtResource("4_452na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 19.75, -8)
+
+[node name="InteractButton" parent="." unique_id=1475975694 node_paths=PackedStringArray("linked_door") instance=ExtResource("5_cja2t")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.5, 20, 0)
+linked_door = NodePath("..")

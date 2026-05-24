@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://br1t8qo4lnopp"]
 
 [ext_resource type="Script" uid="uid://bh2hu60eaifer" path="res://scripts/views/BaseWeaponView.gd" id="1_ivpca"]
-[ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="2_d1ol4"]
+[ext_resource type="Resource" uid="uid://bb0iuhe7u07w8" path="res://resources/weapons/gree_eye.tres" id="2_ivpca"]
 [ext_resource type="Texture2D" uid="uid://cmvh1r4i8qsed" path="res://SPRITES/laje/6 Sem Título_20260523184656.png" id="3_wh8aw"]
 
 [sub_resource type="Animation" id="Animation_e6kkq"]
@@ -50,7 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_ivpca")
-weapon_data = ExtResource("2_d1ol4")
+weapon_data = ExtResource("2_ivpca")
 
 [node name="WeaponSprite" type="TextureRect" parent="." unique_id=1566008322]
 layout_mode = 1
