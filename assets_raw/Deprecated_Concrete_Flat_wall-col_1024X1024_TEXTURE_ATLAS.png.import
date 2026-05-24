@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://wqknbol256pl"
 path.s3tc="res://.godot/imported/Deprecated_Concrete_Flat_wall-col_1024X1024_TEXTURE_ATLAS.png-24278dfe32cc171fcbd3846cc5e990af.s3tc.ctex"
+path.etc2="res://.godot/imported/Deprecated_Concrete_Flat_wall-col_1024X1024_TEXTURE_ATLAS.png-24278dfe32cc171fcbd3846cc5e990af.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets_raw/Deprecated_Concrete_Flat_wall-col_1024X1024_TEXTURE_ATLAS.png"
-dest_files=["res://.godot/imported/Deprecated_Concrete_Flat_wall-col_1024X1024_TEXTURE_ATLAS.png-24278dfe32cc171fcbd3846cc5e990af.s3tc.ctex"]
+dest_files=["res://.godot/imported/Deprecated_Concrete_Flat_wall-col_1024X1024_TEXTURE_ATLAS.png-24278dfe32cc171fcbd3846cc5e990af.s3tc.ctex", "res://.godot/imported/Deprecated_Concrete_Flat_wall-col_1024X1024_TEXTURE_ATLAS.png-24278dfe32cc171fcbd3846cc5e990af.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhjl0ei71hw2g"
 path.s3tc="res://.godot/imported/alien_mock.png-fbd37eb948170565b7b7bbf971d497ca.s3tc.ctex"
+path.etc2="res://.godot/imported/alien_mock.png-fbd37eb948170565b7b7bbf971d497ca.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/placeholders/enemies/alien_mock.png"
-dest_files=["res://.godot/imported/alien_mock.png-fbd37eb948170565b7b7bbf971d497ca.s3tc.ctex"]
+dest_files=["res://.godot/imported/alien_mock.png-fbd37eb948170565b7b7bbf971d497ca.s3tc.ctex", "res://.godot/imported/alien_mock.png-fbd37eb948170565b7b7bbf971d497ca.etc2.ctex"]
 
 [params]
 

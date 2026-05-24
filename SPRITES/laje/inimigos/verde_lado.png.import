@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnhc3ikj48jcp"
 path.s3tc="res://.godot/imported/verde_lado.png-c0d2b901ede48f0a83a5b64a95dc1151.s3tc.ctex"
+path.etc2="res://.godot/imported/verde_lado.png-c0d2b901ede48f0a83a5b64a95dc1151.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://SPRITES/laje/inimigos/verde_lado.png"
-dest_files=["res://.godot/imported/verde_lado.png-c0d2b901ede48f0a83a5b64a95dc1151.s3tc.ctex"]
+dest_files=["res://.godot/imported/verde_lado.png-c0d2b901ede48f0a83a5b64a95dc1151.s3tc.ctex", "res://.godot/imported/verde_lado.png-c0d2b901ede48f0a83a5b64a95dc1151.etc2.ctex"]
 
 [params]
 

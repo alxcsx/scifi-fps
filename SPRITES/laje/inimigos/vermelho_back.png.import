@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6kh1gctn7c73"
 path.s3tc="res://.godot/imported/vermelho_back.png-9286cb5355a79ca4f55d5158eaafd5e5.s3tc.ctex"
+path.etc2="res://.godot/imported/vermelho_back.png-9286cb5355a79ca4f55d5158eaafd5e5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://SPRITES/laje/inimigos/vermelho_back.png"
-dest_files=["res://.godot/imported/vermelho_back.png-9286cb5355a79ca4f55d5158eaafd5e5.s3tc.ctex"]
+dest_files=["res://.godot/imported/vermelho_back.png-9286cb5355a79ca4f55d5158eaafd5e5.s3tc.ctex", "res://.godot/imported/vermelho_back.png-9286cb5355a79ca4f55d5158eaafd5e5.etc2.ctex"]
 
 [params]
 

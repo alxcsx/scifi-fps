@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://djbcbfpy3eibv"
 path.s3tc="res://.godot/imported/Lever_base_1024X1024_TEXTURE_ATLAS.png-ac9a93e41d36befaeab94b04f9273567.s3tc.ctex"
+path.etc2="res://.godot/imported/Lever_base_1024X1024_TEXTURE_ATLAS.png-ac9a93e41d36befaeab94b04f9273567.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets_raw/Lever_base_1024X1024_TEXTURE_ATLAS.png"
-dest_files=["res://.godot/imported/Lever_base_1024X1024_TEXTURE_ATLAS.png-ac9a93e41d36befaeab94b04f9273567.s3tc.ctex"]
+dest_files=["res://.godot/imported/Lever_base_1024X1024_TEXTURE_ATLAS.png-ac9a93e41d36befaeab94b04f9273567.s3tc.ctex", "res://.godot/imported/Lever_base_1024X1024_TEXTURE_ATLAS.png-ac9a93e41d36befaeab94b04f9273567.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqpyeeitbk3xb"
 path.s3tc="res://.godot/imported/HUGE_CYLINDER_NO_COLLISION_1024X1024_TEXTURE_ATLAS.png-28fbefa08daa576dd55df512b95dfe6c.s3tc.ctex"
+path.etc2="res://.godot/imported/HUGE_CYLINDER_NO_COLLISION_1024X1024_TEXTURE_ATLAS.png-28fbefa08daa576dd55df512b95dfe6c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets_raw/HUGE_CYLINDER_NO_COLLISION_1024X1024_TEXTURE_ATLAS.png"
-dest_files=["res://.godot/imported/HUGE_CYLINDER_NO_COLLISION_1024X1024_TEXTURE_ATLAS.png-28fbefa08daa576dd55df512b95dfe6c.s3tc.ctex"]
+dest_files=["res://.godot/imported/HUGE_CYLINDER_NO_COLLISION_1024X1024_TEXTURE_ATLAS.png-28fbefa08daa576dd55df512b95dfe6c.s3tc.ctex", "res://.godot/imported/HUGE_CYLINDER_NO_COLLISION_1024X1024_TEXTURE_ATLAS.png-28fbefa08daa576dd55df512b95dfe6c.etc2.ctex"]
 
 [params]
 

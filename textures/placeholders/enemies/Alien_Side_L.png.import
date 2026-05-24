@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://byt66wvoob3kk"
 path.s3tc="res://.godot/imported/Alien_Side_L.png-b0ed8eef473786fd3eeb2ed024cca967.s3tc.ctex"
+path.etc2="res://.godot/imported/Alien_Side_L.png-b0ed8eef473786fd3eeb2ed024cca967.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/placeholders/enemies/Alien_Side_L.png"
-dest_files=["res://.godot/imported/Alien_Side_L.png-b0ed8eef473786fd3eeb2ed024cca967.s3tc.ctex"]
+dest_files=["res://.godot/imported/Alien_Side_L.png-b0ed8eef473786fd3eeb2ed024cca967.s3tc.ctex", "res://.godot/imported/Alien_Side_L.png-b0ed8eef473786fd3eeb2ed024cca967.etc2.ctex"]
 
 [params]
 

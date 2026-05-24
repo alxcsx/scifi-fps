@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc7gqwxhkuy3q"
 path.s3tc="res://.godot/imported/HUGEFLOOR-col_cell_1024X1024_TEXTURE_ATLAS.png-f4ce218a2e9845d546188043c2380dc1.s3tc.ctex"
+path.etc2="res://.godot/imported/HUGEFLOOR-col_cell_1024X1024_TEXTURE_ATLAS.png-f4ce218a2e9845d546188043c2380dc1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets_raw/HUGEFLOOR-col_cell_1024X1024_TEXTURE_ATLAS.png"
-dest_files=["res://.godot/imported/HUGEFLOOR-col_cell_1024X1024_TEXTURE_ATLAS.png-f4ce218a2e9845d546188043c2380dc1.s3tc.ctex"]
+dest_files=["res://.godot/imported/HUGEFLOOR-col_cell_1024X1024_TEXTURE_ATLAS.png-f4ce218a2e9845d546188043c2380dc1.s3tc.ctex", "res://.godot/imported/HUGEFLOOR-col_cell_1024X1024_TEXTURE_ATLAS.png-f4ce218a2e9845d546188043c2380dc1.etc2.ctex"]
 
 [params]
 

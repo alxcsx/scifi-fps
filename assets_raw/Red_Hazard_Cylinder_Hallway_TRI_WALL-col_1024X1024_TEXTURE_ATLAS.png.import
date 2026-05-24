@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvihq83q7u17v"
 path.s3tc="res://.godot/imported/Red_Hazard_Cylinder_Hallway_TRI_WALL-col_1024X1024_TEXTURE_ATLAS.png-e3ad697986088d77ee6b62e99e9b15ef.s3tc.ctex"
+path.etc2="res://.godot/imported/Red_Hazard_Cylinder_Hallway_TRI_WALL-col_1024X1024_TEXTURE_ATLAS.png-e3ad697986088d77ee6b62e99e9b15ef.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets_raw/Red_Hazard_Cylinder_Hallway_TRI_WALL-col_1024X1024_TEXTURE_ATLAS.png"
-dest_files=["res://.godot/imported/Red_Hazard_Cylinder_Hallway_TRI_WALL-col_1024X1024_TEXTURE_ATLAS.png-e3ad697986088d77ee6b62e99e9b15ef.s3tc.ctex"]
+dest_files=["res://.godot/imported/Red_Hazard_Cylinder_Hallway_TRI_WALL-col_1024X1024_TEXTURE_ATLAS.png-e3ad697986088d77ee6b62e99e9b15ef.s3tc.ctex", "res://.godot/imported/Red_Hazard_Cylinder_Hallway_TRI_WALL-col_1024X1024_TEXTURE_ATLAS.png-e3ad697986088d77ee6b62e99e9b15ef.etc2.ctex"]
 
 [params]
 

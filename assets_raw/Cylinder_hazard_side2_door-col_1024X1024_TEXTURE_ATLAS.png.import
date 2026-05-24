@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xon8yftub3fh"
 path.s3tc="res://.godot/imported/Cylinder_hazard_side2_door-col_1024X1024_TEXTURE_ATLAS.png-fa567260f9a70e7ac24442af1f1e5a44.s3tc.ctex"
+path.etc2="res://.godot/imported/Cylinder_hazard_side2_door-col_1024X1024_TEXTURE_ATLAS.png-fa567260f9a70e7ac24442af1f1e5a44.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets_raw/Cylinder_hazard_side2_door-col_1024X1024_TEXTURE_ATLAS.png"
-dest_files=["res://.godot/imported/Cylinder_hazard_side2_door-col_1024X1024_TEXTURE_ATLAS.png-fa567260f9a70e7ac24442af1f1e5a44.s3tc.ctex"]
+dest_files=["res://.godot/imported/Cylinder_hazard_side2_door-col_1024X1024_TEXTURE_ATLAS.png-fa567260f9a70e7ac24442af1f1e5a44.s3tc.ctex", "res://.godot/imported/Cylinder_hazard_side2_door-col_1024X1024_TEXTURE_ATLAS.png-fa567260f9a70e7ac24442af1f1e5a44.etc2.ctex"]
 
 [params]
 

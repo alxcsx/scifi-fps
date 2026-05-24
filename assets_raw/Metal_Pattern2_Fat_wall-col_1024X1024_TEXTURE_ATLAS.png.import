@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh5wa54d3ufdj"
 path.s3tc="res://.godot/imported/Metal_Pattern2_Fat_wall-col_1024X1024_TEXTURE_ATLAS.png-716a17935e2ddccc80d24173203deca6.s3tc.ctex"
+path.etc2="res://.godot/imported/Metal_Pattern2_Fat_wall-col_1024X1024_TEXTURE_ATLAS.png-716a17935e2ddccc80d24173203deca6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets_raw/Metal_Pattern2_Fat_wall-col_1024X1024_TEXTURE_ATLAS.png"
-dest_files=["res://.godot/imported/Metal_Pattern2_Fat_wall-col_1024X1024_TEXTURE_ATLAS.png-716a17935e2ddccc80d24173203deca6.s3tc.ctex"]
+dest_files=["res://.godot/imported/Metal_Pattern2_Fat_wall-col_1024X1024_TEXTURE_ATLAS.png-716a17935e2ddccc80d24173203deca6.s3tc.ctex", "res://.godot/imported/Metal_Pattern2_Fat_wall-col_1024X1024_TEXTURE_ATLAS.png-716a17935e2ddccc80d24173203deca6.etc2.ctex"]
 
 [params]
 
