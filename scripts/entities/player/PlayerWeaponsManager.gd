@@ -14,7 +14,7 @@ signal weapon_unequipped(weapon: WeaponItem)
 @onready var crosshair_ui: TextureRect = player.get_node("%CrossHair")
 @onready var weapons_container: Node = player.get_node("%Weapons")
 
-var views: Dictionary[WeaponItem.WeaponType, BaseWeaponView] = {}
+var views: Dictionary = {}
 
 var is_zooming: bool = false
 var default_camera_fov: float = 75.0

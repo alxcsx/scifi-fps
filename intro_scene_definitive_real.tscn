@@ -295,8 +295,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -2.5, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.85, -1.8000001, 2)
 trigger_type = 2
 
-[node name="FenceDoor" parent="NavigationRegion3D/LEVEL/START+CENTER/Doors" unique_id=1638623496 instance=ExtResource("14_o6pme")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 42.75, 0, 11.699999)
+[node name="FenceDoor2" parent="NavigationRegion3D/LEVEL/START+CENTER/Doors" unique_id=719717544 instance=ExtResource("14_o6pme")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 42.7, 0, 11.5)
 
 [node name="Interactables" type="Node3D" parent="NavigationRegion3D/LEVEL/START+CENTER" unique_id=798983655]
 

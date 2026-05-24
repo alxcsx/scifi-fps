@@ -5,9 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ch6n4j8783y00" path="res://assets_raw/Lock_fence_door-col.glb" id="2_o1oo4"]
 [ext_resource type="PackedScene" uid="uid://cq84gywjxgwmc" path="res://assets_raw/Pivot_fence_door-col.glb" id="3_5af8g"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xsab7"]
-size = Vector3(1.3000001, 2.9, 2.6000001)
-
 [sub_resource type="Animation" id="Animation_xsab7"]
 resource_name = "Open"
 tracks/0/type = "value"
@@ -72,13 +69,12 @@ _data = {
 &"RESET": SubResource("Animation_o1oo4")
 }
 
-[node name="FenceDoor" type="AnimatableBody3D" unique_id=149904861 node_paths=PackedStringArray("animation") groups=["Interactable"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xsab7"]
+size = Vector3(2.4, 2.9, 2.6000001)
+
+[node name="FenceDoor" type="Node3D" unique_id=719717544 node_paths=PackedStringArray("animation")]
 script = ExtResource("1_o1oo4")
 animation = NodePath("AnimationPlayer")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=452373536]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050000012, 1.55, -1.1920929e-07)
-shape = SubResource("BoxShape3D_xsab7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=793724001]
 libraries/ = SubResource("AnimationLibrary_mytsf")
@@ -91,3 +87,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1)
 
 [node name="Pivot_fence_door-col2" parent="." unique_id=1817097456 instance=ExtResource("3_5af8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=33494852]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=452373536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10000017, 1.55, -1.1920929e-07)
+shape = SubResource("BoxShape3D_xsab7")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

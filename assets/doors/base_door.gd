@@ -14,7 +14,6 @@ enum TRIGGER {PROXIMITY, INTERACT, LOCKED}
 
 @onready var state : STATE = initial_state
 
-const OUTLINE_MAT = preload("res://assets_raw/OUTLINE.tres")
 func _ready() -> void:
 	# Safety check
 	if not animation:
@@ -46,19 +45,6 @@ func is_open() -> bool:
 		return true
 	else:
 		return false
-
-func apply_material_to_meshes(node: Node, mat: Material) -> void:
-	if node is MeshInstance3D:
-		node.material_overlay = mat
-	for child in node.get_children():
-		apply_material_to_meshes(child, mat)
-
-
-func add_outline() -> void:
-	apply_material_to_meshes(self, OUTLINE_MAT)
-
-func remove_outline() -> void:
-	apply_material_to_meshes(self, null)
 
 
 # Proximity doors --------------------------------------------------------------
