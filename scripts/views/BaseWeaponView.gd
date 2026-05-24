@@ -36,6 +36,7 @@ func play_shoot_effects() -> void:
 
 func play_equip_effects() -> void:
   if not anim_player: return
+  if anim_player.has_animation("RESET"): anim_player.play("RESET")
   if anim_player.has_animation("equip"): anim_player.play("equip")
 
 func equip() -> void:

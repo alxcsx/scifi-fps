@@ -8,7 +8,7 @@
 script = ExtResource("1_1vsk4")
 weaponType = 1
 fire_rate = 0.85
-starting_ammo = 6
+starting_ammo = 12
 zoom_fov = 30.0
 item_name = "Pistol"
 icon = ExtResource("4_xq21v")

@@ -26,7 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		equip_slot((active_slot_index - 1 + MAX_SLOTS) % MAX_SLOTS)
 	elif event.is_action_pressed("scroll_down"):
 		equip_slot((active_slot_index + 1) % MAX_SLOTS)
-		
+
 	# Number Keys 1-9 (Assumes you set inputs mapped "slot_1" to "slot_9")
 	for i in range(MAX_SLOTS):
 		if event.is_action_pressed("slot_" + str(i + 1)):
@@ -40,26 +40,29 @@ func equip_slot(index: int) -> void:
 
 func try_add_item(item_data: Item) -> bool:
 	if item_data is HealthItem:
-		item_picked_up.emit(item_data) 
-		return true 
+		item_picked_up.emit(item_data)
+		return true
 
 	if item_data is AmmoItem:
 		add_ammo(item_data.ammo_type, item_data.amount)
 		item_picked_up.emit(item_data) # Tell the UI to update ammo
-		return true 
-	
+		return true
+
+	if item_data is WeaponItem:
+		add_ammo(item_data.ammo_type, item_data.starting_ammo)
+
 	for i in range(MAX_SLOTS):
 		if hotbar[i] == null:
 			hotbar[i] = item_data
 			print("Picked up %s into slot %d" % [item_data.item_name, i + 1])
-			
+
 			# Tell the UI to redraw the screen
-			item_picked_up.emit(item_data) 
-			
-			equip_slot(i) 
-			
+			item_picked_up.emit(item_data)
+
+			equip_slot(i)
+
 			return true
-			
+
 	print("Inventory Full!")
 	return false
 
