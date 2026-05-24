@@ -44,7 +44,7 @@ func interact(player: Node3D) -> void:
 
 		else:
 			print("Console: Access Denied. Requires: " + required_key_name)
-			# play an error_buzz sound or flash the mesh red 
+			anim_player.queue("denied")
 			
 	else:
 		print("Console: Button pushed!")
@@ -54,4 +54,3 @@ func interact(player: Node3D) -> void:
 				linked_door.close_door()
 			else:
 				linked_door.open_door()
-			# play an ACCEPTED sound or flash the mesh green 

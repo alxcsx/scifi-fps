@@ -1,19 +1,14 @@
-[gd_scene format=3 uid="uid://bffgrulu082f"]
+[gd_scene format=3 uid="uid://bp2uqpvawm2be"]
 
 [ext_resource type="Script" uid="uid://bm82j8rrewjpk" path="res://scripts/entities/enemy/Enemy.gd" id="1_j1ss0"]
 [ext_resource type="Script" uid="uid://dm870l2w53ue4" path="res://scripts/entities/HealthManager.gd" id="1_sw0xa"]
-[ext_resource type="Texture2D" uid="uid://em05fgdtion7" path="res://textures/placeholders/enemies/Alien_Back_Idle.png" id="3_hxr1d"]
-[ext_resource type="Script" uid="uid://dtpbmu40w4hb7" path="res://scripts/entities/enemy/EnemyWeaponsManager.gd" id="3_sn6ap"]
-[ext_resource type="Texture2D" uid="uid://e6bkdemd77f" path="res://textures/placeholders/enemies/Alien_Back_L.png" id="4_e42xm"]
+[ext_resource type="Script" path="res://scripts/entities/enemy/EnemyWeaponsManager.gd" id="3_sn6ap"]
 [ext_resource type="Resource" uid="uid://dcnoxw5o35r4d" path="res://resources/weapons/crowbar.tres" id="4_p8dd5"]
 [ext_resource type="Script" uid="uid://ylqa4a3k3hac" path="res://scripts/entities/DebugHealthLabel.gd" id="4_vv3x1"]
-[ext_resource type="Texture2D" uid="uid://c60owl5ebavs2" path="res://textures/placeholders/enemies/Alien_Back_R.png" id="5_okkm7"]
-[ext_resource type="Texture2D" uid="uid://xvfxdryugaxs" path="res://textures/placeholders/enemies/Alien_Front_IDLE.png" id="6_sn6ap"]
-[ext_resource type="Texture2D" uid="uid://cm4v1fqthkbw4" path="res://textures/placeholders/enemies/Alien_Front_L.png" id="7_p8dd5"]
-[ext_resource type="Texture2D" uid="uid://dury5yry338me" path="res://textures/placeholders/enemies/Alien_Front_R.png" id="8_150yw"]
-[ext_resource type="Texture2D" uid="uid://cqlv7lpwolqhv" path="res://textures/placeholders/enemies/Alien_Side_Idle.png" id="9_k8ff1"]
-[ext_resource type="Texture2D" uid="uid://byt66wvoob3kk" path="res://textures/placeholders/enemies/Alien_Side_L.png" id="10_mjxc3"]
-[ext_resource type="Texture2D" uid="uid://7lydhhdb7j6a" path="res://textures/placeholders/enemies/Alien_Side_R.png" id="11_jv35x"]
+[ext_resource type="Texture2D" uid="uid://fr21dwohal7i" path="res://SPRITES/laje/2 Sem Título_20260523184818.png" id="5_7t5mr"]
+[ext_resource type="Texture2D" uid="uid://dgg2vir8xmt26" path="res://SPRITES/laje/2 Sem Título_20260523184759.png" id="6_y8vm1"]
+[ext_resource type="Texture2D" uid="uid://bv3kv3831ng21" path="res://SPRITES/laje/2 Sem Título_20260523184809.png" id="7_e2rqu"]
+[ext_resource type="AudioStream" uid="uid://e34qni4xexde" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Mobs/Creatures/CreaturesBreath.mp3" id="11_y8vm1"]
 [ext_resource type="Script" uid="uid://dy8bndlychh60" path="res://scripts/entities/DirectionalSprite3D.gd" id="12_6rri4"]
 [ext_resource type="Script" uid="uid://ish4ng6ubupt" path="res://scripts/entities/enemy/ChasingAIManager.gd" id="14_e42xm"]
 
@@ -21,16 +16,16 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_hxr1d")
+"texture": ExtResource("5_7t5mr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_e42xm")
+"texture": ExtResource("6_y8vm1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_hxr1d")
+"texture": ExtResource("5_7t5mr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_okkm7")
+"texture": ExtResource("7_e2rqu")
 }],
 "loop": true,
 "name": &"back",
@@ -38,33 +33,33 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_sn6ap")
+"texture": ExtResource("5_7t5mr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_p8dd5")
+"texture": ExtResource("6_y8vm1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_sn6ap")
+"texture": ExtResource("5_7t5mr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_150yw")
+"texture": ExtResource("7_e2rqu")
 }],
 "loop": true,
 "name": &"front",
-"speed": 5.0
+"speed": 2.5
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_k8ff1")
+"texture": ExtResource("5_7t5mr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_mjxc3")
+"texture": ExtResource("6_y8vm1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_k8ff1")
+"texture": ExtResource("5_7t5mr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_jv35x")
+"texture": ExtResource("7_e2rqu")
 }],
 "loop": true,
 "name": &"left",
@@ -74,6 +69,7 @@ animations = [{
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vv3x1"]
 margin = 0.02
 radius = 0.55
+height = 2.4
 
 [sub_resource type="SystemFont" id="SystemFont_lxe82"]
 font_names = PackedStringArray("Comic Sans MS")
@@ -100,11 +96,11 @@ sight_raycast = NodePath("../AIManager/SightRayCast")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=868043640 node_paths=PackedStringArray("target_node")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009917676, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.009917676, 0)
 pixel_size = 0.007
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_x4sx7")
-animation = &"front"
+animation = &"left"
 script = ExtResource("12_6rri4")
 target_node = NodePath("..")
 freeze_animation = true
@@ -138,3 +134,10 @@ shape = SubResource("SphereShape3D_okkm7")
 collision_mask = 3
 
 [node name="NavAgent" type="NavigationAgent3D" parent="AIManager" unique_id=179488981]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2141344930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+stream = ExtResource("11_y8vm1")
+volume_db = 10.0
+autoplay = true
+max_distance = 10.0

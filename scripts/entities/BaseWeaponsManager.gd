@@ -87,8 +87,7 @@ func _execute_combat(origin: Vector3, direction: Vector3) -> void:
 
 		if target is BaseEntity and target != attacker:
 			var exact_hit_direction = origin.direction_to(result.position)
-			target.take_damage(hit_payload.clone({"damage": current_damage, "hit_direction": exact_hit_direction}))
-
+			target.take_damage(hit_payload.clone({"damage": current_damage, "hit_direction": exact_hit_direction})) 
 			current_damage *= hit_payload.pierce_damage_retention
 
 			excluded_rids.append(result.rid)

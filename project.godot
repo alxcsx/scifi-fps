@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="scifi-fps"
-run/main_scene="uid://byh15lbhdbehq"
+run/main_scene="uid://dp4avsmje3it5"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

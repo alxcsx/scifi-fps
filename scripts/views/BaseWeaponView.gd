@@ -1,8 +1,9 @@
 extends Control
 class_name BaseWeaponView
 
-@export 	var weapon_data: WeaponItem
-@onready 	var anim_player: AnimationPlayer = $AnimationPlayer
+@export  var weapon_data  : WeaponItem
+@onready var anim_player  : AnimationPlayer = $AnimationPlayer
+@onready var audio_player : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
   hide();

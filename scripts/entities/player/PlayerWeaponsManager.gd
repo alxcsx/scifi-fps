@@ -74,7 +74,11 @@ func _setup_weapon_view(weapon_view: BaseWeaponView) -> void:
 	print("Registering weapon view: %s" % weapon_view.name)
 	weapon_view.hide()
 	weapon_view.setup(self)
-	views.set(weapon_view.weapon_data.weaponType, weapon_view)
+	var ammo_type = weapon_view.weapon_data.ammo_type
+	if not current_loaded_ammo.has(ammo_type):
+		current_loaded_ammo[ammo_type] = weapon_view.weapon_data.magazine_size
+		
+	views[weapon_view.weapon_data.weaponType] = weapon_view
 
 func reload() -> void:
 	if not current_weapon: return

@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://dbrlgxusgd5m2"]
 
 [ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_rhrr7"]
+[ext_resource type="AudioStream" uid="uid://dufg7t0oa1bke" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Door2/CloseDoor2.mp3" id="2_fky16"]
 [ext_resource type="PackedScene" uid="uid://cb111f3lfywv0" path="res://assets_raw/Hazard_Frame_door-col.glb" id="2_vxqgo"]
 [ext_resource type="PackedScene" uid="uid://b1cue8htlt2k8" path="res://assets_raw/Hazard_Up_door-col.glb" id="3_fky16"]
+[ext_resource type="AudioStream" uid="uid://cesb15abwnsnk" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Door2/OpenDoor2.mp3" id="3_prk1x"]
 [ext_resource type="PackedScene" uid="uid://c64pysp18ku31" path="res://assets_raw/Hazard_Blast_Down_door-col.glb" id="4_prk1x"]
 
 [sub_resource type="Animation" id="Animation_mvuay"]
 resource_name = "Close"
-length = 2.0
+length = 3.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -15,7 +17,7 @@ tracks/0/path = NodePath("Blast_up_door-col:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 5.6, 0), Vector3(0, 3.019248, 0)]
@@ -27,15 +29,30 @@ tracks/1/path = NodePath("Blast_down_door-col:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 2, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_fky16")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_y50xy"]
 resource_name = "Close"
-length = 2.0
+length = 3.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -43,7 +60,7 @@ tracks/0/path = NodePath("Blast_up_door-col:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 3.019248, 0), Vector3(0, 5.6, 0)]
@@ -55,16 +72,35 @@ tracks/1/path = NodePath("Blast_down_door-col:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 2, 0), Vector3(0, 0, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_prk1x")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_prk1x"]
+length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uh1pa"]
 _data = {
 &"Close": SubResource("Animation_mvuay"),
-&"Open": SubResource("Animation_y50xy")
+&"Open": SubResource("Animation_y50xy"),
+&"RESET": SubResource("Animation_prk1x")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ir1hl"]
@@ -81,9 +117,10 @@ libraries/ = SubResource("AnimationLibrary_uh1pa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10000008, 0)
 
 [node name="Blast_up_door-col" parent="." unique_id=1256077233 instance=ExtResource("3_fky16")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.019248, 0)
 
 [node name="Blast_down_door-col" parent="." unique_id=1252034842 instance=ExtResource("4_prk1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1384833058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -93,6 +130,12 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1011608930]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_ir1hl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=186121905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+unit_size = 20.0
+max_distance = 25.0
+area_mask = 2
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

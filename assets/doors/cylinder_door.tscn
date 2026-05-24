@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://b7irwp0rsucj8"]
 
 [ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_ue5di"]
-[ext_resource type="PackedScene" uid="uid://bg1ixk3vseat2" path="res://assets_raw/Cylinder_hazard_Frame_door-col.glb" id="3_jw6b3"]
-[ext_resource type="PackedScene" uid="uid://bfpx7u2dfv8m7" path="res://assets_raw/Cylinder_hazard_side2_door-col.glb" id="4_jw6b3"]
-[ext_resource type="PackedScene" uid="uid://lnf1w327gbsj" path="res://assets_raw/Cylinder_hazard_side1_door-col.glb" id="5_ue5di"]
-[ext_resource type="PackedScene" uid="uid://bv4ea5aryi81n" path="res://assets_raw/Cylinder_hazard_side_down_door-col.glb" id="6_ie01n"]
-[ext_resource type="PackedScene" uid="uid://c5ec26dulpd7c" path="res://assets_raw/Cylinder_hazard_side_up_door-col.glb" id="7_7pski"]
+[ext_resource type="AudioStream" uid="uid://clmi7tfdgtxst" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Door3/CloseDoor3.mp3" id="2_ue5di"]
+[ext_resource type="AudioStream" uid="uid://dvvtjmis6xw0" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Door3/OpenDoor3.mp3" id="3_ie01n"]
+[ext_resource type="PackedScene" uid="uid://ddxwo10amkpy7" path="res://assets_raw/Cylinder_hazard_Frame_door-col.glb" id="3_jw6b3"]
+[ext_resource type="PackedScene" uid="uid://0t8dbqowv5ds" path="res://assets_raw/Cylinder_hazard_side2_door-col.glb" id="4_jw6b3"]
+[ext_resource type="PackedScene" uid="uid://f2ococf50rsg" path="res://assets_raw/Cylinder_hazard_side1_door-col.glb" id="5_ue5di"]
+[ext_resource type="PackedScene" uid="uid://cmc8ttbkwajio" path="res://assets_raw/Cylinder_hazard_side_down_door-col.glb" id="6_ie01n"]
+[ext_resource type="PackedScene" uid="uid://crhd73csreydp" path="res://assets_raw/Cylinder_hazard_side_up_door-col.glb" id="7_7pski"]
 
 [sub_resource type="Animation" id="Animation_ue5di"]
 resource_name = "Open"
-length = 2.0
+length = 3.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,7 +19,7 @@ tracks/0/path = NodePath("Cylinder_hazard_side1_door-col2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 2.7764392, -1.9000001), Vector3(0, 2.7764392, -0.1)]
@@ -29,7 +31,7 @@ tracks/1/path = NodePath("Cylinder_hazard_side2_door-col2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 2.7764392, 1.9000001), Vector3(0, 2.7764392, 0.1)]
@@ -41,7 +43,7 @@ tracks/2/path = NodePath("Cylinder_hazard_side_down_door-col2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -0.10000014, 0.018183023), Vector3(0, 1.1999999, 0.018183023)]
@@ -53,15 +55,30 @@ tracks/3/path = NodePath("Cylinder_hazard_side_up_door-col2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 3.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 4.4816313, 0), Vector3(0, 2.781631, 0)]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer3D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_ue5di")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ykgi4"]
 resource_name = "Open"
-length = 2.0
+length = 3.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -110,6 +127,21 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 2.781631, 0), Vector3(0, 4.4816313, 0)]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer3D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ie01n")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xms6j"]
 _data = {
@@ -130,16 +162,16 @@ libraries/ = SubResource("AnimationLibrary_xms6j")
 [node name="Cylinder_hazard_Frame_door-col2" parent="." unique_id=394274764 instance=ExtResource("3_jw6b3")]
 
 [node name="Cylinder_hazard_side1_door-col2" parent="." unique_id=1813859230 instance=ExtResource("5_ue5di")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7764392, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7764392, -1.9000001)
 
 [node name="Cylinder_hazard_side2_door-col2" parent="." unique_id=1510245251 instance=ExtResource("4_jw6b3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7764392, 0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7764392, 1.9000001)
 
 [node name="Cylinder_hazard_side_down_door-col2" parent="." unique_id=1056568089 instance=ExtResource("6_ie01n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1999999, 0.018183023)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10000014, 0.018183023)
 
 [node name="Cylinder_hazard_side_up_door-col2" parent="." unique_id=1379209040 instance=ExtResource("7_7pski")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.781631, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4816313, 0)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=254622274]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -149,6 +181,10 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1175210198]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_ir1hl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=602311521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+max_distance = 10.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
