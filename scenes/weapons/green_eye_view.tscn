@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brjwt4q0ob4o8" path="res://scripts/views/GenericItemView.gd" id="1_ivpca"]
 [ext_resource type="Resource" uid="uid://bb0iuhe7u07w8" path="res://resources/weapons/green_eye.tres" id="2_ivpca"]
-[ext_resource type="Texture2D" uid="uid://ctw4bqi482ux0" path="res://SPRITES/laje/3 Sem Título_20260521153729.png" id="3_ivpca"]
+[ext_resource type="Texture2D" uid="uid://ctw4bqi482ux0" path="res://assets/sprites/laje/3 Sem Título_20260521153729.png" id="3_ivpca"]
 
 [sub_resource type="Animation" id="Animation_e6kkq"]
 resource_name = "Idle"

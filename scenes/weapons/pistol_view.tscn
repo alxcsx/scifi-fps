@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bh2hu60eaifer" path="res://scripts/views/BaseWeaponView.gd" id="1_ok3if"]
 [ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="2_mo4cc"]
-[ext_resource type="Texture2D" uid="uid://cmvh1r4i8qsed" path="res://SPRITES/laje/6 Sem Título_20260523184656.png" id="3_ttg3c"]
-[ext_resource type="Texture2D" uid="uid://be7rd18dxkis7" path="res://SPRITES/laje/6 Sem Título_20260523184633.png" id="4_2tb2r"]
-[ext_resource type="AudioStream" uid="uid://d2wwualuvv5ug" path="res://Game LAJE - Sound/Game LAJE - Sound2/Objects/Gun/RechargeSound.mp3" id="4_a7l2r"]
-[ext_resource type="AudioStream" uid="uid://cbqj1fmyph1rk" path="res://Game LAJE - Sound/Game LAJE - Sound2/Objects/Gun/GunShot.mp3" id="5_2tb2r"]
+[ext_resource type="Texture2D" uid="uid://cmvh1r4i8qsed" path="res://assets/sprites/laje/6 Sem Título_20260523184656.png" id="3_ttg3c"]
+[ext_resource type="Texture2D" uid="uid://be7rd18dxkis7" path="res://assets/sprites/laje/6 Sem Título_20260523184633.png" id="4_2tb2r"]
+[ext_resource type="AudioStream" uid="uid://d2wwualuvv5ug" path="res://assets/sounds/Objects/Gun/RechargeSound.mp3" id="4_a7l2r"]
+[ext_resource type="AudioStream" uid="uid://cbqj1fmyph1rk" path="res://assets/sounds/Objects/Gun/GunShot.mp3" id="5_2tb2r"]
 
 [sub_resource type="Animation" id="Animation_k1fdf"]
 length = 0.001

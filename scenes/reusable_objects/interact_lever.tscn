@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://f46yx7sa5yct"]
+
+[ext_resource type="Script" uid="uid://cbv27uqcblbkk" path="res://scripts/scene_objects/interact_lever.gd" id="1_hb0tb"]
+[ext_resource type="PackedScene" uid="uid://5va5bbkuiq4a" path="res://assets/assets_raw/Lever.glb" id="1_xjavr"]
+[ext_resource type="PackedScene" uid="uid://dmummfujv7d1s" path="res://assets/assets_raw/Lever_base.glb" id="2_hb0tb"]
+[ext_resource type="AudioStream" uid="uid://p8r2jme5owbu" path="res://assets/sounds/Ambient/Lights/LightsOff.mp3" id="2_x8pdq"]
+[ext_resource type="AudioStream" uid="uid://obrvbgln07ym" path="res://assets/sounds/Ambient/Lights/LightsOn.mp3" id="3_us3gr"]
+
+[sub_resource type="Animation" id="Animation_2f775"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lever2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_x8pdq"]
+resource_name = "unpull"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lever2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.22277722, -0.1570073, -2.330882), Vector3(0, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_x8pdq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_us3gr"]
+resource_name = "pull"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lever2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.22277722, -0.1570073, -2.330882)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_us3gr")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4vk8l"]
+_data = {
+&"RESET": SubResource("Animation_2f775"),
+&"turn_off": SubResource("Animation_x8pdq"),
+&"turn_on": SubResource("Animation_us3gr")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2f775"]
+size = Vector3(0.2, 0.75, 0.4)
+
+[node name="InteractLever" type="StaticBody3D" unique_id=414747959]
+script = ExtResource("1_hb0tb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1095084682]
+libraries/ = SubResource("AnimationLibrary_4vk8l")
+
+[node name="Lever2" parent="." unique_id=486716336 instance=ExtResource("1_xjavr")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Lever_base2" parent="." unique_id=702030601 instance=ExtResource("2_hb0tb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1511421727 groups=["Interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 0.47500002, 1.4901161e-08)
+shape = SubResource("BoxShape3D_2f775")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=661555846]
