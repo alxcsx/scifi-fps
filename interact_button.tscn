@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bw1g8ffv8i6sp"]
 
 [ext_resource type="Script" uid="uid://cnp2qisyuyvil" path="res://interact_button_base.gd" id="1_3ob4l"]
-[ext_resource type="AudioStream" uid="uid://sxe3im7xjni2" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Objects/Button/Button.mp3" id="2_3vt5n"]
+[ext_resource type="AudioStream" uid="uid://sxe3im7xjni2" path="res://Game LAJE - Sound/Game LAJE - Sound2/Objects/Button/Button.mp3" id="2_3vt5n"]
 [ext_resource type="PackedScene" uid="uid://bw80fixb0xyn4" path="res://assets_raw/Interaction_model_DIRTY-col.glb" id="2_8hem0"]
-[ext_resource type="AudioStream" uid="uid://by2k153ssk1wj" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Ambient/Acess/AcessGranted.mp3" id="2_e38eo"]
+[ext_resource type="AudioStream" uid="uid://by2k153ssk1wj" path="res://Game LAJE - Sound/Game LAJE - Sound2/Ambient/Acess/AcessGranted.mp3" id="2_e38eo"]
 [ext_resource type="PackedScene" uid="uid://djk1g1s1o0hxd" path="res://assets_raw/Button_Interaction_model_DIRTY-col.glb" id="3_3vt5n"]
-[ext_resource type="AudioStream" uid="uid://cpu2dcfioq6qi" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Ambient/Acess/AcessDenied.mp3" id="3_e38eo"]
+[ext_resource type="AudioStream" uid="uid://cpu2dcfioq6qi" path="res://Game LAJE - Sound/Game LAJE - Sound2/Ambient/Acess/AcessDenied.mp3" id="3_e38eo"]
 
 [sub_resource type="Animation" id="Animation_3ob4l"]
 length = 0.001

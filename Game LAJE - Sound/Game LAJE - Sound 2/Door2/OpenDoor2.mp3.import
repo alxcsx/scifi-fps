@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cesb15abwnsnk"
+path="res://.godot/imported/OpenDoor2.mp3-c286620085b09254a8c79067c316ea61.mp3str"
+
+[deps]
+
+source_file="res://Game LAJE - Sound/Game LAJE - Sound2/Door2/OpenDoor2.mp3"
+dest_files=["res://.godot/imported/OpenDoor2.mp3-c286620085b09254a8c79067c316ea61.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

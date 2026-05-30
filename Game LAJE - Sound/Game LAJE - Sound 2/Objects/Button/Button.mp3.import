@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://sxe3im7xjni2"
+path="res://.godot/imported/Button.mp3-2048b4d2cb80dd172905b945acca64e6.mp3str"
+
+[deps]
+
+source_file="res://Game LAJE - Sound/Game LAJE - Sound2/Objects/Button/Button.mp3"
+dest_files=["res://.godot/imported/Button.mp3-2048b4d2cb80dd172905b945acca64e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

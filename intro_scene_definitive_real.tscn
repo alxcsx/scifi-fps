@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://byyhadhvmiofl" path="res://assets_raw/Cylinder_hazard_Frame_SQUARE_door-col.glb" id="9_ea7a5"]
 [ext_resource type="PackedScene" uid="uid://c2rtwe6wikfca" path="res://assets_raw/Deprecated_Concrete_Flat_wall-col.glb" id="10_s1kld"]
 [ext_resource type="PackedScene" uid="uid://nuwl4uiqrofg" path="res://assets/doors/blast_door_red.tscn" id="11_20v6q"]
-[ext_resource type="AudioStream" uid="uid://cnidb88a63i7w" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Ambient/Lights/BuzzingLights.mp3" id="11_jp5k8"]
+[ext_resource type="AudioStream" uid="uid://cnidb88a63i7w" path="res://Game LAJE - Sound/Game LAJE - Sound2/Ambient/Lights/BuzzingLights.mp3" id="11_jp5k8"]
 [ext_resource type="PackedScene" uid="uid://b72j0ld20j3sn" path="res://assets_raw/Fence-col.glb" id="12_wfwjx"]
 [ext_resource type="PackedScene" uid="uid://b6gp7p4bjtg6x" path="res://assets_raw/Mud_Concrete_floor-col.glb" id="13_bskf5"]
 [ext_resource type="PackedScene" uid="uid://5feuriwyqf53" path="res://assets/doors/fence_door.tscn" id="14_o6pme"]

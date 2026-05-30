@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://16e63g5sunu3" path="res://assets_raw/Icosphere.glb" id="1_mrpp8"]
 [ext_resource type="PackedScene" uid="uid://cymaks0bd3r2s" path="res://assets_raw/END_TELEPORTER001.001.glb" id="2_k0lwy"]
 [ext_resource type="PackedScene" uid="uid://cuhj2liygfel5" path="res://assets_raw/Tech_floor-col.glb" id="4_452na"]
-[ext_resource type="AudioStream" uid="uid://crwcwgeuyon86" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Ambient/Elevator/Elevator.mp3" id="4_cja2t"]
+[ext_resource type="AudioStream" uid="uid://crwcwgeuyon86" path="res://Game LAJE - Sound/Game LAJE - Sound2/Ambient/Elevator/Elevator.mp3" id="4_cja2t"]
 [ext_resource type="PackedScene" uid="uid://bw1g8ffv8i6sp" path="res://interact_button.tscn" id="5_cja2t"]
 
 [sub_resource type="Animation" id="Animation_452na"]

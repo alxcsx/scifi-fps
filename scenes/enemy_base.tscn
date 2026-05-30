@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bnhc3ikj48jcp" path="res://SPRITES/laje/inimigos/verde_lado.png" id="9_e42xm"]
 [ext_resource type="Texture2D" uid="uid://bwl2llp86ebcw" path="res://SPRITES/laje/inimigos/verde_lado_l.png" id="10_okkm7"]
 [ext_resource type="Texture2D" uid="uid://dreynsc2it7ya" path="res://SPRITES/laje/inimigos/verde_lado_r.png" id="11_sn6ap"]
-[ext_resource type="AudioStream" uid="uid://e34qni4xexde" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Mobs/Creatures/CreaturesBreath.mp3" id="11_y8vm1"]
+[ext_resource type="AudioStream" uid="uid://e34qni4xexde" path="res://Game LAJE - Sound/Game LAJE - Sound2/Mobs/Creatures/CreaturesBreath.mp3" id="11_y8vm1"]
 [ext_resource type="Script" uid="uid://dy8bndlychh60" path="res://scripts/entities/DirectionalSprite3D.gd" id="12_6rri4"]
 [ext_resource type="Script" uid="uid://ish4ng6ubupt" path="res://scripts/entities/enemy/ChasingAIManager.gd" id="14_e42xm"]
 

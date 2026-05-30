@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cbv27uqcblbkk" path="res://interact_lever.gd" id="1_hb0tb"]
 [ext_resource type="PackedScene" uid="uid://5va5bbkuiq4a" path="res://assets_raw/Lever.glb" id="1_xjavr"]
 [ext_resource type="PackedScene" uid="uid://dmummfujv7d1s" path="res://assets_raw/Lever_base.glb" id="2_hb0tb"]
-[ext_resource type="AudioStream" uid="uid://p8r2jme5owbu" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Ambient/Lights/LightsOff.mp3" id="2_x8pdq"]
-[ext_resource type="AudioStream" uid="uid://obrvbgln07ym" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Ambient/Lights/LightsOn.mp3" id="3_us3gr"]
+[ext_resource type="AudioStream" uid="uid://p8r2jme5owbu" path="res://Game LAJE - Sound/Game LAJE - Sound2/Ambient/Lights/LightsOff.mp3" id="2_x8pdq"]
+[ext_resource type="AudioStream" uid="uid://obrvbgln07ym" path="res://Game LAJE - Sound/Game LAJE - Sound2/Ambient/Lights/LightsOn.mp3" id="3_us3gr"]
 
 [sub_resource type="Animation" id="Animation_2f775"]
 length = 0.001

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2wwualuvv5ug"
+path="res://.godot/imported/RechargeSound.mp3-7bc080dd8825a04710b38d4699979f03.mp3str"
+
+[deps]
+
+source_file="res://Game LAJE - Sound/Game LAJE - Sound2/Objects/Gun/RechargeSound.mp3"
+dest_files=["res://.godot/imported/RechargeSound.mp3-7bc080dd8825a04710b38d4699979f03.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

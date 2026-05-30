@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b7irwp0rsucj8"]
 
 [ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_ue5di"]
-[ext_resource type="AudioStream" uid="uid://clmi7tfdgtxst" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Door3/CloseDoor3.mp3" id="2_ue5di"]
-[ext_resource type="AudioStream" uid="uid://dvvtjmis6xw0" path="res://Game LAJE - Sound /Game LAJE - Sound 2/Door3/OpenDoor3.mp3" id="3_ie01n"]
+[ext_resource type="AudioStream" uid="uid://clmi7tfdgtxst" path="res://Game LAJE - Sound/Game LAJE - Sound2/Door3/CloseDoor3.mp3" id="2_ue5di"]
+[ext_resource type="AudioStream" uid="uid://dvvtjmis6xw0" path="res://Game LAJE - Sound/Game LAJE - Sound2/Door3/OpenDoor3.mp3" id="3_ie01n"]
 [ext_resource type="PackedScene" uid="uid://ddxwo10amkpy7" path="res://assets_raw/Cylinder_hazard_Frame_door-col.glb" id="3_jw6b3"]
 [ext_resource type="PackedScene" uid="uid://0t8dbqowv5ds" path="res://assets_raw/Cylinder_hazard_side2_door-col.glb" id="4_jw6b3"]
 [ext_resource type="PackedScene" uid="uid://f2ococf50rsg" path="res://assets_raw/Cylinder_hazard_side1_door-col.glb" id="5_ue5di"]
