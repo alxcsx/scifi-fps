@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dkgabpbh2n815"]
+
+[ext_resource type="Script" uid="uid://bxsaydcvm0a76" path="res://interactive_objects/kill_zones/scripts/kill_zone.gd" id="1_jnstx"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tuh0n"]
+
+[node name="KillZone" type="Area3D" unique_id=1366694493]
+script = ExtResource("1_jnstx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1309586442]
+transform = Transform3D(1.4111999, 0, 0, 0, 1.4111999, 0, 0, 0, 1.4111999, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_tuh0n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://dvl6jhd7rghcw"]
+
+[ext_resource type="Material" uid="uid://cy6j6mhcoopj" path="res://assets/textures/map/triplanar.tres" id="1_o8unc"]
+[ext_resource type="PackedScene" uid="uid://xfg4c8hgb0ab" path="res://interactive_objects/buttons/scenes/item_3d.tscn" id="2_b1u3c"]
+[ext_resource type="Resource" uid="uid://c5liy3lsbp0pp" path="res://resources/weapons/flashlight.tres" id="3_h7lmj"]
+[ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="4_w2ebg"]
+[ext_resource type="Texture2D" uid="uid://bqkp8x3rlsk5u" path="res://assets/textures/map/Reference.png" id="5_b1u3c"]
+
+[node name="IntroScene" type="Node3D" unique_id=398566854]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1624017837]
+transform = Transform3D(1, 0, 0, 0, 82.48299, 0, 0, 0, 1, 0, -40.41409, 0)
+use_collision = true
+
+[node name="Wall_UpperLevel" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1645956853]
+transform = Transform3D(-0.26516503, 0, -0.103237584, 0, 0.9999999, 0, 0.26516503, 0, -0.103237584, 6.097608, 0.52868706, -2.1204667)
+size = Vector3(1, 0.07672238, 138)
+material = ExtResource("1_o8unc")
+
+[node name="Wall_UpperLevel3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1391093521]
+transform = Transform3D(-0.26516503, 0, -0.103237584, 0, 0.9999999, 0, 0.26516503, 0, -0.103237584, -9.5541935, 0.52868706, 10.227733)
+size = Vector3(1, 0.07672238, 106)
+material = ExtResource("1_o8unc")
+
+[node name="Floor_UpperLevel" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1381025420]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -1.0842667, 0.4951629, 5.0427194)
+size = Vector3(20, 0.009674072, 20)
+material = ExtResource("1_o8unc")
+
+[node name="Ceil_UpperLevel2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=668531227]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -1.0842667, 0.55617845, 5.0427194)
+size = Vector3(20, 0.0023956299, 20)
+material = ExtResource("1_o8unc")
+
+[node name="Elevator" type="CSGBox3D" parent="CSGCombiner3D" unique_id=367479270]
+transform = Transform3D(0, 0, -0.32812634, 0, 1, 0, 0.49999997, 0, 0, -0.74544525, 0.52330387, 16.971046)
+size = Vector3(10.72644, 0.065956116, 20)
+material = ExtResource("1_o8unc")
+
+[node name="Elevator2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=994832980]
+transform = Transform3D(0.00013627094, 0.00013258825, -0.26250106, -1.0557273e-05, 0.9999999, 3.4802466e-05, 0.39999995, 2.63531e-05, 8.9429e-05, -0.74544525, 0.5220822, 16.694754)
+operation = 2
+size = Vector3(12.10791, 0.044229507, 20)
+material = ExtResource("1_o8unc")
+
+[node name="Decompress" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1641796737]
+transform = Transform3D(-0.26516503, 0, -0.103237584, 0, 1, 0, 0.26516503, 0, -0.103237584, 7.5176067, 0.51083606, -2.3459318)
+size = Vector3(10.976669, 0.041020393, 22.624512)
+material = ExtResource("1_o8unc")
+
+[node name="Decompress2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1317868525]
+transform = Transform3D(-0.23546655, 0, -0.051618792, 0, 1, 0, 0.23546655, 0, -0.051618792, 7.6152897, 0.51323783, -2.3855257)
+operation = 2
+size = Vector3(13.080946, 0.026254654, 28.796753)
+material = ExtResource("1_o8unc")
+
+[node name="Wall_UpperLevel2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=267732132]
+transform = Transform3D(0.26516506, 0, -0.10323758, 0, 0.9999999, 0, 0.26516503, 0, 0.103237584, -7.759657, 0.52868706, -2.304748)
+size = Vector3(1, 0.07672238, 138)
+material = ExtResource("1_o8unc")
+
+[node name="Wall_UpperLevel4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1532589395]
+transform = Transform3D(0.26516506, 0, -0.10323758, 0, 0.9999999, 0, 0.26516503, 0, 0.103237584, 7.995382, 0.52868706, 9.940213)
+size = Vector3(1, 0.07672238, 104)
+material = ExtResource("1_o8unc")
+
+[node name="Decompress3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=722480334]
+transform = Transform3D(0.26516506, 0, -0.10323758, 0, 0.9999999, 0, 0.26516503, 0, 0.103237584, -7.985122, 0.51083606, -3.7247462)
+size = Vector3(10.976669, 0.041020393, 22.624512)
+material = ExtResource("1_o8unc")
+
+[node name="Decompress4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1979431188]
+transform = Transform3D(0.23546657, 0, -0.05161879, 0, 1, 0, 0.23546654, 0, 0.051618796, -8.024716, 0.51323783, -3.8224292)
+operation = 2
+size = Vector3(13.080946, 0.026254654, 28.796753)
+material = ExtResource("1_o8unc")
+
+[node name="SpotLightElevator" type="SpotLight3D" parent="." unique_id=1880626453]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.7347084, 4.3028, 17.147703)
+light_energy = 5.0
+spot_range = 5.53628
+spot_angle = 89.99
+
+[node name="SpotLightDecompress2" type="SpotLight3D" parent="." unique_id=224533148]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.70246, 2.740323, -2.7266297)
+light_energy = 5.0
+spot_range = 3.044
+spot_angle = 82.97
+
+[node name="SpotLightDecompress" type="SpotLight3D" parent="." unique_id=713768083]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -8.0980015, 2.801259, -4.03813)
+light_energy = 5.0
+spot_range = 3.0440707
+spot_angle = 82.96875
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1642070865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5084642, 3.3711672, 5.428905)
+light_energy = 10.0
+omni_range = 17.785763
+
+[node name="Elevador" type="Label3D" parent="." unique_id=1962419667]
+transform = Transform3D(-0.99999994, 0, 0, 0, 1, 0, 0, 0, -0.99999994, -0.7426019, 2.146108, 16.13681)
+text = "ELEVADOR.
+NAO VAI DESCER LITERALMENTE. A PORTA FECHARA E 
+O JOGO \"TELEPORTARA\" O ELEVADOR PARA
+ O ANDAR PRINCIPAL E ABRIRA. "
+
+[node name="Tranca" type="Label3D" parent="." unique_id=945802916]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -6.511975, 2.146108, -2.3902652)
+text = "ENTRADA/SAIDA DE
+ OUTRA NAVE. 
+PORTA TRANCADA"
+
+[node name="NaveInicio" type="Label3D" parent="." unique_id=76977920]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 10.9384365, 2.146108, -5.3137884)
+text = "NAVE NAVE NAVE
+NAVE NAVE NAVE
+INICIO INICIO INICO"
+
+[node name="Item3D" parent="." unique_id=498381206 instance=ExtResource("2_b1u3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2277837, 1.6542103, 7.278487)
+item_to_give = ExtResource("3_h7lmj")
+
+[node name="Item3D2" parent="." unique_id=2106596903 instance=ExtResource("2_b1u3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0985284, 1.6542103, 0.91612005)
+item_to_give = ExtResource("4_w2ebg")
+
+[node name="Reference" type="Sprite3D" parent="." unique_id=1869162786]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.009475231, -61.18184, -0.04828453)
+pixel_size = 0.1
+texture = ExtResource("5_b1u3c")
+metadata/_edit_lock_ = true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

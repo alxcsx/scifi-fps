@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cfrjlg2gdalui"]
+
+[ext_resource type="Script" uid="uid://k5ya57ofaweh" path="res://entities/player/scenes/weapons_ui/BaseWeaponView.gd" id="1_w63tp"]
+[ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="2_u7ib7"]
+
+[node name="Flashlight" type="Control" unique_id=581189973 node_paths=PackedStringArray("texture", "anim_player")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_w63tp")
+weapon_data = ExtResource("2_u7ib7")
+texture = NodePath("WeaponSprite")
+anim_player = NodePath("AnimationPlayer")
+
+[node name="WeaponSprite" type="TextureRect" parent="." unique_id=1039838434]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.99724454)
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1280872657]

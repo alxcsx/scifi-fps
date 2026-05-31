@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cymaks0bd3r2s" path="res://assets/assets_raw/END_TELEPORTER001.001.glb" id="3_8if2r"]
 [ext_resource type="AudioStream" uid="uid://crwcwgeuyon86" path="res://assets/sounds/Ambient/Elevator/Elevator.mp3" id="4_7pl36"]
 [ext_resource type="PackedScene" uid="uid://cuhj2liygfel5" path="res://assets/assets_raw/Tech_floor-col.glb" id="5_7shqo"]
-[ext_resource type="PackedScene" uid="uid://bw1g8ffv8i6sp" path="res://scenes/reusable_objects/interact_button.tscn" id="6_3m2hx"]
+[ext_resource type="PackedScene" uid="uid://bw1g8ffv8i6sp" path="res://interactive_objects/buttons/scenes/interact_button.tscn" id="6_3m2hx"]
 
 [sub_resource type="Animation" id="Animation_452na"]
 resource_name = "Open"
@@ -1148,3 +1148,18 @@ triggers_win_screen = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.5, 0)
 volume_db = 20.0
 max_distance = 100.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

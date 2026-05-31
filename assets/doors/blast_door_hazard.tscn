@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dbrlgxusgd5m2"]
 
 [ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_rhrr7"]
-[ext_resource type="AudioStream" uid="uid://dufg7t0oa1bke" path="res://Game LAJE - Sound/Game LAJE - Sound2/Door2/CloseDoor2.mp3" id="2_fky16"]
-[ext_resource type="PackedScene" uid="uid://cb111f3lfywv0" path="res://assets_raw/Hazard_Frame_door-col.glb" id="2_vxqgo"]
-[ext_resource type="PackedScene" uid="uid://b1cue8htlt2k8" path="res://assets_raw/Hazard_Up_door-col.glb" id="3_fky16"]
-[ext_resource type="AudioStream" uid="uid://cesb15abwnsnk" path="res://Game LAJE - Sound/Game LAJE - Sound2/Door2/OpenDoor2.mp3" id="3_prk1x"]
-[ext_resource type="PackedScene" uid="uid://c64pysp18ku31" path="res://assets_raw/Hazard_Blast_Down_door-col.glb" id="4_prk1x"]
+[ext_resource type="AudioStream" uid="uid://dufg7t0oa1bke" path="res://assets/sounds/Door2/CloseDoor2.mp3" id="2_fky16"]
+[ext_resource type="PackedScene" uid="uid://cb111f3lfywv0" path="res://assets/assets_raw/Hazard_Frame_door-col.glb" id="2_vxqgo"]
+[ext_resource type="PackedScene" uid="uid://b1cue8htlt2k8" path="res://assets/assets_raw/Hazard_Up_door-col.glb" id="3_fky16"]
+[ext_resource type="AudioStream" uid="uid://cesb15abwnsnk" path="res://assets/sounds/Door2/OpenDoor2.mp3" id="3_prk1x"]
+[ext_resource type="PackedScene" uid="uid://c64pysp18ku31" path="res://assets/assets_raw/Hazard_Blast_Down_door-col.glb" id="4_prk1x"]
 
 [sub_resource type="Animation" id="Animation_mvuay"]
 resource_name = "Close"
@@ -139,3 +139,18 @@ area_mask = 2
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

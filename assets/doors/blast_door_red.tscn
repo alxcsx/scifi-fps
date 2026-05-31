@@ -2,9 +2,9 @@
 
 [ext_resource type="AnimationLibrary" uid="uid://c31bmfej3govb" path="res://assets/OpennDoor_recoveryfile.res" id="1_c7vqr"]
 [ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_go3yl"]
-[ext_resource type="PackedScene" uid="uid://bo6mhddavl4bv" path="res://assets_raw/Red_Metal_Frame_door-col.glb" id="2_go3yl"]
-[ext_resource type="PackedScene" uid="uid://b0xhsmrciureh" path="res://assets_raw/Red_Metal_Down_door-col.glb" id="3_bvxms"]
-[ext_resource type="PackedScene" uid="uid://br1f3ygnatu80" path="res://assets_raw/Red_Metal_Up_door-col.glb" id="4_mu872"]
+[ext_resource type="PackedScene" uid="uid://bo6mhddavl4bv" path="res://assets/assets_raw/Red_Metal_Frame_door-col.glb" id="2_go3yl"]
+[ext_resource type="PackedScene" uid="uid://b0xhsmrciureh" path="res://assets/assets_raw/Red_Metal_Down_door-col.glb" id="3_bvxms"]
+[ext_resource type="PackedScene" uid="uid://br1f3ygnatu80" path="res://assets/assets_raw/Red_Metal_Up_door-col.glb" id="4_mu872"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mv12o"]
 size = Vector3(8, 9, 9)

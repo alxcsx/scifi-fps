@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh65p6lyige1w"]
+
+[ext_resource type="Script" path="res://entities/player/scripts/PlayerWeaponsManager.gd" id="1_wpnmg"]
+
+[node name="WeaponsManager" type="Node"]
+script = ExtResource("1_wpnmg")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

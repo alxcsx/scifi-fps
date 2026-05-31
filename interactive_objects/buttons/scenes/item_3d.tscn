@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://xfg4c8hgb0ab"]
+
+[ext_resource type="Script" uid="uid://cdchvise0qvh2" path="res://interactive_objects/buttons/scripts/Item3D.gd" id="1_a83qc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rqc4q"]
+radius = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a83qc"]
+
+[node name="Item3D" type="Area3D" unique_id=498381206 groups=["Interactable"]]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_a83qc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1207463710]
+shape = SubResource("SphereShape3D_rqc4q")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=397695751]
+billboard = 2
+double_sided = false
+sprite_frames = SubResource("SpriteFrames_a83qc")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b7irwp0rsucj8"]
 
 [ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_ue5di"]
-[ext_resource type="AudioStream" uid="uid://clmi7tfdgtxst" path="res://Game LAJE - Sound/Game LAJE - Sound2/Door3/CloseDoor3.mp3" id="2_ue5di"]
-[ext_resource type="AudioStream" uid="uid://dvvtjmis6xw0" path="res://Game LAJE - Sound/Game LAJE - Sound2/Door3/OpenDoor3.mp3" id="3_ie01n"]
-[ext_resource type="PackedScene" uid="uid://ddxwo10amkpy7" path="res://assets_raw/Cylinder_hazard_Frame_door-col.glb" id="3_jw6b3"]
-[ext_resource type="PackedScene" uid="uid://0t8dbqowv5ds" path="res://assets_raw/Cylinder_hazard_side2_door-col.glb" id="4_jw6b3"]
-[ext_resource type="PackedScene" uid="uid://f2ococf50rsg" path="res://assets_raw/Cylinder_hazard_side1_door-col.glb" id="5_ue5di"]
-[ext_resource type="PackedScene" uid="uid://cmc8ttbkwajio" path="res://assets_raw/Cylinder_hazard_side_down_door-col.glb" id="6_ie01n"]
-[ext_resource type="PackedScene" uid="uid://crhd73csreydp" path="res://assets_raw/Cylinder_hazard_side_up_door-col.glb" id="7_7pski"]
+[ext_resource type="AudioStream" uid="uid://clmi7tfdgtxst" path="res://assets/sounds/Door3/CloseDoor3.mp3" id="2_ue5di"]
+[ext_resource type="AudioStream" uid="uid://dvvtjmis6xw0" path="res://assets/sounds/Door3/OpenDoor3.mp3" id="3_ie01n"]
+[ext_resource type="PackedScene" uid="uid://ddxwo10amkpy7" path="res://assets/assets_raw/Cylinder_hazard_Frame_door-col.glb" id="3_jw6b3"]
+[ext_resource type="PackedScene" uid="uid://0t8dbqowv5ds" path="res://assets/assets_raw/Cylinder_hazard_side2_door-col.glb" id="4_jw6b3"]
+[ext_resource type="PackedScene" uid="uid://f2ococf50rsg" path="res://assets/assets_raw/Cylinder_hazard_side1_door-col.glb" id="5_ue5di"]
+[ext_resource type="PackedScene" uid="uid://cmc8ttbkwajio" path="res://assets/assets_raw/Cylinder_hazard_side_down_door-col.glb" id="6_ie01n"]
+[ext_resource type="PackedScene" uid="uid://crhd73csreydp" path="res://assets/assets_raw/Cylinder_hazard_side_up_door-col.glb" id="7_7pski"]
 
 [sub_resource type="Animation" id="Animation_ue5di"]
 resource_name = "Open"
@@ -188,3 +188,18 @@ max_distance = 10.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

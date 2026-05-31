@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://3t4larx2julk"]
 
-[ext_resource type="PackedScene" uid="uid://xfg4c8hgb0ab" path="res://scenes/reusable_objects/item_3d.tscn" id="1_ol4ot"]
-[ext_resource type="Texture2D" uid="uid://c8srwlie1moxw" path="res://assets/sprites/laje/3 Sem Título2_20260521155010.png" id="2_0kqkc"]
-[ext_resource type="Script" uid="uid://b4m6knhom7fdn" path="res://scripts/resources/AmmoItem.gd" id="3_6evrg"]
+[ext_resource type="PackedScene" uid="uid://xfg4c8hgb0ab" path="res://interactive_objects/buttons/scenes/item_3d.tscn" id="1_ol4ot"]
+[ext_resource type="Texture2D" uid="uid://c8srwlie1moxw" path="res://assets/sprites/laje/ammo/bullet_icon.png" id="2_0kqkc"]
+[ext_resource type="Script" uid="uid://b4m6knhom7fdn" path="res://resources/consumables/ammo/scripts/AmmoItem.gd" id="3_6evrg"]
 
 [sub_resource type="Resource" id="Resource_5covq"]
 script = ExtResource("3_6evrg")
@@ -13,3 +13,19 @@ metadata/_custom_type_script = "uid://b4m6knhom7fdn"
 
 [node name="DropableAmmo" unique_id=498381206 instance=ExtResource("1_ol4ot")]
 item_to_give = SubResource("Resource_5covq")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

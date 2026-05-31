@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://blhduefj1l76i"]
+
+[ext_resource type="Script" uid="uid://lg36lo4u40ww" path="res://ui/scripts/main_menu.gd" id="1_3h7gc"]
+[ext_resource type="Texture2D" uid="uid://cm1n865wloke1" path="res://assets/sprites/laje/ui/main_menu_background.png" id="2_4vh8y"]
+[ext_resource type="Texture2D" uid="uid://cyb4akay13jy" path="res://assets/sprites/laje/ui/main_menu_logo.png" id="3_b1p1q"]
+
+[node name="Control" type="Control" unique_id=281120523]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3h7gc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=481643186]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08468992, 0.08468992, 0.08468992, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=800594914]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4vh8y")
+expand_mode = 1
+
+[node name="Sprite2D" type="TextureRect" parent="." unique_id=1759449776]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.599
+anchor_top = 0.030000001
+anchor_right = 0.97
+anchor_bottom = 0.43100002
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_b1p1q")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=516725299]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.613
+anchor_right = 0.94
+anchor_bottom = 0.662
+offset_left = -284.0
+offset_top = -156.5
+offset_bottom = 156.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=805611843]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "PLAY"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1106980489]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "SETTINGS"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1666872636]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "EXIT"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

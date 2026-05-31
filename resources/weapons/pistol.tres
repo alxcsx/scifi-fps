@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://dflobhpwe1c4q"]
 
-[ext_resource type="Script" uid="uid://bo4xwaru6jy3j" path="res://scripts/resources/WeaponItem.gd" id="1_1vsk4"]
-[ext_resource type="Script" uid="uid://b6g3ghwigtquc" path="res://scripts/resources/WeaponEffects/WeaponEffect.gd" id="1_i4ekl"]
-[ext_resource type="Texture2D" uid="uid://bs0yudkdl4rp0" path="res://assets/sprites/laje/pistolita.png" id="4_xq21v"]
+[ext_resource type="Script" uid="uid://bo4xwaru6jy3j" path="res://resources/weapons/scripts/WeaponItem.gd" id="1_1vsk4"]
+[ext_resource type="Script" uid="uid://b6g3ghwigtquc" path="res://resources/weapons/scripts/WeaponEffect.gd" id="1_i4ekl"]
+[ext_resource type="Texture2D" uid="uid://bs0yudkdl4rp0" path="res://assets/sprites/laje/weapons/pistol/pistol_icon.png" id="4_xq21v"]
 
 [resource]
 script = ExtResource("1_1vsk4")
@@ -13,3 +13,18 @@ zoom_fov = 30.0
 item_name = "Pistol"
 icon = ExtResource("4_xq21v")
 metadata/_custom_type_script = "uid://bo4xwaru6jy3j"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

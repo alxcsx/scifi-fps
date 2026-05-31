@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://5feuriwyqf53"]
 
 [ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_o1oo4"]
-[ext_resource type="PackedScene" uid="uid://bcvv71pq8cvp1" path="res://assets_raw/Fence_Door-col.glb" id="1_pxykx"]
-[ext_resource type="PackedScene" uid="uid://ch6n4j8783y00" path="res://assets_raw/Lock_fence_door-col.glb" id="2_o1oo4"]
-[ext_resource type="PackedScene" uid="uid://cq84gywjxgwmc" path="res://assets_raw/Pivot_fence_door-col.glb" id="3_5af8g"]
+[ext_resource type="PackedScene" uid="uid://bcvv71pq8cvp1" path="res://assets/assets_raw/Fence_Door-col.glb" id="1_pxykx"]
+[ext_resource type="PackedScene" uid="uid://ch6n4j8783y00" path="res://assets/assets_raw/Lock_fence_door-col.glb" id="2_o1oo4"]
+[ext_resource type="PackedScene" uid="uid://cq84gywjxgwmc" path="res://assets/assets_raw/Pivot_fence_door-col.glb" id="3_5af8g"]
 
 [sub_resource type="Animation" id="Animation_xsab7"]
 resource_name = "Open"

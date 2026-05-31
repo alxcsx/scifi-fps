@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dejcoysaktcop"]
 
-[ext_resource type="PackedScene" uid="uid://45f8mdtxgtcw" path="res://assets_raw/Door_wall_sizeDOWN-col.glb" id="1_psb0p"]
+[ext_resource type="PackedScene" uid="uid://45f8mdtxgtcw" path="res://assets/assets_raw/Door_wall_sizeDOWN-col.glb" id="1_psb0p"]
 [ext_resource type="Script" uid="uid://bq8pq2ipb5ctv" path="res://assets/doors/base_door.gd" id="1_r65vx"]
-[ext_resource type="PackedScene" uid="uid://budwiu8lst440" path="res://assets_raw/Door_wall_sizeUP-col.glb" id="2_r65vx"]
+[ext_resource type="PackedScene" uid="uid://budwiu8lst440" path="res://assets/assets_raw/Door_wall_sizeUP-col.glb" id="2_r65vx"]
 
 [sub_resource type="Animation" id="Animation_matav"]
 resource_name = "Close"
@@ -117,3 +117,17 @@ shape = SubResource("BoxShape3D_1t3y8")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+

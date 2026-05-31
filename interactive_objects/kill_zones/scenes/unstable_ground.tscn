@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c00lfwk0smrqd"]
+
+[ext_resource type="Script" uid="uid://dbq77de1x04lh" path="res://interactive_objects/kill_zones/scripts/unstable_ground.gd" id="1_nt1au"]
+[ext_resource type="PackedScene" uid="uid://di1ug5ve5abnq" path="res://assets/assets_raw/Fence_Circles_floor-col.glb" id="2_iffhu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_32jbc"]
+size = Vector3(2, 0.05, 2)
+
+[node name="UnstableGround" type="RigidBody3D" unique_id=2011737468]
+collision_layer = 2
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_nt1au")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=582190259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0011696145, 0)
+shape = SubResource("BoxShape3D_32jbc")
+
+[node name="Fence_Circles_floor-col2" parent="." unique_id=1356899269 instance=ExtResource("2_iffhu")]
+
+[node name="Timer" type="Timer" parent="." unique_id=1863899948]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
