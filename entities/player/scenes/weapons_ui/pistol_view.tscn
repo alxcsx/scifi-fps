@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://br77up73je7iu"]
 
-[ext_resource type="Script" uid="uid://bh2hu60eaifer" path="res://entities/player/scenes/weapons_ui/BaseWeaponView.gd" id="1_ok3if"]
+[ext_resource type="Script" uid="uid://k5ya57ofaweh" path="res://entities/player/scenes/weapons_ui/BaseWeaponView.gd" id="1_ok3if"]
 [ext_resource type="Resource" uid="uid://dflobhpwe1c4q" path="res://resources/weapons/pistol.tres" id="2_mo4cc"]
-[ext_resource type="Texture2D" uid="uid://cmvh1r4i8qsed" path="res://assets/sprites/laje/weapons/pistol/views/pistol_view_idle.png" id="3_ttg3c"]
-[ext_resource type="Texture2D" uid="uid://be7rd18dxkis7" path="res://assets/sprites/laje/weapons/pistol/views/pistol_view_shoot.png" id="4_2tb2r"]
+[ext_resource type="Texture2D" uid="uid://cmvh1r4i8qsed" path="res://assets/sprites/weapons/pistol/views/pistol_view_idle.png" id="3_ttg3c"]
+[ext_resource type="Texture2D" uid="uid://be7rd18dxkis7" path="res://assets/sprites/weapons/pistol/views/pistol_view_shoot.png" id="4_2tb2r"]
 [ext_resource type="AudioStream" uid="uid://d2wwualuvv5ug" path="res://assets/sounds/Objects/Gun/RechargeSound.mp3" id="4_a7l2r"]
 [ext_resource type="AudioStream" uid="uid://cbqj1fmyph1rk" path="res://assets/sounds/Objects/Gun/GunShot.mp3" id="5_2tb2r"]
 
@@ -139,18 +139,3 @@ libraries/ = SubResource("AnimationLibrary_57y1b")
 position = Vector2(1344, 768)
 volume_db = 20.0
 pitch_scale = 2.0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

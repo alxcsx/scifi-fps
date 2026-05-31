@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0flmrc3r6h88"
-path="res://.godot/imported/red_enemy_side_left.png-201c36a1515d6c5690fb4d895b24973d.ctex"
+uid="uid://bwl2llp86ebcw"
+path="res://.godot/imported/green_enemy_side_left.png-107ec9c776bfcb89d1c0dad6bc71f42c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/laje/enemies/red/red_enemy_side_left.png"
-dest_files=["res://.godot/imported/red_enemy_side_left.png-201c36a1515d6c5690fb4d895b24973d.ctex"]
+source_file="res://assets/sprites/enemies/green/green_enemy_side_left.png"
+dest_files=["res://.godot/imported/green_enemy_side_left.png-107ec9c776bfcb89d1c0dad6bc71f42c.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AmmoItem" format=3 uid="uid://caq4ql0j4kocw"]
 
 [ext_resource type="Script" uid="uid://d3duv45hn1bo6" path="res://resources/consumables/ammo/scripts/AmmoItem.gd" id="1_0gyap"]
-[ext_resource type="Texture2D" uid="uid://c8srwlie1moxw" path="res://assets/sprites/laje/ammo/bullet_icon.png" id="1_4ws6o"]
+[ext_resource type="Texture2D" uid="uid://c8srwlie1moxw" path="res://assets/sprites/ammo/bullet_icon.png" id="1_4ws6o"]
 
 [resource]
 script = ExtResource("1_0gyap")

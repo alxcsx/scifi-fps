@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t0eru5vdqm27"
-path.s3tc="res://.godot/imported/red_enemy_front_left_foot.png-b5abdba70debf1ea5d19c03650152532.s3tc.ctex"
-path.etc2="res://.godot/imported/red_enemy_front_left_foot.png-b5abdba70debf1ea5d19c03650152532.etc2.ctex"
+uid="uid://b6kh1gctn7c73"
+path.s3tc="res://.godot/imported/red_enemy_back.png-f4b06153caebb6162bf82a85ef163e28.s3tc.ctex"
+path.etc2="res://.godot/imported/red_enemy_back.png-f4b06153caebb6162bf82a85ef163e28.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/laje/enemies/red/red_enemy_front_left_foot.png"
-dest_files=["res://.godot/imported/red_enemy_front_left_foot.png-b5abdba70debf1ea5d19c03650152532.s3tc.ctex", "res://.godot/imported/red_enemy_front_left_foot.png-b5abdba70debf1ea5d19c03650152532.etc2.ctex"]
+source_file="res://assets/sprites/enemies/red/red_enemy_back.png"
+dest_files=["res://.godot/imported/red_enemy_back.png-f4b06153caebb6162bf82a85ef163e28.s3tc.ctex", "res://.godot/imported/red_enemy_back.png-f4b06153caebb6162bf82a85ef163e28.etc2.ctex"]
 
 [params]
 

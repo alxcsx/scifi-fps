@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfo4s1xscn5ws"
-path="res://.godot/imported/red_enemy_side_right.png-5c83db7bf0844aa381e3fa3ceca85719.ctex"
+uid="uid://bs0yudkdl4rp0"
+path="res://.godot/imported/pistol_icon.png-bdc61b2270c6aedeb7e35dde76c0b2c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/laje/enemies/red/red_enemy_side_right.png"
-dest_files=["res://.godot/imported/red_enemy_side_right.png-5c83db7bf0844aa381e3fa3ceca85719.ctex"]
+source_file="res://assets/sprites/weapons/pistol/pistol_icon.png"
+dest_files=["res://.godot/imported/pistol_icon.png-bdc61b2270c6aedeb7e35dde76c0b2c6.ctex"]
 
 [params]
 

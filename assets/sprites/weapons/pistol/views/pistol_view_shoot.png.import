@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyb4akay13jy"
-path="res://.godot/imported/main_menu_logo.png-6e0805232706b27aa7a3a0b3623a2a47.ctex"
+uid="uid://be7rd18dxkis7"
+path="res://.godot/imported/pistol_view_shoot.png-5f302d91372f6e0a859239e44bec59ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/laje/ui/main_menu_logo.png"
-dest_files=["res://.godot/imported/main_menu_logo.png-6e0805232706b27aa7a3a0b3623a2a47.ctex"]
+source_file="res://assets/sprites/weapons/pistol/views/pistol_view_shoot.png"
+dest_files=["res://.godot/imported/pistol_view_shoot.png-5f302d91372f6e0a859239e44bec59ae.ctex"]
 
 [params]
 

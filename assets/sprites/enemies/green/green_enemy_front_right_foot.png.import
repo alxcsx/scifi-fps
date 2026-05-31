@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgg2vir8xmt26"
-path.s3tc="res://.godot/imported/green_enemy_front_right_foot.png-fd98a6e85032c6840704fd9240ba230e.s3tc.ctex"
-path.etc2="res://.godot/imported/green_enemy_front_right_foot.png-fd98a6e85032c6840704fd9240ba230e.etc2.ctex"
+path.s3tc="res://.godot/imported/green_enemy_front_right_foot.png-2df6c62d9292d5a0cfe34087825c80a9.s3tc.ctex"
+path.etc2="res://.godot/imported/green_enemy_front_right_foot.png-2df6c62d9292d5a0cfe34087825c80a9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/laje/enemies/green/green_enemy_front_right_foot.png"
-dest_files=["res://.godot/imported/green_enemy_front_right_foot.png-fd98a6e85032c6840704fd9240ba230e.s3tc.ctex", "res://.godot/imported/green_enemy_front_right_foot.png-fd98a6e85032c6840704fd9240ba230e.etc2.ctex"]
+source_file="res://assets/sprites/enemies/green/green_enemy_front_right_foot.png"
+dest_files=["res://.godot/imported/green_enemy_front_right_foot.png-2df6c62d9292d5a0cfe34087825c80a9.s3tc.ctex", "res://.godot/imported/green_enemy_front_right_foot.png-2df6c62d9292d5a0cfe34087825c80a9.etc2.ctex"]
 
 [params]
 

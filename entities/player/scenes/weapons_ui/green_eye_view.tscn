@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://br1t8qo4lnopp"]
 
-[ext_resource type="Script" uid="uid://brjwt4q0ob4o8" path="res://entities/player/scenes/weapons_ui/GenericItemView.gd" id="1_ivpca"]
+[ext_resource type="Script" uid="uid://oramqaobuhla" path="res://entities/player/scenes/weapons_ui/GenericItemView.gd" id="1_ivpca"]
 [ext_resource type="Resource" uid="uid://bb0iuhe7u07w8" path="res://resources/weapons/green_eye.tres" id="2_ivpca"]
-[ext_resource type="Texture2D" uid="uid://ctw4bqi482ux0" path="res://assets/sprites/laje/weapons/green_eye/green_eye_weapon_icon.png" id="3_ivpca"]
+[ext_resource type="Texture2D" uid="uid://ctw4bqi482ux0" path="res://assets/sprites/weapons/green_eye/green_eye_weapon_icon.png" id="3_ivpca"]
 
 [sub_resource type="Animation" id="Animation_e6kkq"]
 resource_name = "Idle"
@@ -56,18 +56,3 @@ libraries/ = SubResource("AnimationLibrary_57y1b")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=478660908]
 position = Vector2(1344, 768)
 volume_db = 15.0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

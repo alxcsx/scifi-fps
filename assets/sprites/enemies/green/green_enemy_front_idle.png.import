@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dalvdbbw7r4it"
-path.s3tc="res://.godot/imported/red_enemy_front_idle.png-c179d8610560711247ba54dcefe57db6.s3tc.ctex"
-path.etc2="res://.godot/imported/red_enemy_front_idle.png-c179d8610560711247ba54dcefe57db6.etc2.ctex"
+uid="uid://fr21dwohal7i"
+path.s3tc="res://.godot/imported/green_enemy_front_idle.png-cfcc28d1123c1a5b6d764cfb842e9ee9.s3tc.ctex"
+path.etc2="res://.godot/imported/green_enemy_front_idle.png-cfcc28d1123c1a5b6d764cfb842e9ee9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/laje/enemies/red/red_enemy_front_idle.png"
-dest_files=["res://.godot/imported/red_enemy_front_idle.png-c179d8610560711247ba54dcefe57db6.s3tc.ctex", "res://.godot/imported/red_enemy_front_idle.png-c179d8610560711247ba54dcefe57db6.etc2.ctex"]
+source_file="res://assets/sprites/enemies/green/green_enemy_front_idle.png"
+dest_files=["res://.godot/imported/green_enemy_front_idle.png-cfcc28d1123c1a5b6d764cfb842e9ee9.s3tc.ctex", "res://.godot/imported/green_enemy_front_idle.png-cfcc28d1123c1a5b6d764cfb842e9ee9.etc2.ctex"]
 
 [params]
 
