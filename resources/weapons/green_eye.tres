@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://bb0iuhe7u07w8"]
 
 [ext_resource type="Script" uid="uid://b6g3ghwigtquc" path="res://resources/weapons/scripts/WeaponEffect.gd" id="1_mn8ea"]
-[ext_resource type="Script" uid="uid://bo4xwaru6jy3j" path="res://resources/weapons/scripts/WeaponItem.gd" id="2_1jicx"]
+[ext_resource type="Script" uid="uid://bl7px03xpobn4" path="res://resources/weapons/scripts/WeaponItem.gd" id="2_1jicx"]
 [ext_resource type="Texture2D" uid="uid://ctw4bqi482ux0" path="res://assets/sprites/laje/weapons/green_eye/green_eye_weapon_icon.png" id="4_kl7ay"]
 
 [resource]

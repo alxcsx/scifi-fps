@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xfg4c8hgb0ab" path="res://interactive_objects/buttons/scenes/item_3d.tscn" id="1_ol4ot"]
 [ext_resource type="Texture2D" uid="uid://c8srwlie1moxw" path="res://assets/sprites/laje/ammo/bullet_icon.png" id="2_0kqkc"]
-[ext_resource type="Script" uid="uid://b4m6knhom7fdn" path="res://resources/consumables/ammo/scripts/AmmoItem.gd" id="3_6evrg"]
+[ext_resource type="Script" uid="uid://d3duv45hn1bo6" path="res://resources/consumables/ammo/scripts/AmmoItem.gd" id="3_6evrg"]
 
 [sub_resource type="Resource" id="Resource_5covq"]
 script = ExtResource("3_6evrg")
